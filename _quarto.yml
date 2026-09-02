@@ -1,0 +1,29 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "Junzheng Yang"
+
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - href: bio.qmd
+        text: About
+      - href: resume.qmd
+        text: Resume
+      - href: blog/index.qmd
+        text: Blog
+
+  page-footer:
+    center: |
+      © 2026 Junzheng Yang
+    left: |
+      ![](images/UniversityofPennsylvania_FullLogo_RGB.png){width=100px}
+
+format:
+  html:
+    theme: flatly
+    css: styles.css
+    toc: false

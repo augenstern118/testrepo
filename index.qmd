@@ -1,0 +1,31 @@
+---
+title: ""
+---
+
+::::: columns
+
+::: {.column width="35%"}
+![](images/profile.png){width="100%"}
+:::
+
+::: {.column width="65%"}
+![](images/UniversityofPennsylvania_FullLogo_RGB.png){width="250px"}
+
+# Junzheng Yang
+
+University of Pennsylvania
+
+Welcome to my personal website.
+
+### Quick Links
+
+<div>
+<a href="https://github.com/augenstern118"><i class="bi bi-github fs-3"></i></a>
+<a href="https://www.linkedin.com/in/junzheng-yang-030017335"><i class="bi bi-linkedin fs-3"></i></a>
+<a href="resume.qmd"><i class="bi bi-file-earmark-person-fill fs-3"></i></a>
+<a href="mailto:jyang05@sas.upenn.edu"><i class="bi bi-envelope-fill fs-3"></i></a>
+</div>
+
+:::
+
+:::::

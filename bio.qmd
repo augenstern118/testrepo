@@ -1,0 +1,33 @@
+---
+title: "About Me"
+---
+
+Write a short biography here.
+
+## Education
+
+Master of Applied Economics and Data Science, University of Pennsylvania
+
+Bachelor's degree, University of California San Diego
+
+## Interests
+
+- Econometrics
+- Machine Learning
+- Data Analysis
+- Applied Economics
+
+## Technical Skills
+
+- R
+- Python
+- Data Analysis
+- Statistical Modeling
+
+## Career Goals
+
+Write your career goals here.
+
+## Contact
+
+jyang05\@sas.upenn.edu

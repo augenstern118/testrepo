@@ -1,0 +1,97 @@
+---
+title: "Why a Small P-Value Does Not Mean Your Hypothesis Is Probably Wrong"
+date: 2026-08-31
+categories:
+  - statistics
+  - econometrics
+---
+
+## What Is a P-Value?
+
+The p-value is one of the most commonly used—and commonly misunderstood—ideas in statistics. It appears everywhere from economics papers to medical studies, often as the number that determines whether a result is called “statistically significant.”
+
+A common interpretation is that a p-value tells us the probability that the null hypothesis is true. For example, someone might say that a p-value of 0.03 means there is only a 3% chance that the null hypothesis is correct.
+
+That interpretation is wrong.
+
+A p-value instead answers a more specific question:
+
+> If the null hypothesis were true, how surprising would our observed data—or something even more extreme—be?
+
+This difference sounds subtle, but it is extremely important.
+
+## A Simple Example
+
+Suppose an economist wants to study whether a job-training program increases workers' wages.
+
+The null hypothesis might be
+
+$$H_0: \beta = 0,$$
+
+where $\beta$ represents the effect of the training program on wages.
+
+The alternative hypothesis is
+
+$$H_1: \beta \neq 0.$$
+
+Imagine that the estimated effect is positive and produces a p-value of 0.03.
+
+This does **not** mean
+
+$$P(H_0 \mid \text{data}) = 0.03.$$
+
+Instead, the p-value is closer to
+
+$$P(\text{data at least this extreme} \mid H_0).$$
+
+In words: assuming that the training program truly has no effect, there would be about a 3% chance of observing evidence at least as inconsistent with the null hypothesis as what we actually observed.
+
+## Why Is This Unintuitive?
+
+The confusion comes from reversing the direction of conditional probability.
+
+What researchers often want to know is
+
+$$P(H_0 \mid \text{data}),$$
+
+the probability that the null hypothesis is true given the data.
+
+But a traditional hypothesis test gives us information about
+
+$$P(\text{data} \mid H_0),$$
+
+the probability of observing the data assuming the null hypothesis is true.
+
+These are not the same quantity.
+
+Consider an analogy. Suppose that if a person has a rare disease, there is a 95% probability that a diagnostic test will be positive. This does not imply that someone who tests positive has a 95% probability of having the disease. We would also need to know how common the disease is and how often the test gives false positives.
+
+The same logical issue appears when interpreting p-values.
+
+## What Does “Statistically Significant” Mean?
+
+Researchers often compare the p-value to a significance level such as
+
+$$\alpha = 0.05.$$
+
+If
+
+$$p < 0.05,$$
+
+the result is commonly described as statistically significant, and the null hypothesis is rejected.
+
+However, the 0.05 threshold is a convention rather than a fundamental law of statistics. A result with a p-value of 0.049 is not fundamentally different from one with a p-value of 0.051.
+
+Statistical significance also does not imply economic significance.
+
+For example, a very large dataset might show that a training program increases wages by only \$0.10 per year with a very small p-value. The effect could be statistically convincing while being economically meaningless.
+
+Conversely, an economically important effect may fail to achieve statistical significance if the sample is small or noisy.
+
+## The Main Lesson
+
+A p-value should be viewed as a measure of how compatible the observed data are with a particular null hypothesis—not as the probability that the hypothesis is true.
+
+When interpreting an empirical result, economists should therefore look beyond whether $p < 0.05$. The estimated effect size, confidence interval, sample size, research design, and economic importance of the result are often just as important as the p-value itself.
+
+Understanding this distinction makes hypothesis testing much less mysterious and helps prevent one of the most persistent statistical mistakes in applied research.
