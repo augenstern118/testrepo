@@ -1,0 +1,7 @@
+id,occupation,source_url,median_pay_usd,pay_year,education,experience,employment,growth_pct,net_new_jobs,annual_openings,projection_start,projection_end,access_date,capture_method
+data-scientists,Data scientists,https://www.bls.gov/ooh/math/data-scientists.htm,120230,2025,Bachelor's degree,None,275600,35,95400,24800,2025,2035,2026-09-20,Browser DOM snapshot of public Summary article
+economists,Economists,https://www.bls.gov/ooh/life-physical-and-social-science/economists.htm,124720,2025,Master's degree,None,18600,5,900,1100,2025,2035,2026-09-20,Browser DOM snapshot of public Summary article
+operations-research-analysts,Operations research analysts,https://www.bls.gov/ooh/math/operations-research-analysts.htm,88940,2025,Bachelor's degree,None,113100,12,13500,7500,2025,2035,2026-09-20,Browser DOM snapshot of public Summary article
+market-research-analysts,Market research analysts,https://www.bls.gov/ooh/business-and-financial/market-research-analysts.htm,78760,2025,Bachelor's degree,None,952700,7,66300,82000,2025,2035,2026-09-20,Browser DOM snapshot of public Summary article
+management-analysts,Management analysts,https://www.bls.gov/ooh/business-and-financial/management-analysts.htm,101860,2025,Bachelor's degree,Less than 5 years,1077100,10,109200,94100,2025,2035,2026-09-20,Browser DOM snapshot of public Summary article
+financial-analysts,Financial analysts,https://www.bls.gov/ooh/business-and-financial/financial-analysts.htm,103570,2025,Bachelor's degree,None,443100,7,32000,29500,2025,2035,2026-09-20,Browser DOM snapshot of public Summary article

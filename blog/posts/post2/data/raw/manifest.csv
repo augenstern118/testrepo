@@ -1,0 +1,7 @@
+id,source_url,access_date,capture_method,sha256
+data-scientists,https://www.bls.gov/ooh/math/data-scientists.htm,2026-09-20,Browser DOM snapshot of public Summary article,a7fe5e4d66e2e3f25283d4e2d61d28e45029352ae46af22ab68cc05d0c6a8fee
+economists,https://www.bls.gov/ooh/life-physical-and-social-science/economists.htm,2026-09-20,Browser DOM snapshot of public Summary article,c1cc79a1fd5ef636993affb6c83eba3b724560da9178299e86b27f586b0a6c6e
+operations-research-analysts,https://www.bls.gov/ooh/math/operations-research-analysts.htm,2026-09-20,Browser DOM snapshot of public Summary article,dd158d3d591d36c2e7456d35d5c970a9a49a1a0ec267065a65a04e209c0616f1
+market-research-analysts,https://www.bls.gov/ooh/business-and-financial/market-research-analysts.htm,2026-09-20,Browser DOM snapshot of public Summary article,87302a54bc946cd01386b029611afba1839d80335b4ca907c4985b47ae920966
+management-analysts,https://www.bls.gov/ooh/business-and-financial/management-analysts.htm,2026-09-20,Browser DOM snapshot of public Summary article,afc57f64a5278794c57c6307f39ff94f1e0c9bc58b766d40461d0a78656293da
+financial-analysts,https://www.bls.gov/ooh/business-and-financial/financial-analysts.htm,2026-09-20,Browser DOM snapshot of public Summary article,eaa0aed5a86b5312db749b8a03c1341a05dcc1ab0633038102988d13a85e091e
