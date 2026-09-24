@@ -1,0 +1,170 @@
+[
+  {
+    "objectID": "About me.html",
+    "href": "About me.html",
+    "title": "About Me",
+    "section": "",
+    "text": "Write a short biography here."
+  },
+  {
+    "objectID": "About me.html#education",
+    "href": "About me.html#education",
+    "title": "About Me",
+    "section": "Education",
+    "text": "Education\nMaster of Applied Economics and Data Science, University of Pennsylvania\nBachelor’s degree, University of California San Diego"
+  },
+  {
+    "objectID": "About me.html#interests",
+    "href": "About me.html#interests",
+    "title": "About Me",
+    "section": "Interests",
+    "text": "Interests\n\nEconometrics\nMachine Learning\nData Analysis\nApplied Economics"
+  },
+  {
+    "objectID": "About me.html#technical-skills",
+    "href": "About me.html#technical-skills",
+    "title": "About Me",
+    "section": "Technical Skills",
+    "text": "Technical Skills\n\nR\nPython\nData Analysis\nStatistical Modeling"
+  },
+  {
+    "objectID": "About me.html#career-goals",
+    "href": "About me.html#career-goals",
+    "title": "About Me",
+    "section": "Career Goals",
+    "text": "Career Goals\nWrite your career goals here."
+  },
+  {
+    "objectID": "About me.html#contact",
+    "href": "About me.html#contact",
+    "title": "About Me",
+    "section": "Contact",
+    "text": "Contact\njyang05@sas.upenn.edu"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site\n\n1 + 1\n\n[1] 2"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Junzheng Yang-website",
+    "section": "",
+    "text": "Junzheng Yang\nUniversity of Pennsylvania\nWelcome to my personal website.\n\nQuick Links\n\n\" \""
+  },
+  {
+    "objectID": "blog/posts/post1/index.html",
+    "href": "blog/posts/post1/index.html",
+    "title": "My First Blog Post",
+    "section": "",
+    "text": "This is my first blog post. — title: “Why a Small P-Value Does Not Mean Your Hypothesis Is Probably Wrong” date: 2026-08-31 categories: - statistics - econometrics —"
+  },
+  {
+    "objectID": "blog/posts/post1/index.html#what-is-a-p-value",
+    "href": "blog/posts/post1/index.html#what-is-a-p-value",
+    "title": "My First Blog Post",
+    "section": "What Is a P-Value?",
+    "text": "What Is a P-Value?\nThe p-value is one of the most commonly used—and commonly misunderstood—ideas in statistics. It appears everywhere from economics papers to medical studies, often as the number that determines whether a result is called “statistically significant.”\nA common interpretation is that a p-value tells us the probability that the null hypothesis is true. For example, someone might say that a p-value of 0.03 means there is only a 3% chance that the null hypothesis is correct.\nThat interpretation is wrong.\nA p-value instead answers a more specific question:\n\nIf the null hypothesis were true, how surprising would our observed data—or something even more extreme—be?\n\nThis difference sounds subtle, but it is extremely important."
+  },
+  {
+    "objectID": "blog/posts/post1/index.html#a-simple-example",
+    "href": "blog/posts/post1/index.html#a-simple-example",
+    "title": "My First Blog Post",
+    "section": "A Simple Example",
+    "text": "A Simple Example\nSuppose an economist wants to study whether a job-training program increases workers’ wages.\nThe null hypothesis might be\n\\[\nH_0: \\beta = 0,\n\\]\nwhere \\(\\beta\\) represents the effect of the training program on wages.\nThe alternative hypothesis is\n\\[\nH_1: \\beta \\neq 0.\n\\]\nImagine that the estimated effect is positive and produces a p-value of 0.03.\nThis does not mean\n\\[\nP(H_0 \\mid \\text{data}) = 0.03.\n\\]\nInstead, the p-value is closer to\n\\[\nP(\\text{data at least this extreme} \\mid H_0).\n\\]\nIn words: assuming that the training program truly has no effect, there would be about a 3% chance of observing evidence at least as inconsistent with the null hypothesis as what we actually observed."
+  },
+  {
+    "objectID": "blog/posts/post1/index.html#why-is-this-unintuitive",
+    "href": "blog/posts/post1/index.html#why-is-this-unintuitive",
+    "title": "My First Blog Post",
+    "section": "Why Is This Unintuitive?",
+    "text": "Why Is This Unintuitive?\nThe confusion comes from reversing the direction of conditional probability.\nWhat researchers often want to know is\n\\[\nP(H_0 \\mid \\text{data}),\n\\]\nthe probability that the null hypothesis is true given the data.\nBut a traditional hypothesis test gives us information about\n\\[\nP(\\text{data} \\mid H_0),\n\\]\nthe probability of observing the data assuming the null hypothesis is true.\nThese are not the same quantity.\nConsider an analogy. Suppose that if a person has a rare disease, there is a 95% probability that a diagnostic test will be positive. This does not imply that someone who tests positive has a 95% probability of having the disease. We would also need to know how common the disease is and how often the test gives false positives.\nThe same logical issue appears when interpreting p-values."
+  },
+  {
+    "objectID": "blog/posts/post1/index.html#what-does-statistically-significant-mean",
+    "href": "blog/posts/post1/index.html#what-does-statistically-significant-mean",
+    "title": "My First Blog Post",
+    "section": "What Does “Statistically Significant” Mean?",
+    "text": "What Does “Statistically Significant” Mean?\nResearchers often compare the p-value to a significance level such as\n\\[\n\\alpha = 0.05.\n\\]\nIf\n\\[\np &lt; 0.05,\n\\]\nthe result is commonly described as statistically significant, and the null hypothesis is rejected.\nHowever, the 0.05 threshold is a convention rather than a fundamental law of statistics. A result with a p-value of 0.049 is not fundamentally different from one with a p-value of 0.051.\nStatistical significance also does not imply economic significance.\nFor example, a very large dataset might show that a training program increases wages by only $0.10 per year with a very small p-value. The effect could be statistically convincing while being economically meaningless.\nConversely, an economically important effect may fail to achieve statistical significance if the sample is small or noisy."
+  },
+  {
+    "objectID": "blog/posts/post1/index.html#the-main-lesson",
+    "href": "blog/posts/post1/index.html#the-main-lesson",
+    "title": "My First Blog Post",
+    "section": "The Main Lesson",
+    "text": "The Main Lesson\nA p-value should be viewed as a measure of how compatible the observed data are with a particular null hypothesis—not as the probability that the hypothesis is true.\nWhen interpreting an empirical result, economists should therefore look beyond whether \\(p &lt; 0.05\\). The estimated effect size, confidence interval, sample size, research design, and economic importance of the result are often just as important as the p-value itself.\nUnderstanding this distinction makes hypothesis testing much less mysterious and helps prevent one of the most persistent statistical mistakes in applied research."
+  },
+  {
+    "objectID": "resume.html",
+    "href": "resume.html",
+    "title": "resume",
+    "section": "",
+    "text": "Download my resume here:"
+  },
+  {
+    "objectID": "resume.html#resume-pdf",
+    "href": "resume.html#resume-pdf",
+    "title": "resume",
+    "section": "Resume PDF",
+    "text": "Resume PDF"
+  },
+  {
+    "objectID": "blog/index.html",
+    "href": "blog/index.html",
+    "title": "Blog",
+    "section": "",
+    "text": "My First Blog Post\n\n\n\n\n\n\n\n\nJun 16, 2026\n\n\n\n\n\n\n\n\n\n\n\n\nMy Second Blog Post\n\n\n\n\n\n\n\n\nJun 16, 2026\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "bio.html",
+    "href": "bio.html",
+    "title": "About Me",
+    "section": "",
+    "text": "Write a short biography here."
+  },
+  {
+    "objectID": "bio.html#education",
+    "href": "bio.html#education",
+    "title": "About Me",
+    "section": "Education",
+    "text": "Education\nMaster of Applied Economics and Data Science, University of Pennsylvania\nBachelor’s degree, University of California San Diego"
+  },
+  {
+    "objectID": "bio.html#interests",
+    "href": "bio.html#interests",
+    "title": "About Me",
+    "section": "Interests",
+    "text": "Interests\n\nEconometrics\nMachine Learning\nData Analysis\nApplied Economics"
+  },
+  {
+    "objectID": "bio.html#technical-skills",
+    "href": "bio.html#technical-skills",
+    "title": "About Me",
+    "section": "Technical Skills",
+    "text": "Technical Skills\n\nR\nPython\nData Analysis\nStatistical Modeling"
+  },
+  {
+    "objectID": "bio.html#career-goals",
+    "href": "bio.html#career-goals",
+    "title": "About Me",
+    "section": "Career Goals",
+    "text": "Career Goals\nWrite your career goals here."
+  },
+  {
+    "objectID": "bio.html#contact",
+    "href": "bio.html#contact",
+    "title": "About Me",
+    "section": "Contact",
+    "text": "Contact\njyang05@sas.upenn.edu"
+  },
+  {
+    "objectID": "blog/posts/post2/index.html",
+    "href": "blog/posts/post2/index.html",
+    "title": "My Second Blog Post",
+    "section": "",
+    "text": "This is my second blog post."
+  }
+]

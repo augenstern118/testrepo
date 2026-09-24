@@ -14,6 +14,153 @@
     "text": "Resume PDF"
   },
   {
+    "objectID": "blog/posts/post3/index.html",
+    "href": "blog/posts/post3/index.html",
+    "title": "The College Earnings Premium Is Not One Number",
+    "section": "",
+    "text": "College is often discussed as if it produces one stable earnings return. That shorthand hides at least three dimensions: calendar time, differences between women and men, and workers’ position in the life cycle. How large is the bachelor’s earnings premium, and how does it vary along those dimensions?\nI use IPUMS Current Population Survey Annual Social and Economic Supplement (ASEC) microdata. The analytic sample contains wage and salary workers ages 25–64 who worked at least 50 weeks and usually at least 35 hours per week. This full-time, full-year restriction reduces the role of differences in weeks and hours, although it also excludes people whose employment is less stable.\nAnnual wage income is divided by weeks worked to construct weekly earnings. CPI99 converts dollar values across years, and all results are expressed in 2024 dollars. Most importantly, every median is calculated with ASECWT, the IPUMS person-level weight for ASEC analysis. The figures therefore summarize the population represented by CPS rather than treating every sampled record as equally representative."
+  },
+  {
+    "objectID": "blog/posts/post3/index.html#one-premium-or-many",
+    "href": "blog/posts/post3/index.html#one-premium-or-many",
+    "title": "The College Earnings Premium Is Not One Number",
+    "section": "",
+    "text": "College is often discussed as if it produces one stable earnings return. That shorthand hides at least three dimensions: calendar time, differences between women and men, and workers’ position in the life cycle. How large is the bachelor’s earnings premium, and how does it vary along those dimensions?\nI use IPUMS Current Population Survey Annual Social and Economic Supplement (ASEC) microdata. The analytic sample contains wage and salary workers ages 25–64 who worked at least 50 weeks and usually at least 35 hours per week. This full-time, full-year restriction reduces the role of differences in weeks and hours, although it also excludes people whose employment is less stable.\nAnnual wage income is divided by weeks worked to construct weekly earnings. CPI99 converts dollar values across years, and all results are expressed in 2024 dollars. Most importantly, every median is calculated with ASECWT, the IPUMS person-level weight for ASEC analysis. The figures therefore summarize the population represented by CPS rather than treating every sampled record as equally representative."
+  },
+  {
+    "objectID": "blog/posts/post3/index.html#the-education-hierarchy-persisted-but-its-size-changed",
+    "href": "blog/posts/post3/index.html#the-education-hierarchy-persisted-but-its-size-changed",
+    "title": "The College Earnings Premium Is Not One Number",
+    "section": "The education hierarchy persisted, but its size changed",
+    "text": "The education hierarchy persisted, but its size changed\n\n\n\n\n\nFigure 1. Weighted median real weekly earnings by education.\n\n\n\n\nThe first figure establishes the broad pattern. In every displayed year, median weekly earnings rise with educational attainment. For workers with a bachelor’s degree, the weighted median changed from $1,576 in 2000 to $1,577 in 2024. High-school graduates earned $962 at the median in the latest year.\nRelative comparisons are often more informative than dollar gaps. The bachelor’s premium over high school moved from 60.3% to 64%, making it 3.7 percentage points wider across the displayed period. This is a descriptive contrast between groups—not the causal effect that the same person would experience from completing college."
+  },
+  {
+    "objectID": "blog/posts/post3/index.html#the-premium-is-not-identical-for-women-and-men",
+    "href": "blog/posts/post3/index.html#the-premium-is-not-identical-for-women-and-men",
+    "title": "The College Earnings Premium Is Not One Number",
+    "section": "The premium is not identical for women and men",
+    "text": "The premium is not identical for women and men\n\n\n\n\n\nFigure 2. Bachelor’s earnings premium relative to high-school graduates, by reported sex.\n\n\n\n\nFigure 2 calculates the comparison separately using the CPS categories for female and male respondents. In 2024, the premium was 73.1% for women and 72.7% for men, so the relative education gap was larger among women. This does not mean that college eliminates the gender wage gap: each line compares bachelor’s and high-school workers within the same sex category. The pattern instead shows that the payoff associated with education can differ depending on the comparison group."
+  },
+  {
+    "objectID": "blog/posts/post3/index.html#earnings-profiles-diverge-with-age",
+    "href": "blog/posts/post3/index.html#earnings-profiles-diverge-with-age",
+    "title": "The College Earnings Premium Is Not One Number",
+    "section": "Earnings profiles diverge with age",
+    "text": "Earnings profiles diverge with age\n\n\n\n\n\nFigure 3. Weighted median weekly earnings across age groups in the latest income year.\n\n\n\n\nThe cross-section by age supplies the final piece of the story. In 2024, the bachelor’s premium was 55.6% among workers ages 25–29 and 73.1% among those ages 50–54. These are not longitudinal careers: older and younger people belong to different cohorts, and CPS does not reveal what one worker’s earnings path will be. Still, the figure demonstrates why a single pooled premium can conceal economically meaningful life-cycle variation."
+  },
+  {
+    "objectID": "blog/posts/post3/index.html#takeaway-and-limitations",
+    "href": "blog/posts/post3/index.html#takeaway-and-limitations",
+    "title": "The College Earnings Premium Is Not One Number",
+    "section": "Takeaway and limitations",
+    "text": "Takeaway and limitations\nThe central takeaway is that college graduates earn more at the weighted median, but the college earnings premium is not one universal number. It changes over time, differs between women and men, and varies across age groups. A student evaluating education should therefore ask which workers, which year, and which career stage underlie a quoted return.\nThe analysis remains descriptive. Education groups differ in occupation, field of study, experience, location, selection into employment, and other characteristics. Wage income excludes self-employment earnings; high incomes may be topcoded; population-control changes and sampling error can affect comparisons; and no confidence intervals are shown. These figures document patterns, not causal effects."
+  },
+  {
+    "objectID": "blog/posts/post3/index.html#data-and-reproducibility",
+    "href": "blog/posts/post3/index.html#data-and-reproducibility",
+    "title": "The College Earnings Premium Is Not One Number",
+    "section": "Data and reproducibility",
+    "text": "Data and reproducibility\nData are from IPUMS CPS, which harmonizes CPS microdata produced by the U.S. Census Bureau and Bureau of Labor Statistics. Variable definitions are documented for INCWAGE, WKSWORK1, UHRSWORKLY, and EDUC. IPUMS explains the appropriate CPS weights and CPI99 inflation adjustment.\nThe public repository contains the complete R code, README, and generated aggregate results, but not restricted IPUMS microdata. After an authorized user places the matching DDI and data files in data/raw/, rendering the post recreates all statistics and figures.\n\n\nView the complete R data-preparation code\n\nfind_ipums_extract &lt;- function(raw_dir = \"data/raw\") {\n  xml &lt;- list.files(raw_dir, pattern = \"\\\\.xml$\", full.names = TRUE,\n                    ignore.case = TRUE)\n  data &lt;- list.files(raw_dir, pattern = \"\\\\.(dat|csv)\\\\.gz$\", full.names = TRUE,\n                     ignore.case = TRUE)\n\n  if (length(xml) != 1 || length(data) != 1) {\n    stop(\n      \"Place exactly one IPUMS DDI .xml file and its matching .dat.gz \",\n      \"(or .csv.gz) file in data/raw. See README.md.\"\n    )\n  }\n\n  list(xml = xml, data = data)\n}\n\nclassify_education &lt;- function(x) {\n  labels &lt;- as.character(haven::as_factor(x, levels = \"labels\"))\n\n  dplyr::case_when(\n    stringr::str_detect(labels, stringr::regex(\n      \"high school (diploma|graduate)|GED|equivalent\", ignore_case = TRUE\n    )) ~ \"High school\",\n    stringr::str_detect(labels, stringr::regex(\n      \"some college|associate\", ignore_case = TRUE\n    )) ~ \"Some college / associate\",\n    stringr::str_detect(labels, stringr::regex(\n      \"bachelor\", ignore_case = TRUE\n    )) ~ \"Bachelor's\",\n    stringr::str_detect(labels, stringr::regex(\n      \"master|professional school|doctor\", ignore_case = TRUE\n    )) ~ \"Advanced degree\",\n    TRUE ~ NA_character_\n  )\n}\n\nclassify_sex &lt;- function(x) {\n  labels &lt;- as.character(haven::as_factor(x, levels = \"labels\"))\n\n  dplyr::case_when(\n    stringr::str_detect(labels, stringr::regex(\"female\", ignore_case = TRUE)) ~ \"Women\",\n    stringr::str_detect(labels, stringr::regex(\"male\", ignore_case = TRUE)) ~ \"Men\",\n    TRUE ~ NA_character_\n  )\n}\n\nload_and_prepare_cps &lt;- function(raw_dir = \"data/raw\") {\n  files &lt;- find_ipums_extract(raw_dir)\n  required &lt;- c(\n    \"YEAR\", \"ASECWT\", \"AGE\", \"SEX\", \"EDUC\", \"INCWAGE\", \"WKSWORK1\",\n    \"UHRSWORKLY\"\n  )\n\n  cps &lt;- ipumsr::read_ipums_micro(\n    files$xml,\n    vars = required,\n    data_file = files$data,\n    verbose = FALSE\n  )\n  names(cps) &lt;- tolower(names(cps))\n\n  missing &lt;- setdiff(tolower(required), names(cps))\n  if (length(missing) &gt; 0) {\n    stop(\"The IPUMS extract is missing: \", paste(toupper(missing), collapse = \", \"))\n  }\n\n  cps &lt;- cps |&gt;\n    dplyr::mutate(\n      year = as.integer(year),\n      income_year = year - 1L,\n      education = classify_education(educ),\n      sex_group = classify_sex(sex),\n      age = as.numeric(age),\n      asecwt = as.numeric(asecwt),\n      incwage = as.numeric(incwage),\n      wkswork1 = as.numeric(wkswork1),\n      uhrsworkly = as.numeric(uhrsworkly)\n    )\n\n  # IPUMS CPS CPI99 factors convert prior-year income to constant 1999 dollars.\n  # Keeping this small published lookup in the script avoids requiring CPI99 in\n  # the user's extract. The selected ASEC years are documented in README.md.\n  cpi99_lookup &lt;- c(\n    `2001` = 0.967,\n    `2005` = 0.882,\n    `2009` = 0.774,\n    `2013` = 0.726,\n    `2017` = 0.694,\n    `2020` = 0.652,\n    `2021` = 0.644,\n    `2022` = 0.615,\n    `2023` = 0.569,\n    `2024` = 0.547,\n    `2025` = 0.531\n  )\n  \n  lookup_years &lt;- as.integer(names(cpi99_lookup))\n  \n  # Only keep years covered by the documented inflation factors.\n  ignored_years &lt;- setdiff(sort(unique(cps$year)), lookup_years)\n  if (length(ignored_years) &gt; 0) {\n    message(\"Ignoring years without a CPI99 factor: \",\n            paste(ignored_years, collapse = \", \"))\n  }\n  cps &lt;- dplyr::filter(cps, year %in% lookup_years)\n  cps$cpi99_factor &lt;- unname(cpi99_lookup[match(cps$year, lookup_years)])\n\n  prepared &lt;- cps |&gt;\n    dplyr::filter(\n      age &gt;= 25, age &lt;= 64,\n      wkswork1 &gt;= 50, wkswork1 &lt;= 52,\n      uhrsworkly &gt;= 35, uhrsworkly &lt; 999,\n      incwage &gt; 0, incwage &lt; 99999999,\n      is.finite(asecwt), asecwt &gt; 0,\n      !is.na(education), !is.na(sex_group),\n      is.finite(cpi99_factor), cpi99_factor &gt; 0\n    ) |&gt;\n    dplyr::mutate(\n      # CPI99 converts nominal income to 1999 dollars. Dividing by the\n      # 2025-ASEC factor (0.531) converts 1999 dollars to 2024 dollars.\n      weekly_earnings = incwage * cpi99_factor / 0.531 / wkswork1,\n      education = factor(\n        education,\n        levels = c(\n          \"High school\", \"Some college / associate\", \"Bachelor's\",\n          \"Advanced degree\"\n        )\n      ),\n      sex_group = factor(sex_group, levels = c(\"Women\", \"Men\")),\n      age_band = cut(\n        age,\n        breaks = c(25, 30, 35, 40, 45, 50, 55, 60, 65),\n        right = FALSE,\n        labels = c(\n          \"25–29\", \"30–34\", \"35–39\", \"40–44\",\n          \"45–49\", \"50–54\", \"55–59\", \"60–64\"\n        )\n      )\n    )\n\n  if (nrow(prepared) == 0) {\n    stop(\"No usable observations remain. Check the selected ASEC samples and variables.\")\n  }\n  if (dplyr::n_distinct(prepared$income_year) &lt; 3) {\n    stop(\"Select at least three ASEC sample years; the README recommends eleven.\")\n  }\n  if (!all(levels(prepared$education) %in% unique(as.character(prepared$education)))) {\n    stop(\"Not all four education groups were found. Check EDUC labels in the extract.\")\n  }\n\n  attr(prepared, \"latest_dollar_year\") &lt;- 2024L\n  prepared\n}\n\n\n\nView the complete R analysis and visualization code\n\nweighted_median &lt;- function(x, w) {\n  keep &lt;- is.finite(x) & is.finite(w) & w &gt; 0\n  x &lt;- x[keep]\n  w &lt;- w[keep]\n  if (length(x) == 0) return(NA_real_)\n\n  ord &lt;- order(x)\n  x &lt;- x[ord]\n  w &lt;- w[ord]\n  x[which(cumsum(w) &gt;= sum(w) / 2)[1]]\n}\n\nweighted_summary &lt;- function(data, ...) {\n  data |&gt;\n    dplyr::group_by(...) |&gt;\n    dplyr::summarise(\n      median_weekly = weighted_median(weekly_earnings, asecwt),\n      weighted_population = sum(asecwt),\n      observations = dplyr::n(),\n      .groups = \"drop\"\n    )\n}\n\nanalyze_cps &lt;- function(cps, results_dir = \"results\") {\n  dir.create(results_dir, recursive = TRUE, showWarnings = FALSE)\n  dollar_year &lt;- attr(cps, \"latest_dollar_year\")\n  latest_year &lt;- max(cps$income_year)\n\n  trend &lt;- weighted_summary(cps, income_year, education)\n\n  overall_premium &lt;- trend |&gt;\n    dplyr::filter(education %in% c(\"High school\", \"Bachelor's\")) |&gt;\n    dplyr::select(income_year, education, median_weekly) |&gt;\n    tidyr::pivot_wider(names_from = education, values_from = median_weekly) |&gt;\n    dplyr::mutate(\n      premium_pct = 100 * (`Bachelor's` / `High school` - 1)\n    )\n\n  by_sex &lt;- weighted_summary(cps, income_year, sex_group, education)\n\n  gender_premium &lt;- by_sex |&gt;\n    dplyr::filter(education %in% c(\"High school\", \"Bachelor's\")) |&gt;\n    dplyr::select(income_year, sex_group, education, median_weekly) |&gt;\n    tidyr::pivot_wider(names_from = education, values_from = median_weekly) |&gt;\n    dplyr::mutate(\n      premium_pct = 100 * (`Bachelor's` / `High school` - 1)\n    )\n\n  age_profile &lt;- cps |&gt;\n    dplyr::filter(income_year == latest_year) |&gt;\n    weighted_summary(age_band, education)\n\n  age_premium &lt;- age_profile |&gt;\n    dplyr::filter(education %in% c(\"High school\", \"Bachelor's\")) |&gt;\n    dplyr::select(age_band, education, median_weekly) |&gt;\n    tidyr::pivot_wider(names_from = education, values_from = median_weekly) |&gt;\n    dplyr::mutate(\n      premium_pct = 100 * (`Bachelor's` / `High school` - 1)\n    )\n\n  palette &lt;- c(\n    \"High school\" = \"#4D4D4D\",\n    \"Some college / associate\" = \"#56B4E9\",\n    \"Bachelor's\" = \"#0072B2\",\n    \"Advanced degree\" = \"#D55E00\"\n  )\n\n  base_theme &lt;- ggplot2::theme_minimal(base_size = 13) +\n    ggplot2::theme(\n      plot.title.position = \"plot\",\n      plot.title = ggplot2::element_text(face = \"bold\"),\n      plot.subtitle = ggplot2::element_text(color = \"grey30\"),\n      panel.grid.minor = ggplot2::element_blank(),\n      legend.position = \"bottom\",\n      legend.title = ggplot2::element_blank()\n    )\n\n  trend_plot &lt;- ggplot2::ggplot(\n    trend,\n    ggplot2::aes(income_year, median_weekly, color = education)\n  ) +\n    ggplot2::geom_line(linewidth = 1) +\n    ggplot2::geom_point(size = 2.2) +\n    ggplot2::scale_color_manual(values = palette) +\n    ggplot2::scale_y_continuous(labels = scales::label_dollar(accuracy = 1)) +\n    ggplot2::scale_x_continuous(breaks = sort(unique(trend$income_year))) +\n    ggplot2::labs(\n      title = \"Education and median weekly earnings\",\n      subtitle = paste0(\n        \"Full-time, full-year wage and salary workers ages 25–64; \",\n        dollar_year, \" dollars\"\n      ),\n      x = NULL,\n      y = \"Weighted median weekly earnings\",\n      caption = \"Source: IPUMS CPS ASEC. Estimates use ASECWT.\"\n    ) +\n    base_theme +\n    ggplot2::theme(axis.text.x = ggplot2::element_text(angle = 45, hjust = 1))\n\n  gender_plot &lt;- ggplot2::ggplot(\n    gender_premium,\n    ggplot2::aes(income_year, premium_pct, color = sex_group)\n  ) +\n    ggplot2::geom_hline(yintercept = 0, color = \"grey75\", linewidth = 0.5) +\n    ggplot2::geom_line(linewidth = 1.1) +\n    ggplot2::geom_point(size = 2.3) +\n    ggplot2::scale_color_manual(values = c(\"Women\" = \"#CC79A7\", \"Men\" = \"#0072B2\")) +\n    ggplot2::scale_y_continuous(labels = scales::label_percent(scale = 1, accuracy = 1)) +\n    ggplot2::scale_x_continuous(breaks = sort(unique(gender_premium$income_year))) +\n    ggplot2::labs(\n      title = \"The bachelor's premium differs for women and men\",\n      subtitle = \"Percent difference in weighted median weekly earnings relative to high-school graduates\",\n      x = NULL,\n      y = \"Bachelor's earnings premium\",\n      caption = \"Source: IPUMS CPS ASEC. Estimates use ASECWT.\"\n    ) +\n    base_theme +\n    ggplot2::theme(axis.text.x = ggplot2::element_text(angle = 45, hjust = 1))\n\n  age_plot &lt;- ggplot2::ggplot(\n    age_profile,\n    ggplot2::aes(age_band, median_weekly, color = education, group = education)\n  ) +\n    ggplot2::geom_line(linewidth = 1) +\n    ggplot2::geom_point(size = 2.2) +\n    ggplot2::scale_color_manual(values = palette) +\n    ggplot2::scale_y_continuous(labels = scales::label_dollar(accuracy = 1)) +\n    ggplot2::labs(\n      title = paste0(\"The education gap changes across the life cycle in \", latest_year),\n      subtitle = paste0(\n        \"Weighted median weekly earnings of full-time, full-year workers; \",\n        dollar_year, \" dollars\"\n      ),\n      x = \"Age group\",\n      y = \"Weighted median weekly earnings\",\n      caption = \"Source: IPUMS CPS ASEC. Estimates use ASECWT.\"\n    ) +\n    base_theme\n\n  readr::write_csv(trend, file.path(results_dir, \"earnings_by_education.csv\"))\n  readr::write_csv(overall_premium, file.path(results_dir, \"college_premium.csv\"))\n  readr::write_csv(gender_premium, file.path(results_dir, \"college_premium_by_sex.csv\"))\n  readr::write_csv(age_profile, file.path(results_dir, \"earnings_by_age.csv\"))\n\n  ggplot2::ggsave(file.path(results_dir, \"01_earnings_trend.png\"), trend_plot,\n                  width = 9, height = 5.2, dpi = 220)\n  ggplot2::ggsave(file.path(results_dir, \"02_premium_by_sex.png\"), gender_plot,\n                  width = 9, height = 5.2, dpi = 220)\n  ggplot2::ggsave(file.path(results_dir, \"03_age_profile.png\"), age_plot,\n                  width = 9, height = 5.2, dpi = 220)\n  writeLines(capture.output(sessionInfo()), file.path(results_dir, \"sessionInfo.txt\"))\n\n  list(\n    trend = trend,\n    overall_premium = overall_premium,\n    gender_premium = gender_premium,\n    age_profile = age_profile,\n    age_premium = age_premium,\n    trend_plot = trend_plot,\n    gender_plot = gender_plot,\n    age_plot = age_plot,\n    latest_year = latest_year,\n    dollar_year = dollar_year\n  )\n}"
+  },
+  {
+    "objectID": "blog/posts/post1/index.html",
+    "href": "blog/posts/post1/index.html",
+    "title": "Why a Small P-Value Does Not Mean Your Hypothesis Is Probably Wrong",
+    "section": "",
+    "text": "The p-value is one of the most commonly used—and commonly misunderstood—ideas in statistics. It appears everywhere from economics papers to medical studies, often as the number that determines whether a result is called “statistically significant.”\nA common interpretation is that a p-value tells us the probability that the null hypothesis is true. For example, someone might say that a p-value of 0.03 means there is only a 3% chance that the null hypothesis is correct.\nThat interpretation is wrong.\nA p-value instead answers a more specific question:\n\nIf the null hypothesis were true, how surprising would our observed data—or something even more extreme—be?\n\nThis difference sounds subtle, but it is extremely important."
+  },
+  {
+    "objectID": "blog/posts/post1/index.html#what-is-a-p-value",
+    "href": "blog/posts/post1/index.html#what-is-a-p-value",
+    "title": "Why a Small P-Value Does Not Mean Your Hypothesis Is Probably Wrong",
+    "section": "",
+    "text": "The p-value is one of the most commonly used—and commonly misunderstood—ideas in statistics. It appears everywhere from economics papers to medical studies, often as the number that determines whether a result is called “statistically significant.”\nA common interpretation is that a p-value tells us the probability that the null hypothesis is true. For example, someone might say that a p-value of 0.03 means there is only a 3% chance that the null hypothesis is correct.\nThat interpretation is wrong.\nA p-value instead answers a more specific question:\n\nIf the null hypothesis were true, how surprising would our observed data—or something even more extreme—be?\n\nThis difference sounds subtle, but it is extremely important."
+  },
+  {
+    "objectID": "blog/posts/post1/index.html#a-simple-example",
+    "href": "blog/posts/post1/index.html#a-simple-example",
+    "title": "Why a Small P-Value Does Not Mean Your Hypothesis Is Probably Wrong",
+    "section": "A Simple Example",
+    "text": "A Simple Example\nSuppose an economist wants to study whether a job-training program increases workers’ wages.\nThe null hypothesis might be\n\\[H_0: \\beta = 0,\\]\nwhere \\(\\beta\\) represents the effect of the training program on wages.\nThe alternative hypothesis is\n\\[H_1: \\beta \\neq 0.\\]\nImagine that the estimated effect is positive and produces a p-value of 0.03.\nThis does not mean\n\\[P(H_0 \\mid \\text{data}) = 0.03.\\]\nInstead, the p-value is closer to\n\\[P(\\text{data at least this extreme} \\mid H_0).\\]\nIn words: assuming that the training program truly has no effect, there would be about a 3% chance of observing evidence at least as inconsistent with the null hypothesis as what we actually observed."
+  },
+  {
+    "objectID": "blog/posts/post1/index.html#why-is-this-unintuitive",
+    "href": "blog/posts/post1/index.html#why-is-this-unintuitive",
+    "title": "Why a Small P-Value Does Not Mean Your Hypothesis Is Probably Wrong",
+    "section": "Why Is This Unintuitive?",
+    "text": "Why Is This Unintuitive?\nThe confusion comes from reversing the direction of conditional probability.\nWhat researchers often want to know is\n\\[P(H_0 \\mid \\text{data}),\\]\nthe probability that the null hypothesis is true given the data.\nBut a traditional hypothesis test gives us information about\n\\[P(\\text{data} \\mid H_0),\\]\nthe probability of observing the data assuming the null hypothesis is true.\nThese are not the same quantity.\nConsider an analogy. Suppose that if a person has a rare disease, there is a 95% probability that a diagnostic test will be positive. This does not imply that someone who tests positive has a 95% probability of having the disease. We would also need to know how common the disease is and how often the test gives false positives.\nThe same logical issue appears when interpreting p-values."
+  },
+  {
+    "objectID": "blog/posts/post1/index.html#what-does-statistically-significant-mean",
+    "href": "blog/posts/post1/index.html#what-does-statistically-significant-mean",
+    "title": "Why a Small P-Value Does Not Mean Your Hypothesis Is Probably Wrong",
+    "section": "What Does “Statistically Significant” Mean?",
+    "text": "What Does “Statistically Significant” Mean?\nResearchers often compare the p-value to a significance level such as\n\\[\\alpha = 0.05.\\]\nIf\n\\[p &lt; 0.05,\\]\nthe result is commonly described as statistically significant, and the null hypothesis is rejected.\nHowever, the 0.05 threshold is a convention rather than a fundamental law of statistics. A result with a p-value of 0.049 is not fundamentally different from one with a p-value of 0.051.\nStatistical significance also does not imply economic significance.\nFor example, a very large dataset might show that a training program increases wages by only $0.10 per year with a very small p-value. The effect could be statistically convincing while being economically meaningless.\nConversely, an economically important effect may fail to achieve statistical significance if the sample is small or noisy."
+  },
+  {
+    "objectID": "blog/posts/post1/index.html#the-main-lesson",
+    "href": "blog/posts/post1/index.html#the-main-lesson",
+    "title": "Why a Small P-Value Does Not Mean Your Hypothesis Is Probably Wrong",
+    "section": "The Main Lesson",
+    "text": "The Main Lesson\nA p-value should be viewed as a measure of how compatible the observed data are with a particular null hypothesis—not as the probability that the hypothesis is true.\nWhen interpreting an empirical result, economists should therefore look beyond whether \\(p &lt; 0.05\\). The estimated effect size, confidence interval, sample size, research design, and economic importance of the result are often just as important as the p-value itself.\nUnderstanding this distinction makes hypothesis testing much less mysterious and helps prevent one of the most persistent statistical mistakes in applied research."
+  },
+  {
+    "objectID": "bio.html",
+    "href": "bio.html",
+    "title": "About Me",
+    "section": "",
+    "text": "Write a short biography here."
+  },
+  {
+    "objectID": "bio.html#education",
+    "href": "bio.html#education",
+    "title": "About Me",
+    "section": "Education",
+    "text": "Education\nMaster of Applied Economics and Data Science, University of Pennsylvania\nBachelor’s degree, University of California San Diego"
+  },
+  {
+    "objectID": "bio.html#interests",
+    "href": "bio.html#interests",
+    "title": "About Me",
+    "section": "Interests",
+    "text": "Interests\n\nEconometrics\nMachine Learning\nData Analysis\nApplied Economics"
+  },
+  {
+    "objectID": "bio.html#technical-skills",
+    "href": "bio.html#technical-skills",
+    "title": "About Me",
+    "section": "Technical Skills",
+    "text": "Technical Skills\n\nR\nPython\nData Analysis\nStatistical Modeling"
+  },
+  {
+    "objectID": "bio.html#career-goals",
+    "href": "bio.html#career-goals",
+    "title": "About Me",
+    "section": "Career Goals",
+    "text": "Career Goals\nWrite your career goals here."
+  },
+  {
+    "objectID": "bio.html#contact",
+    "href": "bio.html#contact",
+    "title": "About Me",
+    "section": "Contact",
+    "text": "Contact\njyang05@sas.upenn.edu"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site\n\n1 + 1\n\n[1] 2"
+  },
+  {
+    "objectID": "blog/index.html",
+    "href": "blog/index.html",
+    "title": "Blog",
+    "section": "",
+    "text": "The College Earnings Premium Is Not One Number\n\n\nIPUMS CPS data show how the descriptive college earnings premium varies over time, by sex, and across the life cycle.\n\n\n\n\n\nSep 23, 2026\n\n\nJunzheng Yang\n\n\n\n\n\n\n\n\n\n\n\n\nBeyond the Economist Job Title: Where Should a Quantitative Student Look?\n\n\nUsing rvest and BLS career profiles to turn pay, growth, and opening counts into a practical job-search shortlist.\n\n\n\n\n\nSep 20, 2026\n\n\nJunzheng Yang\n\n\n\n\n\n\n\n\n\n\n\n\nWhy a Small P-Value Does Not Mean Your Hypothesis Is Probably Wrong\n\n\n\n\n\n\n\n\nAug 31, 2026\n\n\n\n\n\nNo matching items"
+  },
+  {
     "objectID": "blog/posts/post2/index.html",
     "href": "blog/posts/post2/index.html",
     "title": "Beyond the Economist Job Title: Where Should a Quantitative Student Look?",
@@ -61,104 +208,6 @@
     "title": "Beyond the Economist Job Title: Where Should a Quantitative Student Look?",
     "section": "Sources and reproducibility",
     "text": "Sources and reproducibility\nEach table entry links to its underlying public BLS profile below. All six snapshots were accessed September 20, 2026. The data, charts, table, sensitivity analysis, and numeric statements above are generated from HTML by R, not pasted from a spreadsheet.\n\nData scientists\nEconomists\nOperations research analysts\nMarket research analysts\nManagement analysts\nFinancial analysts\n\nIn the website project, install the dependencies with source(\"blog/posts/post2/setup.R\"), then render blog/posts/post2/index.qmd. R extracts the archived HTML and regenerates the cleaned data, comparison, sensitivity analysis, and charts inside this post’s data/processed/ and results/ folders. See the accompanying README for replication and optional live collection.\n\n\nView the complete R scraping code\n\n# Collect structured information from BLS HTML using rvest.\n# Run from the project root. Archived HTML makes the default run reproducible.\nsuppressPackageStartupMessages({\n  library(rvest)\n  library(dplyr)\n  library(stringr)\n  library(readr)\n})\n\nsources &lt;- tibble::tribble(\n  ~id, ~occupation, ~path,\n  \"data-scientists\", \"Data scientists\", \"math/data-scientists.htm\",\n  \"economists\", \"Economists\", \"life-physical-and-social-science/economists.htm\",\n  \"operations-research-analysts\", \"Operations research analysts\", \"math/operations-research-analysts.htm\",\n  \"market-research-analysts\", \"Market research analysts\", \"business-and-financial/market-research-analysts.htm\",\n  \"management-analysts\", \"Management analysts\", \"business-and-financial/management-analysts.htm\",\n  \"financial-analysts\", \"Financial analysts\", \"business-and-financial/financial-analysts.htm\"\n) |&gt;\n  mutate(url = paste0(\"https://www.bls.gov/ooh/\", path))\n\nscrape_profile &lt;- function(file, id, occupation, url) {\n  page &lt;- read_html(file, encoding = \"UTF-8\")\n  rows &lt;- html_elements(page, \"#quickfacts tbody tr\")\n  if (length(rows) != 7L) stop(\"Quick Facts structure changed: \", file)\n  fields &lt;- tibble::tibble(\n    label = str_squish(html_text2(html_element(rows, \"th\"))),\n    value = str_squish(html_text2(html_element(rows, \"td\")))\n  )\n  get_field &lt;- function(pattern) {\n    value &lt;- fields$value[str_detect(fields$label, regex(pattern, ignore_case = TRUE))]\n    if (length(value) != 1L || is.na(value) || value == \"\") {\n      stop(\"Missing or ambiguous field: \", pattern, \" in \", file)\n    }\n    value\n  }\n  # Scope to the Summary article, so the same sentence elsewhere is not counted twice.\n  summary &lt;- html_element(page, \"article[aria-labelledby='Summary']\")\n  if (is.na(html_name(summary))) stop(\"Summary article missing: \", file)\n  body &lt;- str_squish(html_text2(summary))\n  openings &lt;- str_match(body, \"About\\\\s+([0-9,]+)\\\\s+openings\")[, 2]\n  period &lt;- str_match(body, \"from\\\\s+(20[0-9]{2})\\\\s+to\\\\s+(20[0-9]{2})\")\n  pay_label &lt;- fields$label[str_detect(fields$label, \"Median Pay\")]\n  pay_text &lt;- get_field(\"Median Pay\")\n  result &lt;- tibble::tibble(\n    id, occupation, source_url = url,\n    # Annual pay is the FIRST amount; the hourly amount is deliberately excluded.\n    median_pay_usd = parse_number(pay_text),\n    pay_year = as.integer(str_extract(pay_label, \"20[0-9]{2}\")),\n    education = get_field(\"Entry-Level Education\"),\n    experience = get_field(\"Work Experience\"),\n    employment = parse_number(get_field(\"Number of Jobs\")),\n    growth_pct = parse_number(get_field(\"Job Outlook\")),\n    net_new_jobs = parse_number(get_field(\"Employment Change\")),\n    annual_openings = parse_number(openings),\n    projection_start = as.integer(period[, 2]),\n    projection_end = as.integer(period[, 3])\n  )\n  if (anyNA(result)) stop(\"A required field could not be parsed: \", file)\n  result\n}\n\ncollect_data &lt;- function(raw_dir = \"data/raw\") {\n  manifest &lt;- read_csv(file.path(raw_dir, \"manifest.csv\"), show_col_types = FALSE)\n  if (anyDuplicated(manifest$id) || !setequal(manifest$id, sources$id)) {\n    stop(\"Manifest must contain exactly one record for each source.\")\n  }\n  data &lt;- bind_rows(lapply(seq_len(nrow(sources)), function(i) {\n    s &lt;- sources[i, ]\n    scrape_profile(file.path(raw_dir, paste0(s$id, \".html\")),\n                   s$id, s$occupation, s$url)\n  })) |&gt;\n    left_join(select(manifest, id, access_date, capture_method), by = \"id\")\n  stopifnot(nrow(data) == 6L, !anyDuplicated(data$id), !anyNA(data),\n            all(data$median_pay_usd &gt; 0), all(data$annual_openings &gt; 0),\n            all(data$employment &gt; 0), all(data$projection_end &gt; data$projection_start),\n            length(unique(data$pay_year)) == 1L,\n            length(unique(data$projection_start)) == 1L,\n            length(unique(data$projection_end)) == 1L)\n  # All monetary figures must refer to the same year for meaningful comparisons.\n  dir.create(\"data/processed\", recursive = TRUE, showWarnings = FALSE)\n  write_csv(data, \"data/processed/careers.csv\")\n  data\n}\n\n# OPTIONAL live collection. The supplied report uses the archived September 2026\n# snapshot. New data go to a separate directory, preserving that original evidence.\nrefresh_sources &lt;- function(destination = \"data/live\") {\n  if (!requireNamespace(\"httr2\", quietly = TRUE)) stop(\"Install httr2 first.\")\n  if (dir.exists(destination)) stop(\"Use a new destination to preserve earlier data.\")\n  ua &lt;- \"EconomicsCourseProject/1.0 (six public BLS career pages; educational use)\"\n  get_public &lt;- function(url) {\n    httr2::request(url) |&gt;\n      httr2::req_user_agent(ua) |&gt;\n      httr2::req_timeout(30) |&gt;\n      httr2::req_perform()  # Stops on HTTP errors, including 403 and 429. No retries.\n  }\n  robots &lt;- httr2::resp_body_string(get_public(\"https://www.bls.gov/robots.txt\"))\n  if (!grepl(\"User-agent:\", robots, ignore.case = TRUE)) stop(\"Cannot verify robots.txt.\")\n  # Conservative check: honor Disallow rules from ALL groups, ignore Allow\n  # exceptions, and stop if any rule could exclude one of these six paths.\n  # This intentionally may refuse more than necessary; it never tries to evade a rule.\n  lines &lt;- trimws(gsub(\"#.*$\", \"\", strsplit(robots, \"\\n\", fixed = TRUE)[[1]]))\n  rules &lt;- trimws(sub(\"^[Dd]isallow\\\\s*:\", \"\", lines[grepl(\"^[Dd]isallow\\\\s*:\", lines)]))\n  rules &lt;- rules[nzchar(rules)]\n  url_paths &lt;- sub(\"https://www.bls.gov\", \"\", sources$url, fixed = TRUE)\n  for (rule in rules) {\n    # Convert robots wildcards to a regular expression. Unanchored rules\n    # match prefixes; a terminal $ requires a match through the end of a path.\n    pattern &lt;- glob2rx(sub(\"\\\\$$\", \"\", rule), trim.head = FALSE, trim.tail = FALSE)\n    if (!endsWith(rule, \"$\")) pattern &lt;- sub(\"\\\\$$\", \"\", pattern)\n    if (any(grepl(pattern, url_paths))) {\n      stop(\"A robots.txt rule may disallow these pages: \", rule,\n           \". Stop and review the site's policy; do not bypass it.\")\n    }\n  }\n  delay &lt;- 3\n  crawl &lt;- lines[grepl(\"^Crawl-delay:\", lines, ignore.case = TRUE)]\n  if (length(crawl)) delay &lt;- max(delay, parse_number(crawl), na.rm = TRUE)\n  dir.create(destination, recursive = TRUE)\n  writeLines(robots, file.path(destination, \"robots.txt\"))\n  manifest &lt;- list()\n  for (i in seq_len(nrow(sources))) {\n    Sys.sleep(delay)\n    s &lt;- sources[i, ]\n    response &lt;- get_public(s$url)\n    content &lt;- httr2::resp_body_raw(response)\n    file &lt;- file.path(destination, paste0(s$id, \".html\"))\n    writeBin(content, file)\n    # rvest collects and validates the relevant fields immediately after download.\n    scrape_profile(file, s$id, s$occupation, s$url)\n    manifest[[i]] &lt;- tibble::tibble(id = s$id, source_url = s$url,\n      access_date = as.character(Sys.Date()), capture_method = \"HTTP download; rvest extraction\")\n    write_csv(bind_rows(manifest), file.path(destination, \"manifest.csv\"))\n  }\n  message(\"Saved six pages. Run run_project(raw_dir = '\", destination, \"') to analyze them.\")\n  invisible(destination)\n}\n\n\n\nView the complete R analysis code\n\nsuppressPackageStartupMessages(library(ggplot2))\n\nanalyze_careers &lt;- function(careers) {\n  dir.create(\"results\", showWarnings = FALSE)\n  data &lt;- careers |&gt;\n    mutate(\n      # These thresholds are an explicit preference scenario, not BLS standards.\n      priority_screen = median_pay_usd &gt;= 85000 & growth_pct &gt;= 10 & experience == \"None\",\n      openings_per_100_jobs = 100 * annual_openings / employment\n    )\n  write_csv(data, \"results/career_comparison.csv\")\n  # Sensitivity analysis prevents treating arbitrary thresholds as universal.\n  scenarios &lt;- expand.grid(pay_floor = c(80000, 85000, 90000),\n                           growth_floor = c(8, 10, 15))\n  sensitivity &lt;- bind_rows(lapply(seq_len(nrow(scenarios)), function(i) {\n    s &lt;- scenarios[i, ]\n    selected &lt;- data |&gt;\n      filter(median_pay_usd &gt;= s$pay_floor, growth_pct &gt;= s$growth_floor,\n             experience == \"None\")\n    tibble::tibble(pay_floor = s$pay_floor, growth_floor = s$growth_floor,\n      qualifying_paths = if (nrow(selected)) paste(selected$occupation, collapse = \"; \") else \"None\")\n  }))\n  write_csv(sensitivity, \"results/sensitivity.csv\")\n  year &lt;- unique(data$pay_year)\n  period &lt;- paste0(unique(data$projection_start), \"-\", unique(data$projection_end))\n  palette &lt;- c(\"FALSE\" = \"#A6B3C2\", \"TRUE\" = \"#167D8D\")\n  chart_theme &lt;- theme_minimal(base_size = 12) +\n    theme(panel.grid.major.y = element_blank(), panel.grid.minor = element_blank(),\n          legend.position = \"none\", plot.title = element_text(face = \"bold\"),\n          plot.caption = element_text(hjust = 0, color = \"#526170\"),\n          plot.margin = margin(12, 28, 12, 12))\n  p1 &lt;- ggplot(data, aes(x = reorder(occupation, growth_pct), y = growth_pct,\n                         fill = priority_screen)) +\n    geom_col(width = 0.62) +\n    geom_text(aes(label = paste0(growth_pct, \"%\")), hjust = -0.2, size = 4) +\n    coord_flip() + scale_fill_manual(values = palette) +\n    scale_y_continuous(expand = expansion(mult = c(0, .17))) + chart_theme +\n    labs(title = \"Data science leads on projected growth\",\n         subtitle = paste(\"BLS employment projections,\", period),\n         x = NULL, y = \"Projected employment growth (%)\",\n         caption = \"Teal: passes the pay, growth and experience screen. Source: BLS OOH.\")\n  p2 &lt;- ggplot(data, aes(x = reorder(occupation, annual_openings), y = annual_openings,\n                         fill = priority_screen)) +\n    geom_col(width = 0.62) +\n    geom_text(aes(label = scales::comma(annual_openings)), hjust = -0.1, size = 4) +\n    coord_flip() + scale_fill_manual(values = palette) +\n    scale_y_continuous(labels = scales::label_comma(), expand = expansion(mult = c(0, .19))) +\n    chart_theme + labs(title = \"Fast growth and many openings are different\",\n      subtitle = paste(\"Projected annual average openings,\", period),\n      x = NULL, y = \"Openings per year (all experience levels)\",\n      caption = \"Openings include replacement needs; these are not current vacancies. Source: BLS OOH.\")\n  ggsave(\"results/growth.png\", p1, width = 9, height = 4.8, dpi = 180, bg = \"white\")\n  ggsave(\"results/openings.png\", p2, width = 9, height = 4.8, dpi = 180, bg = \"white\")\n  capture.output(sessionInfo(), file = \"results/sessionInfo.txt\")\n  list(data = data, sensitivity = sensitivity, growth_plot = p1, openings_plot = p2)\n}"
-  },
-  {
-    "objectID": "blog/index.html",
-    "href": "blog/index.html",
-    "title": "Blog",
-    "section": "",
-    "text": "Beyond the Economist Job Title: Where Should a Quantitative Student Look?\n\n\nUsing rvest and BLS career profiles to turn pay, growth, and opening counts into a practical job-search shortlist.\n\n\n\n\n\nSep 20, 2026\n\n\nJunzheng Yang\n\n\n\n\n\n\n\n\n\n\n\n\nWhy a Small P-Value Does Not Mean Your Hypothesis Is Probably Wrong\n\n\n\n\n\n\n\n\nAug 31, 2026\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
-    "section": "",
-    "text": "About this site\n\n1 + 1\n\n[1] 2"
-  },
-  {
-    "objectID": "bio.html",
-    "href": "bio.html",
-    "title": "About Me",
-    "section": "",
-    "text": "Write a short biography here."
-  },
-  {
-    "objectID": "bio.html#education",
-    "href": "bio.html#education",
-    "title": "About Me",
-    "section": "Education",
-    "text": "Education\nMaster of Applied Economics and Data Science, University of Pennsylvania\nBachelor’s degree, University of California San Diego"
-  },
-  {
-    "objectID": "bio.html#interests",
-    "href": "bio.html#interests",
-    "title": "About Me",
-    "section": "Interests",
-    "text": "Interests\n\nEconometrics\nMachine Learning\nData Analysis\nApplied Economics"
-  },
-  {
-    "objectID": "bio.html#technical-skills",
-    "href": "bio.html#technical-skills",
-    "title": "About Me",
-    "section": "Technical Skills",
-    "text": "Technical Skills\n\nR\nPython\nData Analysis\nStatistical Modeling"
-  },
-  {
-    "objectID": "bio.html#career-goals",
-    "href": "bio.html#career-goals",
-    "title": "About Me",
-    "section": "Career Goals",
-    "text": "Career Goals\nWrite your career goals here."
-  },
-  {
-    "objectID": "bio.html#contact",
-    "href": "bio.html#contact",
-    "title": "About Me",
-    "section": "Contact",
-    "text": "Contact\njyang05@sas.upenn.edu"
-  },
-  {
-    "objectID": "blog/posts/post1/index.html",
-    "href": "blog/posts/post1/index.html",
-    "title": "Why a Small P-Value Does Not Mean Your Hypothesis Is Probably Wrong",
-    "section": "",
-    "text": "The p-value is one of the most commonly used—and commonly misunderstood—ideas in statistics. It appears everywhere from economics papers to medical studies, often as the number that determines whether a result is called “statistically significant.”\nA common interpretation is that a p-value tells us the probability that the null hypothesis is true. For example, someone might say that a p-value of 0.03 means there is only a 3% chance that the null hypothesis is correct.\nThat interpretation is wrong.\nA p-value instead answers a more specific question:\n\nIf the null hypothesis were true, how surprising would our observed data—or something even more extreme—be?\n\nThis difference sounds subtle, but it is extremely important."
-  },
-  {
-    "objectID": "blog/posts/post1/index.html#what-is-a-p-value",
-    "href": "blog/posts/post1/index.html#what-is-a-p-value",
-    "title": "Why a Small P-Value Does Not Mean Your Hypothesis Is Probably Wrong",
-    "section": "",
-    "text": "The p-value is one of the most commonly used—and commonly misunderstood—ideas in statistics. It appears everywhere from economics papers to medical studies, often as the number that determines whether a result is called “statistically significant.”\nA common interpretation is that a p-value tells us the probability that the null hypothesis is true. For example, someone might say that a p-value of 0.03 means there is only a 3% chance that the null hypothesis is correct.\nThat interpretation is wrong.\nA p-value instead answers a more specific question:\n\nIf the null hypothesis were true, how surprising would our observed data—or something even more extreme—be?\n\nThis difference sounds subtle, but it is extremely important."
-  },
-  {
-    "objectID": "blog/posts/post1/index.html#a-simple-example",
-    "href": "blog/posts/post1/index.html#a-simple-example",
-    "title": "Why a Small P-Value Does Not Mean Your Hypothesis Is Probably Wrong",
-    "section": "A Simple Example",
-    "text": "A Simple Example\nSuppose an economist wants to study whether a job-training program increases workers’ wages.\nThe null hypothesis might be\n\\[H_0: \\beta = 0,\\]\nwhere \\(\\beta\\) represents the effect of the training program on wages.\nThe alternative hypothesis is\n\\[H_1: \\beta \\neq 0.\\]\nImagine that the estimated effect is positive and produces a p-value of 0.03.\nThis does not mean\n\\[P(H_0 \\mid \\text{data}) = 0.03.\\]\nInstead, the p-value is closer to\n\\[P(\\text{data at least this extreme} \\mid H_0).\\]\nIn words: assuming that the training program truly has no effect, there would be about a 3% chance of observing evidence at least as inconsistent with the null hypothesis as what we actually observed."
-  },
-  {
-    "objectID": "blog/posts/post1/index.html#why-is-this-unintuitive",
-    "href": "blog/posts/post1/index.html#why-is-this-unintuitive",
-    "title": "Why a Small P-Value Does Not Mean Your Hypothesis Is Probably Wrong",
-    "section": "Why Is This Unintuitive?",
-    "text": "Why Is This Unintuitive?\nThe confusion comes from reversing the direction of conditional probability.\nWhat researchers often want to know is\n\\[P(H_0 \\mid \\text{data}),\\]\nthe probability that the null hypothesis is true given the data.\nBut a traditional hypothesis test gives us information about\n\\[P(\\text{data} \\mid H_0),\\]\nthe probability of observing the data assuming the null hypothesis is true.\nThese are not the same quantity.\nConsider an analogy. Suppose that if a person has a rare disease, there is a 95% probability that a diagnostic test will be positive. This does not imply that someone who tests positive has a 95% probability of having the disease. We would also need to know how common the disease is and how often the test gives false positives.\nThe same logical issue appears when interpreting p-values."
-  },
-  {
-    "objectID": "blog/posts/post1/index.html#what-does-statistically-significant-mean",
-    "href": "blog/posts/post1/index.html#what-does-statistically-significant-mean",
-    "title": "Why a Small P-Value Does Not Mean Your Hypothesis Is Probably Wrong",
-    "section": "What Does “Statistically Significant” Mean?",
-    "text": "What Does “Statistically Significant” Mean?\nResearchers often compare the p-value to a significance level such as\n\\[\\alpha = 0.05.\\]\nIf\n\\[p &lt; 0.05,\\]\nthe result is commonly described as statistically significant, and the null hypothesis is rejected.\nHowever, the 0.05 threshold is a convention rather than a fundamental law of statistics. A result with a p-value of 0.049 is not fundamentally different from one with a p-value of 0.051.\nStatistical significance also does not imply economic significance.\nFor example, a very large dataset might show that a training program increases wages by only $0.10 per year with a very small p-value. The effect could be statistically convincing while being economically meaningless.\nConversely, an economically important effect may fail to achieve statistical significance if the sample is small or noisy."
-  },
-  {
-    "objectID": "blog/posts/post1/index.html#the-main-lesson",
-    "href": "blog/posts/post1/index.html#the-main-lesson",
-    "title": "Why a Small P-Value Does Not Mean Your Hypothesis Is Probably Wrong",
-    "section": "The Main Lesson",
-    "text": "The Main Lesson\nA p-value should be viewed as a measure of how compatible the observed data are with a particular null hypothesis—not as the probability that the hypothesis is true.\nWhen interpreting an empirical result, economists should therefore look beyond whether \\(p &lt; 0.05\\). The estimated effect size, confidence interval, sample size, research design, and economic importance of the result are often just as important as the p-value itself.\nUnderstanding this distinction makes hypothesis testing much less mysterious and helps prevent one of the most persistent statistical mistakes in applied research."
   },
   {
     "objectID": "index.html",

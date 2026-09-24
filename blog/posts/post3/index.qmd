@@ -1,0 +1,152 @@
+---
+title: "The College Earnings Premium Is Not One Number"
+author: "Junzheng Yang"
+date: "2026-09-23"
+description: "IPUMS CPS data show how the descriptive college earnings premium varies over time, by sex, and across the life cycle."
+categories: [data visualization, IPUMS CPS, labor market, education]
+editor: source
+format:
+  html:
+    toc: true
+    code-fold: true
+execute:
+  echo: false
+  warning: false
+  message: false
+  error: false
+  cache: false
+  freeze: false
+---
+
+```{r locate-post-folder, include=FALSE}
+candidates <- c(
+  dirname(knitr::current_input(dir = TRUE)),
+  getwd(),
+  file.path(Sys.getenv("QUARTO_PROJECT_DIR"), "blog", "posts", "post3"),
+  file.path(getwd(), "blog", "posts", "post3")
+)
+valid <- vapply(candidates, function(p) {
+  file.exists(file.path(p, "R", "01_prepare.R")) &&
+    file.exists(file.path(p, "data", "raw", "README.md"))
+}, logical(1))
+if (!any(valid)) stop("Copy the complete post3 folder into blog/posts/post3.")
+post_dir <- normalizePath(candidates[which(valid)[1]], winslash = "/")
+knitr::opts_knit$set(root.dir = post_dir)
+```
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+  echo = FALSE, message = FALSE, warning = FALSE,
+  fig.width = 9, fig.height = 5.2, out.width = "100%"
+)
+source("R/01_prepare.R")
+source("R/02_analyze.R")
+cps <- load_and_prepare_cps("data/raw")
+analysis <- analyze_cps(cps, "results")
+
+trend <- analysis$trend
+premium <- analysis$overall_premium
+gender_premium <- analysis$gender_premium
+age_premium <- analysis$age_premium
+first_year <- min(trend$income_year)
+latest_year <- analysis$latest_year
+dollar_year <- analysis$dollar_year
+
+value_at <- function(data, year, column) {
+  data[data$income_year == year, column, drop = TRUE][1]
+}
+ba_first <- trend$median_weekly[
+  trend$income_year == first_year & trend$education == "Bachelor's"
+][1]
+ba_latest <- trend$median_weekly[
+  trend$income_year == latest_year & trend$education == "Bachelor's"
+][1]
+hs_latest <- trend$median_weekly[
+  trend$income_year == latest_year & trend$education == "High school"
+][1]
+premium_first <- value_at(premium, first_year, "premium_pct")
+premium_latest <- value_at(premium, latest_year, "premium_pct")
+premium_change <- premium_latest - premium_first
+
+latest_gender <- gender_premium[gender_premium$income_year == latest_year, ]
+women_latest <- latest_gender$premium_pct[latest_gender$sex_group == "Women"][1]
+men_latest <- latest_gender$premium_pct[latest_gender$sex_group == "Men"][1]
+larger_group <- if (women_latest >= men_latest) "women" else "men"
+
+young_premium <- age_premium$premium_pct[age_premium$age_band == "25–29"][1]
+mid_premium <- age_premium$premium_pct[age_premium$age_band == "50–54"][1]
+change_word <- if (premium_change >= 0) "wider" else "narrower"
+money <- function(x) scales::dollar(x, accuracy = 1)
+pct <- function(x) paste0(round(x, 1), "%")
+
+if (any(!is.finite(c(
+  ba_first, ba_latest, hs_latest, premium_first, premium_latest,
+  women_latest, men_latest, young_premium, mid_premium
+)))) stop("A required weighted estimate is missing; check the extract.")
+```
+
+## One premium, or many?
+
+College is often discussed as if it produces one stable earnings return. That shorthand hides at least three dimensions: calendar time, differences between women and men, and workers' position in the life cycle. **How large is the bachelor's earnings premium, and how does it vary along those dimensions?**
+
+I use IPUMS Current Population Survey Annual Social and Economic Supplement (ASEC) microdata. The analytic sample contains wage and salary workers ages 25–64 who worked at least 50 weeks and usually at least 35 hours per week. This full-time, full-year restriction reduces the role of differences in weeks and hours, although it also excludes people whose employment is less stable.
+
+Annual wage income is divided by weeks worked to construct weekly earnings. `CPI99` converts dollar values across years, and all results are expressed in `r dollar_year` dollars. Most importantly, every median is calculated with `ASECWT`, the IPUMS person-level weight for ASEC analysis. The figures therefore summarize the population represented by CPS rather than treating every sampled record as equally representative.
+
+## The education hierarchy persisted, but its size changed
+
+```{r earnings-trend, fig.cap="Figure 1. Weighted median real weekly earnings by education."}
+analysis$trend_plot
+```
+
+The first figure establishes the broad pattern. In every displayed year, median weekly earnings rise with educational attainment. For workers with a bachelor's degree, the weighted median changed from `r money(ba_first)` in `r first_year` to `r money(ba_latest)` in `r latest_year`. High-school graduates earned `r money(hs_latest)` at the median in the latest year.
+
+Relative comparisons are often more informative than dollar gaps. The bachelor's premium over high school moved from `r pct(premium_first)` to `r pct(premium_latest)`, making it `r abs(round(premium_change, 1))` percentage points `r change_word` across the displayed period. This is a descriptive contrast between groups—not the causal effect that the same person would experience from completing college.
+
+## The premium is not identical for women and men
+
+```{r gender-premium, fig.cap="Figure 2. Bachelor's earnings premium relative to high-school graduates, by reported sex."}
+analysis$gender_plot
+```
+
+Figure 2 calculates the comparison separately using the CPS categories for female and male respondents. In `r latest_year`, the premium was `r pct(women_latest)` for women and `r pct(men_latest)` for men, so the relative education gap was larger among `r larger_group`. This does not mean that college eliminates the gender wage gap: each line compares bachelor's and high-school workers within the same sex category. The pattern instead shows that the payoff associated with education can differ depending on the comparison group.
+
+## Earnings profiles diverge with age
+
+```{r age-profile, fig.cap="Figure 3. Weighted median weekly earnings across age groups in the latest income year."}
+analysis$age_plot
+```
+
+The cross-section by age supplies the final piece of the story. In `r latest_year`, the bachelor's premium was `r pct(young_premium)` among workers ages 25–29 and `r pct(mid_premium)` among those ages 50–54. These are not longitudinal careers: older and younger people belong to different cohorts, and CPS does not reveal what one worker's earnings path will be. Still, the figure demonstrates why a single pooled premium can conceal economically meaningful life-cycle variation.
+
+## Takeaway and limitations
+
+The central takeaway is that college graduates earn more at the weighted median, but **the college earnings premium is not one universal number**. It changes over time, differs between women and men, and varies across age groups. A student evaluating education should therefore ask which workers, which year, and which career stage underlie a quoted return.
+
+The analysis remains descriptive. Education groups differ in occupation, field of study, experience, location, selection into employment, and other characteristics. Wage income excludes self-employment earnings; high incomes may be topcoded; population-control changes and sampling error can affect comparisons; and no confidence intervals are shown. These figures document patterns, not causal effects.
+
+## Data and reproducibility
+
+Data are from [IPUMS CPS](https://cps.ipums.org/cps/), which harmonizes CPS microdata produced by the U.S. Census Bureau and Bureau of Labor Statistics. Variable definitions are documented for [INCWAGE](https://cps.ipums.org/cps-action/variables/INCWAGE), [WKSWORK1](https://cps.ipums.org/cps-action/variables/WKSWORK1), [UHRSWORKLY](https://cps.ipums.org/cps-action/variables/UHRSWORKLY), and [EDUC](https://cps.ipums.org/cps-action/variables/EDUC). IPUMS explains the appropriate [CPS weights](https://cps.ipums.org/cps/sample_weights.shtml) and [CPI99 inflation adjustment](https://cps.ipums.org/cps/cpi99.shtml).
+
+The public repository contains the complete R code, README, and generated aggregate results, but not restricted IPUMS microdata. After an authorized user places the matching DDI and data files in `data/raw/`, rendering the post recreates all statistics and figures.
+
+<details>
+
+<summary>View the complete R data-preparation code</summary>
+
+```{r preparation-code, results='asis'}
+cat("\n```r\n", paste(readLines("R/01_prepare.R"), collapse = "\n"), "\n```\n", sep = "")
+```
+
+</details>
+
+<details>
+
+<summary>View the complete R analysis and visualization code</summary>
+
+```{r analysis-code, results='asis'}
+cat("\n```r\n", paste(readLines("R/02_analyze.R"), collapse = "\n"), "\n```\n", sep = "")
+```
+
+</details>
