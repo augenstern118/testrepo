@@ -1,0 +1,89 @@
+---
+title: "A Cheaper House Can Still Mean a Bigger Mortgage Payment"
+author: "Junzheng Yang"
+date: "2026-10-05"
+description: "FRED data show why the income burden of financing a new U.S. home rose after 2019, even as prices eased from their peak."
+categories: [data visualization, housing, FRED, interest rates]
+image: results/03_payment_burden.png
+editor: source
+format:
+  html:
+    toc: true
+    code-fold: true
+execute:
+  echo: false
+  warning: false
+  message: false
+  error: false
+  cache: false
+  freeze: false
+---
+
+```{r setup, include=FALSE}
+# Resolve this document's folder directly; no website-specific folder search.
+post_dir <- dirname(normalizePath(knitr::current_input(dir = TRUE),
+                                  winslash = "/", mustWork = TRUE))
+source(file.path(post_dir, "R", "analysis.R"), local = knitr::knit_global())
+```
+
+## The question: price or payment?
+
+A house-price headline tells a buyer how much to borrow, but not how hard the loan will be to repay. **How did the income burden of financing a new U.S. home change between 2019 and 2024, and how much does the interest rate matter?** This matters for first-time buyers: falling prices can coexist with expensive financing, while existing owners may retain an earlier, cheaper mortgage.
+
+I combine three public FRED series: Census/HUD new-home sale prices, Freddie Mac's 30-year mortgage rate, and Census median household income. This is a new aggregate housing dataset, separate from the CPS microdata used in my previous post. The window ends in 2024 to compare six complete calendar years consistently.
+
+## Turning three series into one comparison
+
+I average the four quarterly price medians and the weekly mortgage rates within each year, then merge these with that year's household income. Averaging quarterly medians produces a **price proxy**, not the annual median transaction price. All calculations use the included CSV snapshots; a separate R script downloads the same series directly from FRED without an API key.
+
+The hypothetical buyer puts 20% down and takes a 30-year fixed-rate mortgage. The standard amortization formula converts the remaining 80% into a monthly principal-and-interest payment. Dividing that payment by annual gross income divided by twelve gives a comparable burden measure. Both money amounts refer to the same year: a common inflation deflator would cancel in their ratio. These are scenario calculations at annual-average inputs, not observed household payments.
+
+## Prices moved ahead of incomes
+
+```{r figure-price-income, fig.cap="Figure 1. Annual new-home price proxy and median household income, indexed to 2019 = 100.", fig.alt="Two indexed lines compare new-home prices and household income from 2019 to 2024. The price index rises more sharply through 2022 and then declines; the income index rises more gradually."}
+knitr::include_graphics(file.path(results_dir, "01_price_and_income.png"))
+```
+
+Figure 1 puts both series at 100 in 2019, making their percentage changes comparable. By 2024, prices were `r round(price_growth, 1)`% higher, while income was `r round(income_growth, 1)`% higher. The price-to-income ratio rose from `r round(base$price_to_income, 2)` to `r round(last$price_to_income, 2)`. Buyers therefore needed a larger loan relative to income even before considering interest. The price proxy fell `r round(abs(price_drop), 1)`% between 2022 and 2024, but this alone did not restore the earlier financing burden.
+
+## The low-rate cushion disappeared
+
+```{r figure-mortgage-rate, fig.cap="Figure 2. Annual arithmetic mean of Freddie Mac's weekly 30-year fixed mortgage rates.", fig.alt="Mortgage rates fall from their 2019 average to a low in 2021, rise sharply in 2022 and 2023, and remain elevated in 2024."}
+knitr::include_graphics(file.path(results_dir, "02_mortgage_rate.png"))
+```
+
+Figure 2 explains the missing piece. The annual-average mortgage rate fell from `r round(base$rate_pct, 2)`% in 2019 to `r round(low$rate_pct, 2)`% in 2021, then reached `r round(peak$rate_pct, 2)`% in 2023. Lower rates initially cushioned rising prices by reducing the cost of financing each borrowed dollar. That cushion reversed. In 2024, the rate remained `r round(last$rate_pct, 2)`%, so a slightly cheaper house could still require a much larger payment than before the pandemic.
+
+## Combining the two pressures
+
+```{r figure-payment-burden, fig.cap="Figure 3. Illustrative mortgage principal and interest as a percentage of median gross household income. The dashed line fixes the rate at its 2019 average while retaining each year's price and income.", fig.alt="The payment-to-income ratio rises from about 21 percent in 2019 to about 31 percent in 2024 using observed annual rates. Holding rates at their 2019 average gives about 23 percent in 2024."}
+knitr::include_graphics(file.path(results_dir, "03_payment_burden.png"))
+```
+
+Figure 3 translates prices and rates into the same economic unit: a share of income. The payment increased from `r sprintf("$%s", format(round(base$monthly_pi_usd), big.mark = ",", trim = TRUE))` to `r sprintf("$%s", format(round(last$monthly_pi_usd), big.mark = ",", trim = TRUE))` per month, a `r round(payment_growth, 1)`% increase. Its income share rose from `r round(base$payment_share_pct, 1)`% to `r round(last$payment_share_pct, 1)`%, an increase of `r round(burden_change, 1)` percentage points.
+
+Holding the rate at its 2019 average gives a 2024 burden of `r round(last$payment_share_fixed_rate_pct, 1)`%, or `r round(rate_gap, 1)` percentage points below the observed-rate scenario. This isolates financing arithmetic while keeping price and income unchanged. It is not a causal estimate: different rates could also change prices, construction, and who buys.
+
+## Sources and limits
+
+The downloadable inputs are [MSPUS](https://fred.stlouisfed.org/series/MSPUS), [MORTGAGE30US](https://fred.stlouisfed.org/series/MORTGAGE30US), and [MEHOINUSA646N](https://fred.stlouisfed.org/series/MEHOINUSA646N), retrieved October 5, 2026. Freddie Mac changed its survey methodology in November 2022. National new-home prices do not describe existing homes or local markets, and all-household median income does not represent the median buyer. Taxes, insurance, closing costs, maintenance, and savings constraints are excluded. The repository includes raw CSVs, readable R scripts, generated figures and tables, and replication instructions.
+
+## Takeaway
+
+**A cheaper purchase price does not necessarily mean an affordable payment.** After 2019, higher prices relative to income and higher financing costs jointly raised this illustrative burden. Buyers should compare the loan's payment with their own income and total ownership costs, rather than treating a decline in national house prices as proof that affordability has recovered.
+
+<details>
+<summary>View the complete R analysis and visualization code</summary>
+
+```{r show-analysis, echo=TRUE, eval=FALSE, code=readLines(file.path(post_dir, "R", "analysis.R"))}
+```
+
+</details>
+
+<details>
+<summary>View the optional R data-download code</summary>
+
+```{r show-download, echo=TRUE, eval=FALSE, code=readLines(file.path(post_dir, "R", "download_data.R"))}
+```
+
+</details>

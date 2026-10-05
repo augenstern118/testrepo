@@ -1,0 +1,4 @@
+series_id,url,retrieved_on,start,end
+MSPUS,https://fred.stlouisfed.org/graph/fredgraph.csv?id=MSPUS&cosd=2015-01-01&coed=2024-12-31,2026-10-05,2015-01-01,2024-12-31
+MORTGAGE30US,https://fred.stlouisfed.org/graph/fredgraph.csv?id=MORTGAGE30US&cosd=2015-01-01&coed=2024-12-31,2026-10-05,2015-01-01,2024-12-31
+MEHOINUSA646N,https://fred.stlouisfed.org/graph/fredgraph.csv?id=MEHOINUSA646N&cosd=2015-01-01&coed=2024-12-31,2026-10-05,2015-01-01,2024-12-31
