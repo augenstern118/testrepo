@@ -1,0 +1,8 @@
+id,soc_code,scope
+data-scientists,15-2051,Single detailed SOC occupation
+economists,19-3011,Single detailed SOC occupation
+operations-research-analysts,15-2031,Single detailed SOC occupation
+market-research-analysts,13-1161,Single detailed SOC occupation
+management-analysts,13-1111,Single detailed SOC occupation
+financial-analysts,13-2051,OOH aggregate of two detailed SOC occupations
+financial-analysts,13-2054,OOH aggregate of two detailed SOC occupations

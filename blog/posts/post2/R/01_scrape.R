@@ -64,6 +64,12 @@ collect_data <- function(raw_dir = "data/raw") {
   if (anyDuplicated(manifest$id) || !setequal(manifest$id, sources$id)) {
     stop("Manifest must contain exactly one record for each source.")
   }
+  files <- file.path(raw_dir, paste0(manifest$id, ".html"))
+  if (!all(file.exists(files))) stop("An archived HTML file is missing.")
+  if ("md5" %in% names(manifest) &&
+      !all(unname(tools::md5sum(files)) == manifest$md5)) {
+    stop("Archived HTML differs from its manifest. Review the inputs before analysis.")
+  }
   data <- bind_rows(lapply(seq_len(nrow(sources)), function(i) {
     s <- sources[i, ]
     scrape_profile(file.path(raw_dir, paste0(s$id, ".html")),
@@ -132,6 +138,6 @@ refresh_sources <- function(destination = "data/live") {
       access_date = as.character(Sys.Date()), capture_method = "HTTP download; rvest extraction")
     write_csv(bind_rows(manifest), file.path(destination, "manifest.csv"))
   }
-  message("Saved six pages. Run run_project(raw_dir = '", destination, "') to analyze them.")
+  message("Saved six pages. Run collect_data(raw_dir = '", destination, "') and analyze_careers() to review them.")
   invisible(destination)
 }

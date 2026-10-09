@@ -1,0 +1,7 @@
+occupation,soc_codes,soc_title,scope,work_focus
+Data scientists,15-2051,Data scientists,Single detailed SOC occupation,Data analysis and computational modeling
+Economists,19-3011,Economists,Single detailed SOC occupation,Economic research and policy analysis
+Operations research analysts,15-2031,Operations research analysts,Single detailed SOC occupation,Optimization and mathematical decision support
+Market research analysts,13-1161,Market research analysts and marketing specialists,Single detailed SOC occupation,"Markets, consumers and marketing analysis"
+Management analysts,13-1111,Management analysts,Single detailed SOC occupation,Organizational efficiency and consulting
+Financial analysts,13-2051;13-2054,Financial and investment analysts; financial risk specialists,OOH aggregate of two detailed SOC occupations,Investment analysis and financial risk

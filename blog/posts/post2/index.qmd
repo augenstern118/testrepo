@@ -1,13 +1,15 @@
 ---
-title: "Beyond the Economist Job Title: Where Should a Quantitative Student Look?"
+title: "Where Should an Economics Student Start the Job Search?"
 author: "Junzheng Yang"
 date: "2026-09-20"
-description: "Using rvest and BLS career profiles to turn pay, growth, and opening counts into a practical job-search shortlist."
+date-modified: "2026-10-08"
+description: "Six BLS occupational profiles offer a starting point for a job search, once we separate job duties from a worker's economics background."
 categories: [web scraping, R, labor market]
+image: results/growth.png
 editor: source
 format:
   html:
-    toc: true
+    toc: false
     code-fold: true
 execute:
   echo: false
@@ -18,31 +20,16 @@ execute:
   freeze: false
 ---
 
-```{r locate-post-folder, include=FALSE}
-# Support both Quarto's default file working directory and project-root execution.
-candidates <- c(
-  dirname(knitr::current_input(dir = TRUE)),
-  getwd(),
-  file.path(Sys.getenv("QUARTO_PROJECT_DIR"), "blog", "posts", "post2"),
-  file.path(getwd(), "blog", "posts", "post2")
-)
-valid <- vapply(candidates, function(p) {
-  file.exists(file.path(p, "R", "01_scrape.R")) &&
-    file.exists(file.path(p, "data", "raw", "manifest.csv"))
-}, logical(1))
-if (!any(valid)) stop("Copy the R and data folders next to post2/index.qmd.")
-post_dir <- normalizePath(candidates[which(valid)[1]], winslash = "/")
-knitr::opts_knit$set(root.dir = post_dir)
-```
-
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE,
-                     fig.width = 9, fig.height = 4.8, out.width = "100%")
-source("R/01_scrape.R")
-source("R/02_analyze.R")
-careers <- collect_data("data/raw")
-analysis <- analyze_careers(careers)
+script <- if (file.exists("R/run_project.R")) {
+  "R/run_project.R"
+} else {
+  "blog/posts/post2/R/run_project.R"
+}
+source(script)
+analysis <- post2_result$analysis
 d <- analysis$data
+sources <- post2_result$sources
 get_row <- function(id) d[d$id == id, ]
 ds <- get_row("data-scientists")
 ec <- get_row("economists")
@@ -53,74 +40,70 @@ fa <- get_row("financial-analysts")
 money <- function(x) scales::dollar(x, accuracy = 1)
 count <- function(x) scales::comma(x, accuracy = 1)
 period <- paste0(ds$projection_start, "-", ds$projection_end)
-# A refreshed source may change the story. Fail rather than publish stale prose.
-if (ds$growth_pct != max(d$growth_pct) || ec$median_pay_usd != max(d$median_pay_usd) ||
-    ma$annual_openings != max(d$annual_openings) || ma$experience == "None" ||
-    !setequal(d$id[d$priority_screen], c("data-scientists", "operations-research-analysts"))) {
-  stop("The refreshed data change the narrative. Review the findings before rendering.")
+post_dir <- dirname(dirname(normalizePath(script, winslash = "/")))
+# The prose interprets this archived snapshot. Review it if inputs change.
+if (ds$growth_pct != max(d$growth_pct) ||
+    ec$median_pay_usd != max(d$median_pay_usd) ||
+    ma$annual_openings != max(d$annual_openings) ||
+    ma$experience == "None" ||
+    !setequal(d$id[d$priority_screen],
+              c("data-scientists", "operations-research-analysts"))) {
+  stop("The inputs change the findings. Review the article before publishing.")
 }
 ```
 
-## The question
+An economics student opens a job site. Should the first saved search be “economist,” “financial analyst,” or “data scientist”? Each can involve quantitative work, but choosing where to look requires more than finding a familiar title. **Which occupations offer a useful starting point when weighing pay, growth, and the volume of openings?**
 
-An economics degree does not require a job with “economist” in its title. For a student with quantitative training, data science, operations research, finance, consulting, and market research are also plausible directions. But searching every category equally takes time. **Which paths deserve attention when balancing earnings, growth, and the scale of opportunities?**
+I use R's `rvest` package to extract six deliberately selected [Bureau of Labor Statistics occupational profiles](https://www.bls.gov/ooh/). They help compare job markets. They cannot show which occupation an economics graduate is most likely to enter.
 
-I compare six deliberately selected occupations in the U.S. Bureau of Labor Statistics' [Occupational Outlook Handbook](https://www.bls.gov/ooh/). These are relevant alternatives, not a representative sample of every graduate career. The aim is to build a practical search shortlist rather than predict an individual's employment outcome.
+## A job category is not an academic background
 
-## From web pages to comparable data
+A financial analyst may have an economics degree, use economic models, and describe themselves as an economist. That does not make the BLS categories interchangeable. The [Standard Occupational Classification](https://www.bls.gov/soc/2018/soc_2018_class_prin_cod_guide.pdf) assigns jobs according to work performed, with rules for mixed duties. Academic background and professional identity can cross those boundaries.
 
-The project uses R's `rvest` package to extract each page's Quick Facts table and the Summary paragraph reporting average annual openings. The archived HTML was captured from the public pages in a browser on September 20, 2026. `read_html()`, `html_elements()`, and `html_text2()` turn those saved pages into structured observations. An optional collection function downloads fresh pages and applies the same extractor.
+Here, “economists” means SOC **19-3011**, while the financial-analysts profile combines **13-2051** (financial and investment analysts) and **13-2054** (financial risk specialists). The code records all component codes and checks that none appears in two comparison rows. Financial analysts' combined statistics stay combined; a median cannot be split into subgroup medians.
 
-Cleaning removes excess whitespace, dollar signs, commas, and descriptive text attached to percentages. It keeps annual pay separate from hourly pay and checks for missing fields, duplicate occupations, and inconsistent reference years. The comparison uses May `r ds[["pay_year"]]` wages and `r period` projections; retrieval date and measurement year are different concepts.
+**These are occupational comparisons, not six exclusive groups of economics-trained people.** I neither add the opening counts into a total for economics graduates nor interpret wage differences as the payoff from choosing one career over another.
 
-The pages require no login or paywall. The reviewed [robots.txt](https://www.bls.gov/robots.txt) does not disallow these occupation paths. Collection is limited to six profiles, with pauses between page requests. The refresh function checks current rules, stops on access errors, and never attempts to bypass restrictions. Reusing saved HTML avoids repeat requests during editing.
+## Fast growth and many openings tell different stories
 
-```{r comparison-table}
-display <- d |>
-  arrange(desc(annual_openings)) |>
-  transmute(Occupation = occupation,
-    `Median annual pay` = money(median_pay_usd),
-    `Growth` = paste0(growth_pct, "%"),
-    `Annual openings` = count(annual_openings),
-    `Typical education` = education,
-    `Related experience` = experience)
-knitr::kable(display, caption = paste0("Table 1. Selected U.S. occupations. Pay: May ",
-  ds$pay_year, "; projections: ", period, ". Source: BLS OOH."))
-```
+In the archived profiles, data scientists lead projected growth at **`r ds$growth_pct`%**, versus **`r ec$growth_pct`%** for the economist occupation over `r period`. Their median annual pay, `r money(ds$median_pay_usd)`, is close to economists' `r money(ec$median_pay_usd)`. That combination makes data science worth examining for a student who enjoys computation.
 
-## Growth is not the same as opportunity volume
-
-Data scientists have the fastest projected growth: `r ds[["growth_pct"]]`%, compared with `r ec[["growth_pct"]]`% for economists. Their median annual pay is `r money(ds[["median_pay_usd"]])`, only `r money(ec[["median_pay_usd"]] - ds[["median_pay_usd"]])` below economists' `r money(ec[["median_pay_usd"]])`. For a student interested in both economic questions and computation, this makes data science a compelling direction to investigate.
-
-However, the annual-openings ranking tells a different story. Management analysts have approximately `r count(ma[["annual_openings"]])` openings, market research analysts `r count(mr[["annual_openings"]])`, and data scientists `r count(ds[["annual_openings"]])`. Economists have `r count(ec[["annual_openings"]])`. Data science therefore has about `r sprintf("%.1f", ds[["annual_openings"]] / ec[["annual_openings"]])` times as many projected annual openings as economics, despite a similar median wage.
-
-These measures answer different questions. Growth describes the percentage increase in employment over a decade. Openings include positions arising when workers leave an occupation or retire, as well as expansion. A large, slower-growing occupation can consequently generate more openings than a small, fast-growing one.
-
-```{r growth-chart, fig.cap="Figure 1. Growth identifies expanding fields, not the number of available positions."}
+```{r growth-chart, fig.cap="Projected employment growth by BLS occupational profile. Teal marks profiles passing the stated preference screen, not an official BLS rating.", fig.alt="Horizontal bars compare projected growth across six occupational profiles, with data scientists highest. Teal highlights data science and operations research under the stated preference screen.", fig.width=9, fig.height=4.8}
 analysis$growth_plot
 ```
 
-```{r openings-chart, fig.cap="Figure 2. The largest projected opening counts belong to different occupations than the fastest growth."}
+The openings chart changes the emphasis. Management analysts have about `r count(ma$annual_openings)` projected openings annually, market research analysts `r count(mr$annual_openings)`, and data scientists `r count(ds$annual_openings)`. The economist category has `r count(ec$annual_openings)`.
+
+Growth measures expansion relative to an occupation's existing size. Openings also include replacement needs when workers leave an occupation or retire. A large, slower-growing occupation can therefore generate more openings than a small, fast-growing one. These counts cover all qualifying workers, not positions reserved for economics graduates.
+
+```{r openings-chart, fig.cap="Projected average annual openings by BLS occupational profile. Counts include replacement needs and all experience levels; they are not current vacancies.", fig.alt="Horizontal bars compare projected annual openings across six occupational profiles. Management analysts have the largest count and economists the smallest.", fig.width=9, fig.height=4.8}
 analysis$openings_plot
 ```
 
-## Turning the comparison into a search strategy
+## A shortlist to investigate, not a promise of employment
 
-For a transparent starting rule, I screen for a median wage of at least USD 85,000, projected growth of at least 10%, and no typical requirement for related work experience. These thresholds express a hypothetical student's preferences; they are not official quality ratings. **Data scientists and operations research analysts pass this screen.** Operations research offers `r op[["growth_pct"]]`% growth, `r money(op[["median_pay_usd"]])` median pay, and approximately `r count(op[["annual_openings"]])` annual openings.
+Suppose a student wants median pay of at least **$85,000**, projected growth of at least **10%**, and no typical requirement for related work experience. This preference screen selects data scientists and operations research analysts. The latter offer `r money(op$median_pay_usd)` median pay, `r op$growth_pct`% growth, and about `r count(op$annual_openings)` annual openings.
 
-The recommendation is to make these two categories regular saved searches, while retaining market research and financial analysis as alternatives for applicants whose interests fit them. Management analysis has the most openings, but its typical related-experience requirement means a new graduate should specifically look for entry-level or campus programs. Economics remains attractive for students committed to economic research, but searching only that title would unnecessarily narrow the opportunity set.
+```{r comparison-table}
+knitr::kable(analysis$comparison_table,
+  caption = paste0("Selected occupational profiles. Pay: May ", ds$pay_year,
+    "; projections: ", period, ". Source: BLS OOH. Financial analysts combine two SOC codes."))
+```
 
-The shortlist depends on preferences. Raising the wage threshold to USD 90,000, or the growth threshold to 15%, removes operations research in this snapshot. The code saves a nine-scenario sensitivity table so readers can inspect how changing the rule changes the recommendation.
+For this student, create saved searches in those two areas, then check each posting's tasks and qualifications. BLS lists bachelor's-level entry education for both; this does not mean an economics degree alone supplies every technical skill. Management analysis offers more openings but typically requires related experience, so a new graduate should look specifically for campus or entry-level programs.
 
-## Limits and takeaway
+The rule also excludes financial analysis despite its `r money(fa$median_pay_usd)` median pay, because its `r fa$growth_pct`% growth misses the chosen cutoff. That is a consequence of the preference rule, not evidence that finance is a poor choice. Raising the pay floor to $90,000 or growth floor to 15% leaves only data science. A saved nine-scenario table shows how the shortlist changes.
 
-Median wages cover workers at different career stages; they are not starting salaries. Projected openings are not current vacancies, internships, or evidence of low competition. National averages hide geographic differences, and these profiles cannot establish employer-specific skills, work-authorization eligibility, or an applicant's probability of receiving an offer. Financial analysts also combine multiple specialties; this comparison consistently uses the combined Quick Facts figures.
+## What the comparison can—and cannot—decide
 
-**The actionable takeaway is to broaden the search beyond “economist,” prioritize data science and operations research under the stated preferences, and evaluate individual postings before applying.** Web scraping becomes useful when comparable information changes a decision, with its limitations kept visible.
+Median pay is not a starting salary. National projections do not reveal local vacancies, competition, visa eligibility, or an applicant's hiring probability. The six profiles are a selected comparison, and their workers differ in skills and experience.
 
-## Sources and reproducibility
+**The takeaway is to use occupational evidence to choose searches, then use actual job descriptions to decide where to apply.** Under the stated preferences, data science and operations research are starting points. Shared economics training does not make the categories identical—or establish that either is the best path for every graduate.
 
-Each table entry links to its underlying public BLS profile below. All six snapshots were accessed September 20, 2026. The data, charts, table, sensitivity analysis, and numeric statements above are generated from HTML by R, not pasted from a spreadsheet.
+::: {.callout-note collapse="true"}
+## Sources, scraping, and replication
+
+The six archived Summary HTML fragments were captured September 20, 2026. Pay refers to May `r ds$pay_year`; projections cover `r period`. The original capture method and file hashes are recorded in `data/raw/manifest.csv`. The numerical inputs are extracted from those HTML files with `rvest`, not manually copied into the comparison table.
 
 ```{r source-links, results='asis'}
 for (i in seq_len(nrow(sources))) {
@@ -128,24 +111,27 @@ for (i in seq_len(nrow(sources))) {
 }
 ```
 
-In the website project, install the dependencies with `source("blog/posts/post2/setup.R")`, then render `blog/posts/post2/index.qmd`. R extracts the archived HTML and regenerates the cleaned data, comparison, sensitivity analysis, and charts inside this post’s `data/processed/` and `results/` folders. See the accompanying README for replication and optional live collection.
+The [SOC definitions](https://www.bls.gov/soc/2018/soc_2018_definitions.pdf) and [classification rules](https://www.bls.gov/soc/2018/soc_2018_class_prin_cod_guide.pdf) document the distinction between jobs and backgrounds. `data/occupation_scope.csv` is author-documented classification metadata, separate from scraped numbers. The financial profile's Employment Projections table identifies its two component occupations. Classification documentation was checked October 8, 2026.
 
-<details>
+Extraction targets the Quick Facts table and the Summary's annual-openings paragraph. Cleaning removes whitespace, commas, dollar signs, and descriptive text; validation checks unique profiles, numerical fields, common measurement years, archived-file integrity, and nonoverlapping SOC coverage.
 
-<summary>View the complete R scraping code</summary>
+Rendering reuses saved HTML without sending new requests. The optional collector reads current robots rules, waits between six public-page requests, and stops on access errors. No login, paywall, CAPTCHA, or other restriction is bypassed. Live collection is optional because it cannot reproduce the original snapshot if pages change.
+
+From the website root, run `source("blog/posts/post2/setup.R")` once, then `source("blog/posts/post2/R/run_project.R")`. Render `blog/posts/post2/index.qmd` and `blog/index.qmd`. See the [Post 2 README](https://github.com/augenstern118/testrepo/tree/main/blog/posts/post2) for exact commands, a file map, and output definitions.
+:::
+
+::: {.callout-note collapse="true"}
+## View the R scraping code
 
 ```{r scraping-code, results='asis'}
-cat("\n```r\n", paste(readLines("R/01_scrape.R"), collapse = "\n"), "\n```\n", sep = "")
+cat("\n```r\n", paste(readLines(file.path(post_dir, "R/01_scrape.R")), collapse = "\n"), "\n```\n", sep = "")
 ```
+:::
 
-</details>
-
-<details>
-
-<summary>View the complete R analysis code</summary>
+::: {.callout-note collapse="true"}
+## View the R analysis code
 
 ```{r analysis-code, results='asis'}
-cat("\n```r\n", paste(readLines("R/02_analyze.R"), collapse = "\n"), "\n```\n", sep = "")
+cat("\n```r\n", paste(readLines(file.path(post_dir, "R/02_analyze.R")), collapse = "\n"), "\n```\n", sep = "")
 ```
-
-</details>
+:::
