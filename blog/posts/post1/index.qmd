@@ -1,97 +1,84 @@
 ---
-title: "Why a Small P-Value Does Not Mean Your Hypothesis Is Probably Wrong"
+title: "A P-Value of 0.03 Is Not a Funding Recommendation"
 date: 2026-08-31
+date-modified: 2026-10-08
+author: "Junzheng Yang"
+description: "A hypothetical job-training decision shows what a small p-value can tell us, and what a policymaker still needs to know."
+image: results/null_distribution.png
 categories:
   - statistics
   - econometrics
+execute:
+  echo: false
+  message: false
+  warning: false
 ---
 
-## What Is a P-Value?
+```{r}
+#| label: setup
+#| include: false
+script <- if (file.exists("R/analysis.R")) {
+  "R/analysis.R"
+} else {
+  "blog/posts/post1/R/analysis.R"
+}
+source(script)
+```
 
-The p-value is one of the most commonly used—and commonly misunderstood—ideas in statistics. It appears everywhere from economics papers to medical studies, often as the number that determines whether a result is called “statistically significant.”
+Imagine a city deciding whether to fund a job-training program. An evaluation reports higher wages and a p-value of **`r p_text`**. Does that mean a 97% chance the program works? And is it enough to justify spending public money?
 
-A common interpretation is that a p-value tells us the probability that the null hypothesis is true. For example, someone might say that a p-value of 0.03 means there is only a 3% chance that the null hypothesis is correct.
+The first answer is no. The second needs more information. The useful question is **what this number tells a decision-maker, and what it leaves unanswered**.
 
-That interpretation is wrong.
+There is evidence that the probability interpretation causes difficulty. In a [2022 survey by Lytsy, Hartman, and Pingel](https://pubmed.ncbi.nlm.nih.gov/35991465/), 53.3% of 75 doctoral students and 73.4% of 64 statisticians/epidemiologists interpreted a significant result as indicating that the null hypothesis was improbable. Those respondents do not establish how prevalent this interpretation is among all researchers or economists. They do provide a specific reason to examine it, rather than simply declaring that everyone gets p-values wrong.
 
-A p-value instead answers a more specific question:
+## Imagine a world where the program does nothing
 
-> If the null hypothesis were true, how surprising would our observed data—or something even more extreme—be?
+Our example is hypothetical. Suppose a randomized evaluation estimates that training raises monthly wages by **`r gain_text` dollars**, with a standard error of **`r se_text` dollars**. The standard error describes the estimate's sampling uncertainty. Assume its sampling distribution is approximately normal with this known standard error; this simplified model lets us calculate the example directly in R.
 
-This difference sounds subtle, but it is extremely important.
+The *null hypothesis* says that the true average wage effect is zero. Even in that no-effect world, repeated evaluations would produce different estimates because they observe different samples.
 
-## A Simple Example
+For a two-sided test, we count estimates at least as far from zero as the observed gain, in either direction. Here that means an estimate of at least +`r gain_text` dollars or at most -`r gain_text` dollars.
 
-Suppose an economist wants to study whether a job-training program increases workers' wages.
+![Normal sampling distribution of the estimated monthly wage effect under a zero-effect null. Both tails beyond minus and plus 20 dollars are shaded; together they contain approximately 3 percent of the probability.](results/null_distribution.png){#fig-null fig-alt="Normal sampling distribution under a zero-effect null. Both tails beyond minus and plus 20 dollars are shaded and contain approximately 3 percent of the probability." fig-cap="A p-value counts outcomes in a hypothetical no-effect world. Shaded tails total approximately 3%. Source: author-created illustration; no observed program data."}
 
-The null hypothesis might be
+R gives a probability of about **`r tail_percent_text`%** for those outcomes under the null model. That is the p-value. It is a probability about possible **results assuming no effect**, not a probability that **no effect is true**.
 
-$$H_0: \beta = 0,$$
+## Why the direction matters
 
-where $\beta$ represents the effect of the training program on wages.
+The reversal is tempting because we usually want the second answer: after seeing the evaluation, how likely is the program to work? But the test begins by assuming a zero effect, then evaluates the result against that assumption. It does not assign probabilities to the competing explanations.
 
-The alternative hypothesis is
+Think of a fire alarm: knowing how often an alarm sounds when there is no fire does not, by itself, tell you the chance that a fire exists when it sounds. You also need information about actual fires and the alarm's behavior during them. Likewise, a probability for the hypothesis requires additional assumptions and information, not simply subtracting the p-value from one.
 
-$$H_1: \beta \neq 0.$$
+The [American Statistical Association's 2016 guidance](https://www.amstat.org/asa/files/pdfs/p-valuestatement.pdf) explicitly distinguishes p-values from probabilities that hypotheses are true, and advises against basing policy decisions solely on a significance threshold.
 
-Imagine that the estimated effect is positive and produces a p-value of 0.03.
+## Significant, but worth funding?
 
-This does **not** mean
+Because `r p_text` is below 0.05, the result would conventionally be called statistically significant. That tells us the estimate is relatively unusual under the specified no-effect model. It does not tell us the benefit is large.
 
-$$P(H_0 \mid \text{data}) = 0.03.$$
+```{r}
+#| label: decision-table
+#| tbl-cap: "Inputs and calculated results for the hypothetical training evaluation. All money amounts are monthly dollars per participant."
+knitr::kable(display_table, col.names = c("Measure", "Illustrative value"), align = c("l", "r"))
+```
 
-Instead, the p-value is closer to
+Now suppose the program costs **`r cost_text` dollars per participant per month**. The estimated wage gain is just `r gain_text` dollars. Its model-based 95% confidence interval runs from about `r lower_text` to `r upper_text` dollars. These results describe a positive but modest gain relative to the assumed cost.
 
-$$P(\text{data at least this extreme} \mid H_0).$$
+This is not a complete benefit-cost analysis: effects might last beyond the evaluation, and training could produce benefits other than wages. The example nevertheless shows why crossing 0.05 cannot settle the funding decision.
 
-In words: assuming that the training program truly has no effect, there would be about a 3% chance of observing evidence at least as inconsistent with the null hypothesis as what we actually observed.
+## What to ask next
 
-## Why Is This Unintuitive?
+For this evaluation, read the p-value alongside the estimated gain, uncertainty, study design, and program cost. **The number answers how unusual the result would be under a no-effect model; deciding whether to fund the program requires a separate judgment about benefits and costs.**
 
-The confusion comes from reversing the direction of conditional probability.
+::: {.callout-note collapse="true" title="Sources and replication"}
+The survey evidence comes from Lytsy, Hartman, and Pingel (2022), *Upsala Journal of Medical Sciences*, DOI [10.48101/ujms.v127.8760](https://doi.org/10.48101/ujms.v127.8760). Interpretive guidance comes from the ASA's statement by Wasserstein and Lazar (2016), DOI [10.1080/00031305.2016.1154108](https://doi.org/10.1080/00031305.2016.1154108). Both sources were accessed October 8, 2026.
 
-What researchers often want to know is
+All training-program amounts are invented teaching inputs, not estimates from an actual study. The normal approximation and known standard error are assumptions of this illustration. `R/analysis.R` reads `data/example_inputs.csv` and saves the figure, numeric results, plot data, and R session information to `results/`. The [GitHub folder](https://github.com/augenstern118/testrepo/tree/main/blog/posts/post1) contains a README with replication instructions. No external data download or additional R analysis package is needed.
+:::
 
-$$P(H_0 \mid \text{data}),$$
-
-the probability that the null hypothesis is true given the data.
-
-But a traditional hypothesis test gives us information about
-
-$$P(\text{data} \mid H_0),$$
-
-the probability of observing the data assuming the null hypothesis is true.
-
-These are not the same quantity.
-
-Consider an analogy. Suppose that if a person has a rare disease, there is a 95% probability that a diagnostic test will be positive. This does not imply that someone who tests positive has a 95% probability of having the disease. We would also need to know how common the disease is and how often the test gives false positives.
-
-The same logical issue appears when interpreting p-values.
-
-## What Does “Statistically Significant” Mean?
-
-Researchers often compare the p-value to a significance level such as
-
-$$\alpha = 0.05.$$
-
-If
-
-$$p < 0.05,$$
-
-the result is commonly described as statistically significant, and the null hypothesis is rejected.
-
-However, the 0.05 threshold is a convention rather than a fundamental law of statistics. A result with a p-value of 0.049 is not fundamentally different from one with a p-value of 0.051.
-
-Statistical significance also does not imply economic significance.
-
-For example, a very large dataset might show that a training program increases wages by only \$0.10 per year with a very small p-value. The effect could be statistically convincing while being economically meaningless.
-
-Conversely, an economically important effect may fail to achieve statistical significance if the sample is small or noisy.
-
-## The Main Lesson
-
-A p-value should be viewed as a measure of how compatible the observed data are with a particular null hypothesis—not as the probability that the hypothesis is true.
-
-When interpreting an empirical result, economists should therefore look beyond whether $p < 0.05$. The estimated effect size, confidence interval, sample size, research design, and economic importance of the result are often just as important as the p-value itself.
-
-Understanding this distinction makes hypothesis testing much less mysterious and helps prevent one of the most persistent statistical mistakes in applied research.
+::: {.callout-note collapse="true" title="View the R code"}
+```{r}
+#| label: show-code
+#| results: asis
+cat("```r\n", paste(readLines(script, warn = FALSE), collapse = "\n"), "\n```\n", sep = "")
+```
+:::
