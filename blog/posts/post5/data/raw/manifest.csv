@@ -1,0 +1,3 @@
+file,source_url,access_date,description,md5,sha256
+population_2025.csv,https://www2.census.gov/programs-surveys/popest/datasets/2020-2025/state/totals/NST-EST2025-ALLDATA.csv,2026-10-17,"Census Population Estimates, Vintage 2025; July 2024-July 2025",e8cc8ac590ffe5708a2341aea654a115,92188e29cb0a67dcf95afa7d6c47359409782f086478b70ea4128eb70e223ca9
+states_2024_albers.json,https://tigerweb.geo.census.gov/arcgis/rest/services/Generalized_ACS2024/State_County/MapServer/9/query?where=1%3D1&outFields=GEOID%2CNAME%2CSTUSAB&outSR=5070&f=json&returnGeometry=true,2026-10-17,Census TIGERweb 2024 states 20M; service-transformed EPSG:5070,f3b95656b3d151fc19ff8f962a1a0254,6956b8e4e68e9fb644f5f9b5c76a6e97d058de83e9bd0a5b5b36b497c85d8287

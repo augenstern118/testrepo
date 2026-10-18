@@ -1,0 +1,125 @@
+---
+title: "Florida and South Carolina: Two Different Growth Stories"
+author: "Junzheng Yang"
+date: "2026-10-17"
+description: "Two Census maps show why population growth and domestic migration tell different stories—and why the distinction matters for local planning."
+categories: [GIS, R, population, economic geography]
+image: results/01_population_growth_map.png
+editor: source
+format:
+  html:
+    toc: false
+    code-fold: true
+execute:
+  echo: false
+  warning: false
+  message: false
+  error: false
+  cache: false
+  freeze: false
+---
+
+```{r setup, include=FALSE}
+script <- if (file.exists("R/run_project.R")) {
+  "R/run_project.R"
+} else {
+  "blog/posts/post5/R/run_project.R"
+}
+source(script)
+a <- post5_result
+d <- a$states
+post_dir <- dirname(dirname(normalizePath(script, winslash = "/")))
+get_state <- function(name) d[d$state == name, ]
+sc <- get_state("South Carolina")
+fl <- get_state("Florida")
+pa <- get_state("Pennsylvania")
+ca <- get_state("California")
+id <- get_state("Idaho")
+count <- function(x) format(round(x), big.mark = ",", scientific = FALSE, trim = TRUE)
+rate <- function(x) sprintf("%.1f", x)
+# These signs and rankings support the fixed prose. Review it if inputs change.
+stopifnot(sc$domestic > sc$international, fl$international > fl$domestic,
+          pa$domestic < 0, pa$population_change > 0, ca$population_change < 0,
+          sc$population_change_rate == max(d$population_change_rate))
+```
+
+Florida added **`r count(fl$population_change)` residents** between July 2024 and July 2025. South Carolina added **`r count(sc$population_change)`**. **Which population flows account for those gains, and how do their contributions differ across states?**
+
+The Census estimates give different answers. **South Carolina's growth was mainly a domestic-migration story; Florida's largest contribution came from net international migration.** Mapping the two measures separately shows why “a growing state” is too broad a label for understanding demographic change.
+
+This matters for economic planning. More residents can mean more demand for homes, transportation, and services. But total growth alone cannot tell a community which demographic flows it needs to understand.
+
+## First, put growth on a comparable scale
+
+I join the [Census Bureau's Vintage 2025 population estimates](https://www.census.gov/data/tables/time-series/demo/popest/2020s-state-total.html) to official state polygons using two-digit state FIPS identifiers. The analysis covers all 50 states. Maps show the contiguous 48; Alaska and Hawaii remain in the downloadable comparison. Washington, D.C., and Puerto Rico are excluded from this state comparison.
+
+Raw counts favor large states. Instead, each map expresses change **per 1,000 residents**, using the average of the July 2024 and July 2025 populations. A value of 10 means a gain equivalent to 10 people for every 1,000 residents. Both maps use identical colors and limits, so their shades are directly comparable.
+
+```{r growth-map, fig.cap="Annual population change per 1,000 residents. Selected states are labeled; all 50 states appear in the saved comparison. Boundaries are generalized Census polygons in an equal-area projection.", fig.alt="Choropleth of the contiguous United States. South Carolina and Idaho show especially strong population growth per resident, while several northeastern and western states show much weaker growth.", fig.width=10.5, fig.height=7.1, out.width="100%"}
+a$growth_map
+```
+
+South Carolina leads at **`r rate(sc$population_change_rate)` additional residents per 1,000**, with Idaho close behind at `r rate(id$population_change_rate)`. Florida gains `r rate(fl$population_change_rate)`. Parts of the South and Mountain West stand out, but a color indicating growth does not identify its source.
+
+## Now map domestic migration
+
+Domestic migration is arrivals from elsewhere in the United States minus departures to other U.S. locations. It is a **net balance**, not the number of people who moved in. A state can have many arrivals and departures at the same time.
+
+```{r domestic-map, fig.cap="Net domestic migration per 1,000 residents. The color scale matches the first map. Differences between the maps reflect the other components of population change.", fig.alt="Choropleth on the same scale as the growth map. South Carolina and Idaho have strong domestic inflows; Florida and Texas are much lighter. California and much of the Northeast show domestic outflows.", fig.width=10.5, fig.height=7.1, out.width="100%"}
+a$domestic_map
+```
+
+South Carolina remains dark teal: its domestic gain is `r rate(sc$domestic_rate)` per 1,000 residents. Florida becomes much lighter, at only `r rate(fl$domestic_rate)`. Similar growth colors on the first map can therefore conceal quite different migration balances.
+
+The distinction also matters outside the South. **`r a$summary$growing_despite_domestic_loss` of the 50 states grew despite net domestic outflows.** Pennsylvania, for example, gained `r rate(pa$population_change_rate)` residents per 1,000 overall while losing `r rate(abs(pa$domestic_rate))` through domestic migration. Calling it simply a state people are “leaving” would miss the rest of its population balance.
+
+## What fills the gap?
+
+Population change combines net domestic migration, net international migration, births minus deaths, and a small Census reconciliation adjustment. These components classify flows; they are not mutually exclusive groups of people. “International” is a geographic category, not a citizenship or visa category; it also includes returning U.S.-born residents and other movements covered by the Census definition.
+
+```{r components, fig.cap="Four illustrative states chosen to contrast demographic balances. Positive bars extend right and negative bars left; the diamond marks their signed sum. Small residual adjustments are retained.", fig.alt="Diverging component bars for South Carolina, Florida, Pennsylvania and California. Domestic migration dominates South Carolina's gain; international migration dominates Florida's. Pennsylvania grows despite domestic and natural losses; California's positive components nearly offset its domestic loss.", fig.width=10.5, fig.height=5.6, out.width="100%"}
+a$component_plot
+```
+
+Florida's net international gain was `r count(fl$international)`, compared with a domestic gain of `r count(fl$domestic)`. In Pennsylvania, international migration more than offset both domestic outflows and deaths exceeding births. California shows the reverse outcome: births exceeding deaths and international migration nearly offset its domestic loss, but its estimated population still edged down.
+
+These are one-year accounting contributions, not proof of why people chose a destination. The figures do not establish effects of taxes, housing costs, jobs, or state policies. Nor do they reveal migrants' ages, occupations, or service needs. State averages also conceal differences between cities and rural areas. The estimates may be revised; a small one-year change does not establish a lasting trend.
+
+**The takeaway: locate where population grew or declined, then examine the components before explaining the pattern.** Domestic migration was central to South Carolina's gain, while international migration contributed most to Florida's. These balances provide a starting point for local planning; identifying particular housing or service needs requires additional local and demographic data.
+
+::: {.callout-note collapse="true"}
+## Data, GIS methods, and replication
+
+Population: [NST-EST2025-ALLDATA](https://www2.census.gov/programs-surveys/popest/datasets/2020-2025/state/totals/NST-EST2025-ALLDATA.csv), released January 2026; [variable definitions](https://www2.census.gov/programs-surveys/popest/technical-documentation/file-layouts/2020-2025/NST-EST2025-ALLDATA.pdf) and [methodology](https://www2.census.gov/programs-surveys/popest/technical-documentation/methodology/2020-2025/methods-statement-v2025.pdf). The analysis isolates July 2024-July 2025 using one consistent vintage, not a mixture of releases. These are published population estimates, not an unweighted microdata sample.
+
+Geography: [Census TIGERweb Generalized ACS 2024 State/County service, States 20M layer](https://tigerweb.geo.census.gov/arcgis/rest/services/Generalized_ACS2024/State_County/MapServer/9). The public service supplies generalized polygon coordinates transformed to **EPSG:5070, NAD83 / Conus Albers**, an equal-area projection for the contiguous United States. R draws those cached projected coordinates with `ggplot2`; no local GIS system libraries are required. The 2024 outline vintage is separate from the 2025 population-estimate vintage.
+
+All inputs were downloaded October 17, 2026. Exact URLs and hashes are in `data/raw/manifest.csv`. The code verifies 50 unique state matches, agreement of state names, 48 mapped states, valid coordinates, and exact reconciliation of the population components. Polygon vertex order and separate rings are preserved; joins use FIPS codes rather than names.
+
+Raw files are included, so rendering does not contact either data service. `R/download_data.R` reproduces acquisition to a separate folder if needed. Numeric statements, figures, join checks, tables, and comparison files are generated by R. The [Post 5 README](https://github.com/augenstern118/testrepo/tree/main/blog/posts/post5) gives replication and publishing instructions.
+:::
+
+::: {.callout-note collapse="true"}
+## Exact component values
+
+```{r component-table}
+knitr::kable(a$display,
+  caption = "Components and total change per 1,000 average residents, July 2024-July 2025. Components may differ slightly from the displayed total because of rounding.")
+```
+:::
+
+::: {.callout-note collapse="true"}
+## View the R preparation and GIS code
+
+```{r preparation-code, results='asis'}
+cat("\n```r\n", paste(readLines(file.path(post_dir, "R/01_prepare.R")), collapse = "\n"), "\n```\n", sep = "")
+```
+:::
+
+::: {.callout-note collapse="true"}
+## View the R analysis and figure code
+
+```{r analysis-code, results='asis'}
+cat("\n```r\n", paste(readLines(file.path(post_dir, "R/02_analyze.R")), collapse = "\n"), "\n```\n", sep = "")
+```
+:::

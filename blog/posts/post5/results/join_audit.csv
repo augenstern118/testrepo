@@ -1,0 +1,51 @@
+"fips","state","boundary_match","mapped_in_lower48"
+"01","Alabama",TRUE,TRUE
+"02","Alaska",TRUE,FALSE
+"04","Arizona",TRUE,TRUE
+"05","Arkansas",TRUE,TRUE
+"06","California",TRUE,TRUE
+"08","Colorado",TRUE,TRUE
+"09","Connecticut",TRUE,TRUE
+"10","Delaware",TRUE,TRUE
+"12","Florida",TRUE,TRUE
+"13","Georgia",TRUE,TRUE
+"15","Hawaii",TRUE,FALSE
+"16","Idaho",TRUE,TRUE
+"17","Illinois",TRUE,TRUE
+"18","Indiana",TRUE,TRUE
+"19","Iowa",TRUE,TRUE
+"20","Kansas",TRUE,TRUE
+"21","Kentucky",TRUE,TRUE
+"22","Louisiana",TRUE,TRUE
+"23","Maine",TRUE,TRUE
+"24","Maryland",TRUE,TRUE
+"25","Massachusetts",TRUE,TRUE
+"26","Michigan",TRUE,TRUE
+"27","Minnesota",TRUE,TRUE
+"28","Mississippi",TRUE,TRUE
+"29","Missouri",TRUE,TRUE
+"30","Montana",TRUE,TRUE
+"31","Nebraska",TRUE,TRUE
+"32","Nevada",TRUE,TRUE
+"33","New Hampshire",TRUE,TRUE
+"34","New Jersey",TRUE,TRUE
+"35","New Mexico",TRUE,TRUE
+"36","New York",TRUE,TRUE
+"37","North Carolina",TRUE,TRUE
+"38","North Dakota",TRUE,TRUE
+"39","Ohio",TRUE,TRUE
+"40","Oklahoma",TRUE,TRUE
+"41","Oregon",TRUE,TRUE
+"42","Pennsylvania",TRUE,TRUE
+"44","Rhode Island",TRUE,TRUE
+"45","South Carolina",TRUE,TRUE
+"46","South Dakota",TRUE,TRUE
+"47","Tennessee",TRUE,TRUE
+"48","Texas",TRUE,TRUE
+"49","Utah",TRUE,TRUE
+"50","Vermont",TRUE,TRUE
+"51","Virginia",TRUE,TRUE
+"53","Washington",TRUE,TRUE
+"54","West Virginia",TRUE,TRUE
+"55","Wisconsin",TRUE,TRUE
+"56","Wyoming",TRUE,TRUE
