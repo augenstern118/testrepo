@@ -103,7 +103,7 @@ Raw files are included, so rendering does not contact either data service. `R/do
 ## Exact component values
 
 ```{r component-table}
-knitr::kable(a$display,
+knitr::kable(a$display, row.names = FALSE,
   caption = "Components and total change per 1,000 average residents, July 2024-July 2025. Components may differ slightly from the displayed total because of rounding.")
 ```
 :::
