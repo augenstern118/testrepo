@@ -1,0 +1,6 @@
+__pycache__/
+data/download_cache/
+data/reacquired/
+.venv/
+index.html
+index_files/

@@ -1,0 +1,6 @@
+model,label,parent,child,ige,se,lower,upper,children,mothers
+single_both,Single year in both generations,parent_single,mature_single,0.017042957466816798,0.05484914275037776,-0.09046136232392363,0.12454727725755721,356,290
+average_parent,Average mother; single child year,parent_average,mature_single,0.09841129824831932,0.07438605422738785,-0.047385368037360875,0.2442079645339995,356,290
+average_both,Average both generations,parent_average,mature_average,0.0842571094063505,0.0762815984040304,-0.06525482346554906,0.23376904227825007,356,290
+early_single,Child early 20s: single year,parent_average,early_single,0.012435876730564777,0.06799372333535117,-0.1208318210067235,0.14570357446785306,356,290
+early_average,Child ages 20–25: average,parent_average,early_average,0.09347849032920232,0.055564102676738,-0.015427150917204174,0.2023841315756088,356,290

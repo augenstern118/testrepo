@@ -1,0 +1,5 @@
+data/raw/*.csv text eol=lf
+data/raw/*.txt text eol=lf
+data/raw/*.json text eol=lf
+*.sqlite -text
+*.png -text

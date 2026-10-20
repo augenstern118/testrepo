@@ -1,0 +1,45 @@
+{
+  "downloaded_utc": "2026-10-20",
+  "data_kind": "Real public-use survey data; no generated or simulated incomes",
+  "nlsy79": {
+    "url": "https://www.bls.gov/nls/getting-started/nlsy79_all_1979-2018.zip",
+    "archive_sha256": "a5bb09e0795b2af4386ac4e4e23f73bde7dc5198a3ae538b67925edfba53bedc",
+    "member": "nlsy79_all_1979-2018.csv",
+    "rows": 12686
+  },
+  "nlscya": {
+    "url": "https://www.bls.gov/nls/getting-started/nlscya_all_1979-2018.zip",
+    "archive_sha256": "0e9305a9eb09b2db2f51172a4d673d7861b5790ef7e9ae46d0e9081dc4fa8ec5",
+    "member": "nlscya_all_1979-2018.csv",
+    "rows": 11545
+  },
+  "cpi": {
+    "url": "https://download.bls.gov/pub/time.series/cu/cu.data.1.AllItems",
+    "series_id": "CUUR0000SA0",
+    "period": "M13",
+    "base_dollar_year": 2018,
+    "description": "CPI-U, U.S. city average, all items, not seasonally adjusted, annual average"
+  },
+  "included_files": [
+    {
+      "file": "codebook_selected.txt",
+      "sha256": "8caf7d486766dc5b07d1b86a99c9ec588c51db5728420267909b502fbe459d03"
+    },
+    {
+      "file": "cpi_u_annual.csv",
+      "sha256": "0729d9aa0b68f25b374f33d2ff6a78eebfce54c6b116652d47f4ad40f892a58a"
+    },
+    {
+      "file": "nlscya_selected.csv",
+      "sha256": "b547527230e6bff77c86f13cb187a5938d1de4174235ca5b74924e7a83d7f7dd"
+    },
+    {
+      "file": "nlsy79_selected.csv",
+      "sha256": "0b82d9af9fc5815276664224343d5924d60e4f4228dca63d2b451e3dd7e9788b"
+    },
+    {
+      "file": "variables.csv",
+      "sha256": "a31de606071c08e37f56bbdd3b48820314620ea44a61774b25d21a8eee3d47a1"
+    }
+  ]
+}

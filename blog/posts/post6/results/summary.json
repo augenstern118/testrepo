@@ -1,0 +1,21 @@
+{
+  "children": 356,
+  "mothers": 290,
+  "child_birth_min": 1973,
+  "child_birth_max": 1985,
+  "parent_years_min": 3,
+  "parent_years_max": 4,
+  "early_years_min": 2,
+  "early_years_max": 3,
+  "mature_years_min": 2,
+  "mature_years_max": 4,
+  "parent_single_mean_age": 37.587078651685395,
+  "early_single_mean_age": 22.6123595505618,
+  "mature_single_mean_age": 34.58988764044944,
+  "single_both": 0.017042957466816798,
+  "average_parent": 0.09841129824831932,
+  "average_both": 0.0842571094063505,
+  "early_single": 0.012435876730564777,
+  "early_average": 0.09347849032920232,
+  "ten_percent_association": 0.8062891684824658
+}

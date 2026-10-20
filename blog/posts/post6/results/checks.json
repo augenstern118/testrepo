@@ -1,0 +1,10 @@
+{
+  "unique_child_ids": true,
+  "all_children_have_documented_mother": true,
+  "unique_person_income_years": true,
+  "complete_cpi_coverage": true,
+  "matched_children": 356,
+  "matched_mothers": 290,
+  "minimum_parent_years": 3,
+  "minimum_child_years_per_window": 2
+}

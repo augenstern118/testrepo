@@ -1,0 +1,17 @@
+---
+title: "One Family Link, Several Measures of Income Persistence"
+author: "Junzheng Yang"
+date: "2026-10-20"
+description: "A Python and SQL tutorial using real NLSY mother–child data to show how income averaging and measurement age affect an intergenerational elasticity."
+categories: [Python, SQL, income mobility, longitudinal data]
+image: results/01_single_vs_average.png
+editor: source
+format:
+  html:
+    toc: false
+    code-fold: true
+execute:
+  eval: false
+---
+
+{{< include results/_article.md >}}
