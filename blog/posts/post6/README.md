@@ -9,6 +9,28 @@ microdata**, not simulated data. It estimates **maternal wage-and-salary
 earnings persistence in a selected matched sample**, not a national causal
 effect or the persistence of total parental family income.
 
+## Rendering and editing the article
+
+`index.qmd` includes the generated `results/_article.md` and the saved figures.
+Quarto does not execute Python during Render. To render the saved results,
+run in the RStudio **Terminal** from the website root:
+
+```bash
+quarto render blog/posts/post6/index.qmd
+quarto render blog/index.qmd
+```
+
+For durable prose changes, edit `_article_template.md`, then rerun the Python
+analysis described below. Do not edit `results/_article.md` directly: it is
+regenerated. After changing the template, Python analysis, SQL, or inputs,
+**rerun Python before rendering** so the article, tables, and figures agree.
+Keep the leading underscores on these two Markdown filenames; they identify
+supporting content rather than separate blog articles.
+
+The saved page can be rendered without a Python execution step, Jupyter,
+or reticulate. Reproducing or changing the analysis requires the Python
+environment below. Open the repository's `.Rproj` for website work in RStudio.
+
 ## Reproduce the complete analysis
 
 Use Python **3.11 or newer** with SQLite support. In the RStudio **Terminal**,
@@ -31,14 +53,14 @@ py -3 blog/posts/post6/code/run_analysis.py
 Use the same interpreter for installation and analysis. SQL is executed by
 Python's built-in `sqlite3` module. The only external packages are numpy,
 pandas, and matplotlib; they normally install as Windows binary packages.
-`results/versions.json` records the versions used for the supplied outputs.
+`results/versions.json` records the versions used for the saved outputs.
 
 The script resolves paths relative to its own location. It works from the
 website root, the `post6` folder, or another directory, including Windows paths
-containing spaces. No hard-coded `E:/...` paths are used. No network is needed
-for analysis once the packages are installed.
+containing spaces. No network is needed for the default analysis once the
+packages are installed.
 
-Expected supplied results: 356 children from 290 mothers; log-log slopes
+Expected results for the included inputs: 356 children from 290 mothers; log-log slopes
 about 0.017 (single year in each generation), 0.098 (average mother, single
 later child year), and 0.084 (averages in both generations). Confidence
 intervals are wide and include zero. These expectations refer to this fixed
@@ -231,3 +253,13 @@ documented family links, CPI coverage, income-year counts, plausible birth-year
 ordering and one row per matched child. Results are generated from data and
 queries; numeric statements and SQL displayed in the article are inserted
 programmatically, rather than manually copied from output.
+
+## Updating and publishing
+
+From the website root, rerun the analysis and render the post and blog listing
+using the commands above. Review the results, then commit changed Post 6
+source/input files, generated outputs, and regenerated `docs/` files. Leave
+large archive caches and `data/reacquired/` out of Git.
+
+- **Published article:** https://augenstern118.github.io/testrepo/blog/posts/post6/
+- **Repository:** https://github.com/augenstern118/testrepo

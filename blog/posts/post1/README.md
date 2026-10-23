@@ -6,9 +6,6 @@ Explain why a p-value is a probability of possible test results under a null
 model, not the probability that the hypothesis is true. A hypothetical
 job-training decision connects that distinction to benefit-cost reasoning.
 
-The article was revised October 8, 2026 to address feedback about unsupported
-claims of widespread misunderstanding and an overly strong conclusion.
-
 ## Folder structure
 
 - `index.qmd`: Quarto article, generated table, and expandable R code.
@@ -28,6 +25,30 @@ if these are missing, run `install.packages(c("knitr", "rmarkdown"))` once
 in the RStudio Console. No other analysis packages, Rtools, downloads, or
 API credentials are required. Rendering does not retrieve the cited articles.
 
+## Replication
+
+Open the repository's `.Rproj` file in RStudio. From the website root,
+run in the RStudio **Console** to regenerate the calculations, table,
+figure, plot data, and session information:
+
+```r
+source("blog/posts/post1/R/analysis.R")
+```
+
+For a session already inside `blog/posts/post1`, use `source("R/analysis.R")`.
+Other working directories are not supported by this script.
+
+In the RStudio **Terminal**, from the website root:
+
+```bash
+quarto render blog/posts/post1/index.qmd
+quarto render blog/index.qmd
+```
+
+Rendering the article also runs `R/analysis.R`; the separate Console command
+is useful when regenerating results without rendering. The inline values and
+displayed table are calculated from the CSV input. Review the generated page
+before publishing. The website output directory is `docs/`.
 
 ## Model and limitations
 

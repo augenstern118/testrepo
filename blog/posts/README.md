@@ -1,78 +1,102 @@
 # Junzheng Yang's Economics Blog
 
-Quarto website for Computational Methods for Economists. Analysis code is
-written in R and can be run in RStudio. Source posts are under `blog/posts/`;
-the rendered website is under `docs/`, as configured in `_quarto.yml`.
+Quarto website for Computational Methods for Economists. Posts 1–5 use R;
+Post 6 uses SQL within Python. Each post includes its own methods, inputs,
+code, generated results, and replication instructions.
 
 - **Website:** https://augenstern118.github.io/testrepo/
 - **Blog:** https://augenstern118.github.io/testrepo/blog/
+- **Repository:** https://github.com/augenstern118/testrepo
 
-## Find the posts and their code
+## Posts and replication
 
-| Post | Article source | Replication instructions |
-|---|---|---|
-| 1: Interpreting a p-value in a funding decision | [index.qmd](blog/posts/post1/index.qmd) | [README](blog/posts/post1/README.md) |
-| 2: Web scraping for a job-search shortlist | [index.qmd](blog/posts/post2/index.qmd) | [README](blog/posts/post2/README.md) |
-| 3: IPUMS CPS college earnings comparisons | [index.qmd](blog/posts/post3/index.qmd) | [README](blog/posts/post3/README.md) |
-| 4: Housing prices, mortgage rates and payment burden | [index.qmd](blog/posts/post4/index.qmd) | [README](blog/posts/post4/README.md) |
-| 5: GIS maps of population growth and migration | [index.qmd](blog/posts/post5/index.qmd) | [README](blog/posts/post5/README.md) |
+| Post | Question or topic | Article source | Replication instructions |
+|---|---|---|---|
+| 1 | What does a p-value establish in a funding decision? | [index.qmd](blog/posts/post1/index.qmd) | [README](blog/posts/post1/README.md) |
+| 2 | Where should an economics student start a job search? | [index.qmd](blog/posts/post2/index.qmd) | [README](blog/posts/post2/README.md) |
+| 3 | How does the college earnings premium vary? | [index.qmd](blog/posts/post3/index.qmd) | [README](blog/posts/post3/README.md) |
+| 4 | How did mortgage rates change the payment burden? | [index.qmd](blog/posts/post4/index.qmd) | [README](blog/posts/post4/README.md) |
+| 5 | Do state population growth and domestic migration tell the same story? | [index.qmd](blog/posts/post5/index.qmd) | [README](blog/posts/post5/README.md) |
+| 6 | How do income averaging and measurement age change an IGE? | [index.qmd](blog/posts/post6/index.qmd) | [README](blog/posts/post6/README.md) |
 
-Each post's README explains its own inputs, packages, assumptions, outputs,
-and replication commands. CPS raw-data requirements are documented separately
-in Post 3; they are not required to reproduce Post 5.
+## Working from the repository
 
-## Reproduce Blog Post 5
+Clone or download this repository, then open `Junzheng Yang-website.Rproj`
+in RStudio. Commands described as running from the **website root** start
+in the directory containing `_quarto.yml` and this README. Run R code in
+the RStudio **Console**; run `quarto`, `python`, and `git` commands in the
+**Terminal**. RStudio is convenient but not required for command-line use.
 
-Open this website's `.Rproj` file in RStudio. From the website root, run in the
-**Console**:
+Install R and Quarto for the R articles, plus each post's documented R
+packages. Rendering R code uses `knitr` and `rmarkdown`; if missing, install
+them once in the R Console:
 
 ```r
-source("blog/posts/post5/setup.R")
-source("blog/posts/post5/R/run_project.R")
+install.packages(c("knitr", "rmarkdown"))
 ```
 
-Then run in the RStudio **Terminal**:
+Post 6 analysis requires Python 3.11 or newer and the packages in its
+`requirements.txt`. SQLite is supplied through Python's built-in `sqlite3`.
+The post's README gives both `python` and Windows `py -3` commands.
+
+## Inputs and generated results
+
+- Post 1 uses explicitly hypothetical teaching inputs.
+- Posts 2, 4, and 5 include their archived public-source inputs; acquisition
+  scripts are optional when reproducing those fixed snapshots.
+- Post 3 requires a separately obtained IPUMS CPS ASEC extract. Its README
+  lists the exact samples and variables. Raw CPS microdata are excluded from
+  Git; do not upload them when publishing changes.
+- Post 6 includes selected columns from real public-use NLSY files and a
+  saved CPI series. The main analysis uses these included inputs. Reacquiring
+  the full source archives is optional.
+
+The default analyses need no data downloads once their required inputs and
+packages are installed. Source dates, definitions, transformations, limitations,
+and output locations are documented separately for each post.
+
+## Rebuild the website
+
+Follow the relevant post's README to regenerate its analysis first. For
+Post 6, rerun Python after changing analysis code, SQL, inputs, or its article
+template; Quarto publishes the saved generated article rather than executing
+Python during Render.
+
+To rebuild one article, for example Post 2, and refresh the listing, run in
+the Terminal from the website root:
 
 ```bash
-quarto render blog/posts/post5/index.qmd
+quarto render blog/posts/post2/index.qmd
 quarto render blog/index.qmd
 ```
 
-The [Post 5 README](blog/posts/post5/README.md) documents all files, formulas,
-GIS decisions and limitations. Both official Census inputs are included, so
-reproduction needs no network access. The analysis generates two maps and a
-component chart using R; no local spatial system libraries are needed.
+To rebuild the entire site, run:
 
-- [Original data manifest](blog/posts/post5/data/raw/manifest.csv)
-- [Preparation and GIS code](blog/posts/post5/R/01_prepare.R)
-- [Analysis and figures](blog/posts/post5/R/02_analyze.R)
-- [All 50 states](blog/posts/post5/results/state_comparison.csv)
-- [FIPS join audit](blog/posts/post5/results/join_audit.csv)
+```bash
+quarto render
+```
 
-For earlier posts, use the corresponding README in the table above.
+A full render executes the R posts and therefore requires the Post 3 CPS
+extract and all R dependencies. It does not replace the separate Python
+analysis step for Post 6. To preview the site locally, run `quarto preview`.
 
-## Website layout
+`_quarto.yml` sets `output-dir: docs`. Review the rendered pages before
+publishing, then commit the changed source files and regenerated `docs/`
+files. Do not edit generated HTML by hand. A change confined to README files
+can be committed and pushed without rerunning the statistical analyses.
+
+## Repository layout
 
 | Location | Purpose |
 |---|---|
-| `_quarto.yml` | Site navigation, theme and `docs` output directory |
+| `_quarto.yml` | Website configuration and output directory |
+| `Junzheng Yang-website.Rproj` | RStudio project |
 | `index.qmd`, `bio.qmd`, `resume.qmd` | Main website pages |
 | `blog/index.qmd` | Blog listing |
-| `blog/posts/post*/` | Article sources, code, inputs and generated results |
-| `docs/` | Generated site files used by GitHub Pages |
+| `blog/posts/post1/` through `post6/` | Article sources and replication materials |
+| `docs/` | Rendered website used by GitHub Pages |
 | `images/`, `files/`, `styles.css` | Shared website assets |
 
-## Update the published site
-
-Render the changed post and `blog/index.qmd`, then commit source files and
-regenerated `docs/` files. For Post 5:
-
-```bash
-git add README.md blog/posts/post5 docs
-git commit -m "Add Post 5 GIS population growth analysis"
-git push origin main
-```
-
-Keep the existing GitHub Pages configuration. Check the published page after
-deployment completes; the published URL alone is not a substitute for the
-source and replication instructions above.
+Post-level READMEs distinguish raw inputs, analysis scripts, processed data,
+and generated results. Files under `results/` and `data/processed/` should be
+regenerated by the documented workflow rather than changed manually.

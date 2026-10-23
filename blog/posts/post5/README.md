@@ -7,7 +7,7 @@
 - **Data sources and hashes:** [data/raw/manifest.csv](data/raw/manifest.csv)
 - **All 50 states:** [results/state_comparison.csv](results/state_comparison.csv)
 - **Geographic join checks:** [results/join_audit.csv](results/join_audit.csv)
-- **Expected published location:** `https://augenstern118.github.io/testrepo/blog/posts/post5/`
+- **Published article:** `https://augenstern118.github.io/testrepo/blog/posts/post5/`
 
 Question: Is recent state population growth mainly a story of domestic migration?
 Two Census choropleths compare total growth and net domestic migration. A third
@@ -16,20 +16,9 @@ The main article is written for a general audience; detailed methods and code
 are in expandable notes and this README. This is descriptive demographic
 accounting, not a causal analysis of migration decisions.
 
-## Install into the existing website
-
-Copy this entire `post5` folder to:
-
-`E:/coding/Junzheng Yang-website/blog/posts/post5/`
-
-Keep `R/`, `data/`, `results/`, `setup.R` and `index.qmd` together; do not add
-another nested `post5` directory. The package's separate root `README.md`
-belongs at the website root, alongside `_quarto.yml`. It gives graders direct
-links to each post's code and replication instructions.
-
 ## Reproduce in RStudio
 
-Use R >= 4.1 and Quarto. Open the existing website's `.Rproj` file. From the
+Use R >= 4.1 and Quarto. Open the repository's `.Rproj` file in RStudio. From the
 website root, run in the RStudio **Console**:
 
 ```r
@@ -204,32 +193,14 @@ hashes are in [the manifest](data/raw/manifest.csv).
 - [Vintage 2025 methodology](https://www2.census.gov/programs-surveys/popest/technical-documentation/methodology/2020-2025/methods-statement-v2025.pdf)
 - [TIGERweb 2024 state service and query interface](https://tigerweb.geo.census.gov/arcgis/rest/services/Generalized_ACS2024/State_County/MapServer/9)
 
-## Assignment/rubric coverage
+## Updating and publishing
 
-| Criterion | Where it is addressed |
-|---|---|
-| 1. Question and motivation | Opening question; implications for local economic planning |
-| 2. Clear explanation | Net flows and per-1,000 rates explained in plain language |
-| 3. Interpretation and takeaway | Maps compared; accounting distinguished from causation; bounded conclusion |
-| 4. Data and presentation | Official sources, years, units, scope, captions and color legends |
-| 5. Repository organization | Root navigation, this file map, separate R/data/results folders |
-| 6. Reproducibility and coding | Cached inputs, one runner, generated values/figures/tables, validation |
-| 7. Appropriate spatial data | Census polygons joined to state estimates by FIPS |
-| 8. Central substantive map | Two choropleths anchor the article |
-| 9. Effective geographic communication | Equal-area coordinates, shared zero-centered scale, rates and readable labels |
-| 10. Explanation of spatial pattern | Different growth components; South Carolina/Florida contrast and counterexamples |
+After changing analysis code or inputs, rerun `R/run_project.R`, render the
+article and `blog/index.qmd`, and inspect the local pages. Commit the changed
+Post 5 source/input files, generated data/results, and regenerated `docs/`
+files. Source scripts, manifests, and data definitions document replication;
+generated HTML should not be edited by hand.
 
-## Publish from the existing website
-
-This project's `_quarto.yml` outputs to `docs`. After rendering the article
-and `blog/index.qmd`, inspect the local preview and run in the Terminal:
-
-```bash
-git add README.md blog/posts/post5 docs
-git commit -m "Add Post 5 GIS population growth analysis"
-git push origin main
-```
-
-Commit the complete Post 5 source/data/results folder, the root navigation
-README, and regenerated `docs` files. Submit the published post URL and the
-GitHub repository URL. The supplied package does not publish automatically.
+See the [repository overview](../../../README.md) for website structure and
+publication. The [data dictionary](data/README.md) documents the input and
+processed fields.
