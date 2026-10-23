@@ -9,34 +9,6 @@ microdata**, not simulated data. It estimates **maternal wage-and-salary
 earnings persistence in a selected matched sample**, not a national causal
 effect or the persistence of total parental family income.
 
-## Publish in your existing RStudio website
-
-1. Copy the complete `post6` folder into `blog/posts/` in your website project.
-   Keep the existing `_quarto.yml`, earlier posts, and website files.
-2. Open your existing website `.Rproj` file in RStudio. Open
-   `blog/posts/post6/index.qmd` and click **Render**. All generated article text
-   and figures are supplied, so publishing the verified results does not need
-   Jupyter, reticulate, R packages, or a Python installation step during Render.
-3. In the RStudio **Terminal**, from the website root, update the listing:
-
-   ```bash
-   quarto render blog/posts/post6/index.qmd
-   quarto render blog/index.qmd
-   ```
-
-4. Review the site, then commit `blog/posts/post6/` and the regenerated `docs/`
-   files. Push to GitHub. Your existing output directory is `docs/`; do not
-   paste source code into generated HTML there.
-
-Expected article URL after deployment:
-`https://augenstern118.github.io/testrepo/blog/posts/post6/`
-
-`index.qmd` includes the programmatically generated `results/_article.md`.
-Render publishes these saved results; it does not silently run a different
-Python environment. **After changing the analysis, SQL, inputs, or article
-template, rerun Python before Render.** Edit `_article_template.md` for durable
-prose changes: rerunning Python regenerates `results/_article.md`.
-
 ## Reproduce the complete analysis
 
 Use Python **3.11 or newer** with SQLite support. In the RStudio **Terminal**,

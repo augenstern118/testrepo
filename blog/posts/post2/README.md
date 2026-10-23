@@ -17,9 +17,7 @@ outcomes for economics graduates.
 
 ## Replicate in RStudio
 
-Use R >= 4.1 and Quarto. Put this entire folder at `blog/posts/post2/` in your
-existing website. Open the website's `.Rproj` file in RStudio. Do not put a
-second `post2` folder inside the existing one.
+Use R >= 4.1 and Quarto.
 
 In the RStudio **Console**, from the website root:
 
@@ -186,19 +184,3 @@ Classification documentation checked October 8, 2026:
 - [2018 SOC classification principles and coding guidelines](https://www.bls.gov/soc/2018/soc_2018_class_prin_cod_guide.pdf)
 - [2018 SOC definitions](https://www.bls.gov/soc/2018/soc_2018_definitions.pdf)
 - Financial analysts' Employment Projections table identifies codes 13-2051 and 13-2054.
-
-## Publish and submit
-
-This existing website outputs to `docs/`. After rendering both the post and
-blog index, review your local preview and use the Terminal from the website root:
-
-```bash
-git add README.md blog/posts/post2 docs
-git commit -m "Revise Post 2 classification and reproducibility"
-git push origin main
-```
-
-Submit the article URL and repository URL. Commit all Post 2 source, archived
-HTML, metadata, processed data, results, and README, plus the updated website
-output. The repository-root README links directly to the post's analysis and
-replication instructions so a reviewer can find them immediately.

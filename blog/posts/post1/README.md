@@ -28,41 +28,6 @@ if these are missing, run `install.packages(c("knitr", "rmarkdown"))` once
 in the RStudio Console. No other analysis packages, Rtools, downloads, or
 API credentials are required. Rendering does not retrieve the cited articles.
 
-## Replication in RStudio
-
-1. Put the complete `post1` folder under `blog/posts/` in your existing website.
-   Replace the old `index.qmd` and keep the accompanying folders together.
-2. Open the website's `.Rproj` file.
-3. For calculations alone, run in the Console from the website root:
-
-   ```r
-   source("blog/posts/post1/R/analysis.R")
-   ```
-
-   Alternatively, from the `post1` folder run `source("R/analysis.R")`.
-   The script supports these two locations without changing your working directory.
-4. Render and update the blog listing in the RStudio **Terminal** from the
-   website root (the folder containing `_quarto.yml`):
-
-   ```bash
-   quarto render blog/posts/post1/index.qmd
-   quarto render blog/index.qmd
-   ```
-
-   Opening `index.qmd` and clicking **Render** also builds the article.
-   Re-rendering `blog/index.qmd` refreshes the title and thumbnail on the blog list.
-5. For this website, `_quarto.yml` sets `output-dir: docs`. Check the local
-   preview before committing the source folder and generated website files:
-
-   ```bash
-   git add blog/posts/post1 docs
-   git commit -m "Revise Post 1 motivation and interpretation"
-   git push origin main
-   ```
-
-   Commit generated changes to `docs/blog/index.html`, `docs/listings.json`,
-   `docs/search.json`, and the article assets when present. Adding `docs` covers
-   these files. GitHub Pages publication can take a few minutes.
 
 ## Model and limitations
 
