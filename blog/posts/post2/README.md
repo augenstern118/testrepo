@@ -1,185 +1,105 @@
 # Blog Post 2: Where Should an Economics Student Start the Job Search?
 
-## Start here
+- [Published article](https://augenstern118.github.io/testrepo/blog/posts/post2/)
+- [Article source](index.qmd)
+- [Analysis entry point](R/run_project.R)
+- [Original-source manifest](data/raw/manifest.csv)
 
-- **Published article:** https://augenstern118.github.io/testrepo/blog/posts/post2/
-- **Article source:** [index.qmd](index.qmd)
-- **One-command analysis:** [R/run_project.R](R/run_project.R)
-- **Original HTML evidence:** [data/raw/manifest.csv](data/raw/manifest.csv)
-- **Calculated comparison:** [results/career_comparison.csv](results/career_comparison.csv)
-- **Classification check:** [results/classification_audit.csv](results/classification_audit.csv)
+## Question and interpretation
 
-The article compares six BLS occupational profiles to help a quantitative
-student choose job searches. It distinguishes occupational classification
-from a worker's economics background and does not infer employment outcomes
-for economics graduates.
+Which occupations are useful starting points for an economics student's job
+search under explicit pay, growth and experience preferences? Six selected
+BLS Occupational Outlook Handbook profiles support a comparison, not an
+estimate of economics graduates' employment outcomes.
 
-## Replicate in RStudio
+The screen requires median annual pay of at least $85,000, projected growth
+of at least 10%, and no typical requirement for related work experience.
+It selects data science and operations research in the archived snapshot.
+These are hypothetical preferences, not BLS recommendations. Median pay is
+not starting pay; projected openings are not current vacancies or individual
+hiring probabilities. The code saves nine alternative threshold combinations.
 
-Use R >= 4.1 and Quarto. Open the repository's `.Rproj` file in RStudio.
+## Data and classification
 
-In the RStudio **Console**, from the website root:
+The six public Summary HTML fragments were captured on September 20, 2026.
+Pay refers to May 2025; projections cover 2025–2035. The manifest records
+source URLs, browser-DOM capture method and hashes. Rendering uses these
+fixed inputs rather than making new requests. `rvest` extracts the Quick
+Facts rows and annual-openings paragraph, then cleans formatting and checks
+missing values, unique profiles, reference years and archived-file integrity.
+
+BLS occupational codes classify work performed, not workers' academic
+backgrounds. An economics-trained financial analyst is not thereby a second
+record in the economist occupation. The compared profile coverage is:
+
+| Profile | SOC coverage |
+|---|---|
+| Data scientists | 15-2051 |
+| Economists | 19-3011 |
+| Operations research analysts | 15-2031 |
+| Market research analysts and marketing specialists | 13-1161 |
+| Management analysts | 13-1111 |
+| Financial analysts, combined | 13-2051; 13-2054 |
+
+`data/occupation_scope.csv` records author-documented classification metadata,
+reviewed October 8, 2026. The code rejects repeated component codes across
+comparison rows. Financial analysts' aggregate median and openings stay
+combined; subgroup medians cannot be recovered by splitting that median.
+The analysis does not add openings into a total for economics graduates,
+link individual workers, or estimate causal career-choice payoffs.
+
+## Replication
+
+Software: R 4.1 or later and Quarto. R dependencies are `rvest`, `dplyr`,
+`stringr`, `readr`, `ggplot2`, `scales`, `knitr` and `rmarkdown`.
+
+From the website root, containing `_quarto.yml`, run in the RStudio Console:
 
 ```r
-source("blog/posts/post2/setup.R")       # once; installs only missing packages
 source("blog/posts/post2/R/run_project.R")
 ```
 
-The default analysis reads the included HTML and requires no network access.
-It regenerates processed data, both charts, the displayed comparison table,
-the shortlist, classification tables/audit, sensitivity results, and session
-information. The runner restores the original working directory even on errors.
-From inside `blog/posts/post2`, use `source("setup.R")` and
-`source("R/run_project.R")` instead. Arbitrary other working directories are
-not supported: open the website project or the post folder.
-
-To build the article and refresh the blog listing, use the RStudio **Terminal**
-from the website root (where `_quarto.yml` is located):
+Then run in the RStudio Terminal:
 
 ```bash
 quarto render blog/posts/post2/index.qmd
 quarto render blog/index.qmd
 ```
 
-Opening the post's `index.qmd` and clicking **Render** also regenerates its
-analysis. The build stops if the main rankings or selected occupations conflict
-with the prose. Review all interpretation when intentionally changing inputs.
+Clicking Render in this article also runs the analysis. The workflow reads
+included inputs, saves numerical results and figures, and restores the
+working directory. If changed inputs invalidate the written interpretation,
+rendering stops so the article can be reviewed.
 
-The analysis needs `rvest`, `dplyr`, `stringr`, `readr`, `ggplot2`, and `scales`;
-rendering uses `knitr` and `rmarkdown`. `setup.R` installs missing core
-packages once. `httr2` is needed only for optional live collection; the
-archived-data analysis does not require it or an API key.
+## File organization
 
-## File map
-
-| Path relative to this folder | Role |
+| Location | Content |
 |---|---|
-| `index.qmd` | Short article; computed numbers/table; expandable method and code notes |
-| `setup.R` | Install missing core packages once |
-| `R/run_project.R` | Run the entire archived-data workflow |
-| `R/01_scrape.R` | rvest extraction, cleaning, validation, optional collection |
-| `R/02_analyze.R` | SOC coverage audit, preference screen, sensitivity and figures |
-| `data/raw/*.html` | Six original Summary HTML fragments, preserved from public pages |
-| `data/raw/manifest.csv` | URLs, capture dates/method, original SHA-256 and checked MD5 hashes |
-| `data/occupation_scope.csv` | Author-documented occupation/SOC metadata, separate from scraped numbers |
-| `data/processed/careers.csv` | Cleaned numerical and text fields extracted from HTML |
-| `results/career_comparison.csv` | Clean data joined to classification metadata and calculated screen |
-| `results/display_table.csv` | Exact formatted values in the displayed table |
-| `results/classification_table.csv` | Occupation names, component codes, scopes, and work focus |
-| `results/classification_audit.csv` | One row per component SOC code; no repeated code allowed |
-| `results/shortlist.csv` | Profiles passing the stated preference screen |
-| `results/sensitivity.csv` | Shortlists under nine alternative thresholds |
-| `results/growth.png`, `results/openings.png` | Programmatically generated figures |
-| `results/sessionInfo.txt` | R/package versions used for the run |
+| `index.qmd` | Article, computed numbers, comparison table and figures |
+| `R/01_scrape.R` | HTML extraction, cleaning, validation and optional collection |
+| `R/02_analyze.R` | Classification check, preference screen, sensitivity and plots |
+| `R/run_project.R` | Rebuild the archived-data analysis |
+| `data/raw/` | Six HTML inputs and their provenance manifest |
+| `data/occupation_scope.csv` | Separately documented SOC metadata |
+| `data/processed/careers.csv` | Cleaned fields extracted from HTML |
+| `results/career_comparison.csv` | Numerical comparison and preference screen |
+| `results/display_table.csv` | Formatted values used in the article |
+| `results/classification_table.csv`, `classification_audit.csv` | Coverage and duplicate-code checks |
+| `results/shortlist.csv`, `sensitivity.csv` | Baseline and alternative shortlists |
+| `results/growth.png`, `openings.png` | Generated figures |
+| `results/sessionInfo.txt` | R and package versions |
 
-## Classification: jobs versus backgrounds
+The website's `docs/` directory contains the rendered submission. Statistics
+and figures are generated by the scripts rather than edited manually.
 
-The unit of comparison is a **BLS occupational profile**, not a degree holder,
-self-described economist, unique person, or individual job advertisement.
-A financial analyst may have economics training; that information is absent
-from these profiles. These data cannot measure how many financial analysts are
-also economists in that broader sense.
+## Sources and collection practices
 
-| Profile | Detailed SOC coverage | Scope |
-|---|---|---|
-| Data scientists | 15-2051 | One detailed occupation |
-| Economists | 19-3011 | One detailed occupation |
-| Operations research analysts | 15-2031 | One detailed occupation |
-| Market research analysts | 13-1161 | Market research analysts and marketing specialists |
-| Management analysts | 13-1111 | One detailed occupation |
-| Financial analysts | 13-2051; 13-2054 | Combined financial/investment analysts and financial risk specialists |
+Original BLS profiles are linked in the article and `data/raw/manifest.csv`.
+Classification sources are the [SOC definitions](https://www.bls.gov/soc/2018/soc_2018_definitions.pdf)
+and [coding guidelines](https://www.bls.gov/soc/2018/soc_2018_class_prin_cod_guide.pdf).
 
-SOC coding follows work performed and rules for mixed duties, not simply a
-worker's academic major or an employer's title. The analysis expands each
-profile's component codes and rejects duplicate codes across rows. This checks
-the documented mapping's coverage; it does not deduplicate real job listings
-or link individual workers, which are not observed. Counts are compared
-profile by profile; no total or market-share denominator is constructed for
-'economics graduates'. Shared skills or educational backgrounds are not
-interpreted as duplicate SOC records.
-
-The combined financial profile is retained because the archived Quick Facts
-and openings paragraph report that aggregate. It is clearly labeled as a
-two-code aggregate. Its median wage is not divided between components, and
-component medians are not averaged to reconstruct it. Component-specific
-comparisons would require additional data.
-
-## Data provenance and cleaning
-
-The six public BLS Summary articles were captured as browser DOM HTML
-fragments on **September 20, 2026**. They are the original archived fragments,
-not reconstructed numerical tables. Pay refers to **May 2025**; projections
-cover **2025-2035**. URLs and capture method are in `data/raw/manifest.csv`.
-The revision retains those files and measurement years rather than presenting
-the findings as a newly downloaded October sample. SHA-256 hashes are retained;
-base R's `tools::md5sum()` checks the additional MD5 hashes before extraction.
-
-`rvest::read_html()`, `html_elements()`, and `html_text2()` extract each Quick
-Facts row and the Summary's annual-openings sentence. Cleaning removes
-whitespace and currency/number formatting. Annual pay is the first amount in
-the wage field; hourly pay is deliberately excluded. Checks reject missing
-fields, duplicated profiles, incompatible reference years, invalid counts,
-changed archived bytes, and overlapping mapped SOC codes.
-
-Classification metadata was author-documented from BLS definitions and the
-financial profile's Employment Projections table, reviewed October 8, 2026.
-It is stored separately and labeled as metadata; it is not presented as an
-rvest estimate from the saved Summary fragment.
-
-## Interpretation and preference rule
-
-The screen is `median_pay_usd >= 85000 & growth_pct >= 10 & experience == "None"`.
-These are a hypothetical student's preferences, not BLS quality ratings.
-Sensitivity uses wage floors $80,000/$85,000/$90,000 and growth floors
-8%/10%/15%. The original snapshot selects data science and operations research
-at $85,000 and 10%; either the $90,000 floor or 15% floor leaves only data science.
-
-Median wages cover workers at multiple career stages, not starting salaries.
-Openings include replacement needs and all experience levels; they are not
-current vacancies, internships, openings reserved for economics graduates,
-or individual hiring probabilities. Wage gaps across occupations are not
-causal returns to choosing a career. The six profiles are selected, not a
-representative sample of the entire labor market. Geography, skills, work
-authorization and actual posting requirements must be checked separately.
-
-## Optional live collection
-
-This is **not needed** to reproduce the supplied article. In the RStudio
-Console from this `post2` folder:
-
-```r
-# Install httr2 once if it is missing: install.packages("httr2")
-source("R/01_scrape.R")
-source("R/02_analyze.R")
-refresh_sources(destination = "data/live") # choose a new directory each time
-fresh <- collect_data("data/live")
-fresh_analysis <- analyze_careers(fresh)
-```
-
-This optional run overwrites processed/results files with new calculations,
-while leaving `data/raw` intact. Re-run `R/run_project.R` to restore the archived
-analysis before rendering this article. Live changes need their own reviewed
-interpretation; the post always uses `data/raw` by default.
-
-The collector checks current robots.txt rules, requests only six public
-profiles with delays, and stops on HTTP/access errors without retrying or
-bypassing protections. No login, CAPTCHA, paywall, or other restriction is
-bypassed. Original direct HTTP acquisition was unavailable, so the default
-workflow explicitly reproduces the included browser-captured evidence.
-
-## Sources
-
-Six BLS OOH profiles, accessed September 20, 2026:
-
-- [Data scientists](https://www.bls.gov/ooh/math/data-scientists.htm)
-- [Economists](https://www.bls.gov/ooh/life-physical-and-social-science/economists.htm)
-- [Operations research analysts](https://www.bls.gov/ooh/math/operations-research-analysts.htm)
-- [Market research analysts](https://www.bls.gov/ooh/business-and-financial/market-research-analysts.htm)
-- [Management analysts](https://www.bls.gov/ooh/business-and-financial/management-analysts.htm)
-- [Financial analysts](https://www.bls.gov/ooh/business-and-financial/financial-analysts.htm)
-
-Classification documentation checked October 8, 2026:
-
-- [2018 SOC classification principles and coding guidelines](https://www.bls.gov/soc/2018/soc_2018_class_prin_cod_guide.pdf)
-- [2018 SOC definitions](https://www.bls.gov/soc/2018/soc_2018_definitions.pdf)
-- Financial analysts' Employment Projections table identifies codes 13-2051 and 13-2054.
+The optional live collector in `R/01_scrape.R` uses `httr2`, checks current
+robots rules, delays between public-page requests, and stops on access errors.
+It does not bypass authentication, paywalls, CAPTCHA or other restrictions.
+Live collection is unnecessary for replication and may produce different data
+if BLS updates its pages; new findings require a new interpretation.

@@ -2,23 +2,26 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.9.38">
+<meta name="generator" content="quarto-1.10.18">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Junzheng Yang">
 <meta name="dcterms.date" content="2026-09-20">
-<meta name="description" content="Six BLS occupational profiles offer a starting point for a job search, once we separate job duties from a worker’s economics background.">
+<meta name="description" content="Six BLS profiles help turn a broad economics job search into a shortlist, with clear limits on what the numbers can tell us.">
 
 <title>Where Should an Economics Student Start the Job Search? – Junzheng Yang</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
 */
-code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: min(4vw, 1.5em);}
-div.column{flex: auto; overflow-x: auto;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
@@ -77,10 +80,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../../site_libs/bootstrap/bootstrap-6b423f165eeea3787de40cb4f8e821c3.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-92404dd89b1444827012a9e3a58cda88.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -173,7 +176,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <div>
   <div class="description">
-    Six BLS occupational profiles offer a starting point for a job search, once we separate job duties from a worker’s economics background.
+    Six BLS profiles help turn a broad economics job search into a shortlist, with clear limits on what the numbers can tell us.
   </div>
 </div>
 
@@ -197,7 +200,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">October 8, 2026</p>
+      <p class="date-modified">October 25, 2026</p>
     </div>
   </div>
     
@@ -208,47 +211,47 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>An economics student opens a job site. Should the first saved search be “economist,” “financial analyst,” or “data scientist”? Each can involve quantitative work, but choosing where to look requires more than finding a familiar title. <strong>Which occupations offer a useful starting point when weighing pay, growth, and the volume of openings?</strong></p>
-<p>I use R’s <code>rvest</code> package to extract six deliberately selected <a href="https://www.bls.gov/ooh/">Bureau of Labor Statistics occupational profiles</a>. They help compare job markets. They cannot show which occupation an economics graduate is most likely to enter.</p>
-<section id="a-job-category-is-not-an-academic-background" class="level2">
-<h2 class="anchored" data-anchor-id="a-job-category-is-not-an-academic-background">A job category is not an academic background</h2>
-<p>A financial analyst may have an economics degree, use economic models, and describe themselves as an economist. That does not make the BLS categories interchangeable. The <a href="https://www.bls.gov/soc/2018/soc_2018_class_prin_cod_guide.pdf">Standard Occupational Classification</a> assigns jobs according to work performed, with rules for mixed duties. Academic background and professional identity can cross those boundaries.</p>
-<p>Here, “economists” means SOC <strong>19-3011</strong>, while the financial-analysts profile combines <strong>13-2051</strong> (financial and investment analysts) and <strong>13-2054</strong> (financial risk specialists). The code records all component codes and checks that none appears in two comparison rows. Financial analysts’ combined statistics stay combined; a median cannot be split into subgroup medians.</p>
-<p><strong>These are occupational comparisons, not six exclusive groups of economics-trained people.</strong> I neither add the opening counts into a total for economics graduates nor interpret wage differences as the payoff from choosing one career over another.</p>
+<p>An economics student opens a job site. Should the first saved search be “economist,” “financial analyst,” or “data scientist”? Familiar titles offer little guidance about where to spend application time. <strong>Which occupations are useful starting points when a student wants good pay, growing employment, and no typical requirement for related work experience?</strong></p>
+<p>I use R’s <code>rvest</code> package to extract six selected <a href="https://www.bls.gov/ooh/">Bureau of Labor Statistics occupational profiles</a>. Their pay and employment projections can narrow a search. They cannot identify the job an economics graduate is most likely to obtain.</p>
+<section id="compare-jobs-not-academic-backgrounds" class="level2">
+<h2 class="anchored" data-anchor-id="compare-jobs-not-academic-backgrounds">Compare jobs, not academic backgrounds</h2>
+<p>A financial analyst can have an economics degree and call themselves an economist. BLS classifies jobs by work performed, rather than academic background. Here, “economists” means SOC 19-3011; the financial-analysts profile combines 13-2051 and 13-2054. The code checks that no component code appears in two comparison rows.</p>
+<p>These are distinct occupational classifications, not exclusive groups of economics-trained people. I compare profiles separately, keep the financial aggregate labeled, and do not add their openings into a total for economics graduates. The <a href="https://www.bls.gov/soc/2018/soc_2018_class_prin_cod_guide.pdf">classification rules</a> and README document the distinction.</p>
 </section>
-<section id="fast-growth-and-many-openings-tell-different-stories" class="level2">
-<h2 class="anchored" data-anchor-id="fast-growth-and-many-openings-tell-different-stories">Fast growth and many openings tell different stories</h2>
-<p>In the archived profiles, data scientists lead projected growth at <strong>35%</strong>, versus <strong>5%</strong> for the economist occupation over 2025-2035. Their median annual pay, $120,230, is close to economists’ $124,720. That combination makes data science worth examining for a student who enjoys computation.</p>
+<section id="fast-growth-does-not-mean-the-most-openings" class="level2">
+<h2 class="anchored" data-anchor-id="fast-growth-does-not-mean-the-most-openings">Fast growth does not mean the most openings</h2>
+<p>Data scientists lead projected growth at <strong>35%</strong>, compared with <strong>5%</strong> for economists over 2025-2035. Their median annual pay is $120,230, versus economists’ $124,720. Data science therefore deserves a closer look from a student interested in quantitative work.</p>
 <div class="cell">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="index_files/figure-html/growth-chart-1.png" class="img-fluid figure-img" alt="Horizontal bars compare projected growth across six occupational profiles, with data scientists highest. Teal highlights data science and operations research under the stated preference screen." width="864"></p>
-<figcaption>Projected employment growth by BLS occupational profile. Teal marks profiles passing the stated preference screen, not an official BLS rating.</figcaption>
+<p><img src="index_files/figure-html/growth-chart-1.png" class="img-fluid figure-img" alt="Bars compare projected growth for six BLS occupational profiles. Data scientists lead, followed by operations research analysts. Teal marks the two profiles meeting the article's pay, growth and experience preferences." width="864"></p>
+<figcaption>Projected employment growth. Teal highlights profiles passing the stated preference screen, not an official BLS rating.</figcaption>
 </figure>
 </div>
 </div>
 </div>
-<p>The openings chart changes the emphasis. Management analysts have about 94,100 projected openings annually, market research analysts 82,000, and data scientists 24,800. The economist category has 1,100.</p>
-<p>Growth measures expansion relative to an occupation’s existing size. Openings also include replacement needs when workers leave an occupation or retire. A large, slower-growing occupation can therefore generate more openings than a small, fast-growing one. These counts cover all qualifying workers, not positions reserved for economics graduates.</p>
+<p>The second chart changes the ranking. Management analysts have about 94,100 projected openings annually, market research analysts 82,000, and data scientists 24,800. Economists have 1,100.</p>
+<p>Growth measures expansion relative to an occupation’s size. Openings also include replacement needs when workers retire or leave an occupation. A large, slower-growing field can therefore offer more openings than a small, fast-growing one. These are projections for all qualifying workers, not current vacancies or positions reserved for new graduates.</p>
 <div class="cell">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="index_files/figure-html/openings-chart-1.png" class="img-fluid figure-img" alt="Horizontal bars compare projected annual openings across six occupational profiles. Management analysts have the largest count and economists the smallest." width="864"></p>
-<figcaption>Projected average annual openings by BLS occupational profile. Counts include replacement needs and all experience levels; they are not current vacancies.</figcaption>
+<p><img src="index_files/figure-html/openings-chart-1.png" class="img-fluid figure-img" alt="Bars show management analysts with the most projected annual openings and economists with the fewest. Data scientists grow fastest but have fewer projected openings than management or market research analysts." width="864"></p>
+<figcaption>Projected average annual openings, including replacement needs and all experience levels.</figcaption>
 </figure>
 </div>
 </div>
 </div>
+<p>Taken together, the charts show why a single ranking is a poor search strategy. Searching only by growth would emphasize data science; searching only by openings would emphasize management analysis. For a new graduate, the second choice also raises an experience question. The practical task is to find a manageable set of searches consistent with the student’s constraints, rather than declare one occupation universally superior.</p>
 </section>
-<section id="a-shortlist-to-investigate-not-a-promise-of-employment" class="level2">
-<h2 class="anchored" data-anchor-id="a-shortlist-to-investigate-not-a-promise-of-employment">A shortlist to investigate, not a promise of employment</h2>
-<p>Suppose a student wants median pay of at least <strong>$85,000</strong>, projected growth of at least <strong>10%</strong>, and no typical requirement for related work experience. This preference screen selects data scientists and operations research analysts. The latter offer $88,940 median pay, 12% growth, and about 7,500 annual openings.</p>
+<section id="turn-the-comparison-into-a-search" class="level2">
+<h2 class="anchored" data-anchor-id="turn-the-comparison-into-a-search">Turn the comparison into a search</h2>
+<p>Suppose a student chooses three preferences: median pay of at least <strong>$85,000</strong>, projected growth of at least <strong>10%</strong>, and no typical requirement for related work experience. This screen selects <strong>data scientists and operations research analysts</strong>. Operations research offers $88,940 median pay, 12% growth, and about 7,500 annual openings.</p>
 <div class="cell">
 <div class="cell-output-display">
 <table class="caption-top table table-sm table-striped small">
-<caption>Selected occupational profiles. Pay: May 2025; projections: 2025-2035. Source: BLS OOH. Financial analysts combine two SOC codes.</caption>
+<caption>Selected BLS profiles. Pay: May 2025; projections: 2025-2035. Financial analysts combine two SOC codes.</caption>
 <colgroup>
 <col style="width: 30%">
 <col style="width: 16%">
@@ -312,26 +315,26 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </table>
 </div>
 </div>
-<p>For this student, create saved searches in those two areas, then check each posting’s tasks and qualifications. BLS lists bachelor’s-level entry education for both; this does not mean an economics degree alone supplies every technical skill. Management analysis offers more openings but typically requires related experience, so a new graduate should look specifically for campus or entry-level programs.</p>
-<p>The rule also excludes financial analysis despite its $103,570 median pay, because its 7% growth misses the chosen cutoff. That is a consequence of the preference rule, not evidence that finance is a poor choice. Raising the pay floor to $90,000 or growth floor to 15% leaves only data science. A saved nine-scenario table shows how the shortlist changes.</p>
+<p>Create saved searches in those two areas, then inspect each posting’s tasks and qualifications. Both have bachelor’s-level entry education in BLS, but an economics degree alone need not supply every required technical skill. Management analysis has more openings but typically requires related experience; new graduates should look specifically for campus or entry-level programs.</p>
+<p>The recommendation depends on those preferences. Financial analysis misses the growth cutoff despite $103,570 median pay. Raising the pay floor to $90,000 or growth floor to 15% leaves only data science. The code saves nine alternative screens so readers can inspect that sensitivity.</p>
+<p>The screen is deliberately easy to change. A student willing to accept slower employment growth might retain financial analysis; one with relevant experience might investigate management analysis. Neither adjustment requires treating a national median as an expected personal offer.</p>
 </section>
-<section id="what-the-comparison-canand-cannotdecide" class="level2">
-<h2 class="anchored" data-anchor-id="what-the-comparison-canand-cannotdecide">What the comparison can—and cannot—decide</h2>
-<p>Median pay is not a starting salary. National projections do not reveal local vacancies, competition, visa eligibility, or an applicant’s hiring probability. The six profiles are a selected comparison, and their workers differ in skills and experience.</p>
-<p><strong>The takeaway is to use occupational evidence to choose searches, then use actual job descriptions to decide where to apply.</strong> Under the stated preferences, data science and operations research are starting points. Shared economics training does not make the categories identical—or establish that either is the best path for every graduate.</p>
+<section id="takeaway" class="level2">
+<h2 class="anchored" data-anchor-id="takeaway">Takeaway</h2>
+<p><strong>Use occupational evidence to choose searches, then actual job descriptions to choose applications.</strong> Under these preferences, data science and operations research are starting points, rather than a ranking of the best careers for every graduate. Median pay is not a starting salary, and national projections cannot reveal local competition, work-authorization requirements, or an individual’s hiring probability.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Sources, scraping, and replication
+<span class="screen-reader-only">Note</span>Sources and reproducibility
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-1" class="callout-1-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>The six archived Summary HTML fragments were captured September 20, 2026. Pay refers to May 2025; projections cover 2025-2035. The original capture method and file hashes are recorded in <code>data/raw/manifest.csv</code>. The numerical inputs are extracted from those HTML files with <code>rvest</code>, not manually copied into the comparison table.</p>
+<p>The six public BLS Summary HTML fragments were captured September 20, 2026. Pay refers to May 2025; projections cover 2025-2035. <code>rvest</code> extracts the Quick Facts table and annual-openings paragraph. Cleaning removes formatting; checks validate fields, measurement years, archived-file hashes and SOC coverage. Classification metadata is stored separately from scraped numbers.</p>
 <ul>
 <li><a href="https://www.bls.gov/ooh/math/data-scientists.htm">Data scientists</a></li>
 <li><a href="https://www.bls.gov/ooh/life-physical-and-social-science/economists.htm">Economists</a></li>
@@ -340,10 +343,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><a href="https://www.bls.gov/ooh/business-and-financial/management-analysts.htm">Management analysts</a></li>
 <li><a href="https://www.bls.gov/ooh/business-and-financial/financial-analysts.htm">Financial analysts</a></li>
 </ul>
-<p>The <a href="https://www.bls.gov/soc/2018/soc_2018_definitions.pdf">SOC definitions</a> and <a href="https://www.bls.gov/soc/2018/soc_2018_class_prin_cod_guide.pdf">classification rules</a> document the distinction between jobs and backgrounds. <code>data/occupation_scope.csv</code> is author-documented classification metadata, separate from scraped numbers. The financial profile’s Employment Projections table identifies its two component occupations. Classification documentation was checked October 8, 2026.</p>
-<p>Extraction targets the Quick Facts table and the Summary’s annual-openings paragraph. Cleaning removes whitespace, commas, dollar signs, and descriptive text; validation checks unique profiles, numerical fields, common measurement years, archived-file integrity, and nonoverlapping SOC coverage.</p>
-<p>Rendering reuses saved HTML without sending new requests. The optional collector reads current robots rules, waits between six public-page requests, and stops on access errors. No login, paywall, CAPTCHA, or other restriction is bypassed. Live collection is optional because it cannot reproduce the original snapshot if pages change.</p>
-<p>From the website root, run <code>source("blog/posts/post2/setup.R")</code> once, then <code>source("blog/posts/post2/R/run_project.R")</code>. Render <code>blog/posts/post2/index.qmd</code> and <code>blog/index.qmd</code>. See the <a href="https://github.com/augenstern118/testrepo/tree/main/blog/posts/post2">Post 2 README</a> for exact commands, a file map, and output definitions.</p>
+<p>Rendering reads saved HTML. Optional live collection checks robots rules, spaces requests, and stops on access errors without bypassing restrictions. The <a href="https://github.com/augenstern118/testrepo/tree/main/blog/posts/post2">README and code</a> document replication and all saved outputs.</p>
 </div>
 </div>
 </div>
@@ -353,7 +353,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>View the R scraping code
+<span class="screen-reader-only">Note</span>R scraping code
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -511,7 +511,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>View the R analysis code
+<span class="screen-reader-only">Note</span>R analysis code
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>

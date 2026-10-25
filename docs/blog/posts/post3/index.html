@@ -2,23 +2,26 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.9.38">
+<meta name="generator" content="quarto-1.10.18">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Junzheng Yang">
 <meta name="dcterms.date" content="2026-09-23">
-<meta name="description" content="IPUMS CPS data show how the descriptive college earnings premium varies over time, by sex, and across the life cycle.">
+<meta name="description" content="CPS data show why a larger relative earnings advantage need not mean a large gain in college graduates’ purchasing power.">
 
-<title>The College Earnings Premium Is Not One Number – Junzheng Yang</title>
+<title>A Bigger College Earnings Premium Without Bigger Paychecks? – Junzheng Yang</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
 */
-code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: min(4vw, 1.5em);}
-div.column{flex: auto; overflow-x: auto;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
@@ -77,10 +80,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../../site_libs/bootstrap/bootstrap-6b423f165eeea3787de40cb4f8e821c3.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-92404dd89b1444827012a9e3a58cda88.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -113,7 +116,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link rel="stylesheet" href="../../../styles.css">
 </head>
 
-<body class="nav-fixed quarto-light">
+<body class="nav-fixed fullcontent quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -157,26 +160,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#one-premium-or-many" id="toc-one-premium-or-many" class="nav-link active" data-scroll-target="#one-premium-or-many">One premium, or many?</a></li>
-  <li><a href="#the-education-hierarchy-persisted-but-its-size-changed" id="toc-the-education-hierarchy-persisted-but-its-size-changed" class="nav-link" data-scroll-target="#the-education-hierarchy-persisted-but-its-size-changed">The education hierarchy persisted, but its size changed</a></li>
-  <li><a href="#the-premium-is-not-identical-for-women-and-men" id="toc-the-premium-is-not-identical-for-women-and-men" class="nav-link" data-scroll-target="#the-premium-is-not-identical-for-women-and-men">The premium is not identical for women and men</a></li>
-  <li><a href="#earnings-profiles-diverge-with-age" id="toc-earnings-profiles-diverge-with-age" class="nav-link" data-scroll-target="#earnings-profiles-diverge-with-age">Earnings profiles diverge with age</a></li>
-  <li><a href="#takeaway-and-limitations" id="toc-takeaway-and-limitations" class="nav-link" data-scroll-target="#takeaway-and-limitations">Takeaway and limitations</a></li>
-  <li><a href="#data-and-reproducibility" id="toc-data-and-reproducibility" class="nav-link" data-scroll-target="#data-and-reproducibility">Data and reproducibility</a></li>
-  </ul>
-</nav>
-    </div>
+    
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">The College Earnings Premium Is Not One Number</h1>
+<h1 class="title">A Bigger College Earnings Premium Without Bigger Paychecks?</h1>
   <div class="quarto-categories">
     <div class="quarto-category">data visualization</div>
     <div class="quarto-category">IPUMS CPS</div>
@@ -187,7 +177,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <div>
   <div class="description">
-    IPUMS CPS data show how the descriptive college earnings premium varies over time, by sex, and across the life cycle.
+    CPS data show why a larger relative earnings advantage need not mean a large gain in college graduates’ purchasing power.
   </div>
 </div>
 
@@ -208,6 +198,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     </div>
   </div>
   
+    <div>
+    <div class="quarto-title-meta-heading">Modified</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date-modified">October 25, 2026</p>
+    </div>
+  </div>
     
   </div>
   
@@ -216,67 +212,63 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="one-premium-or-many" class="level2">
-<h2 class="anchored" data-anchor-id="one-premium-or-many">One premium, or many?</h2>
-<p>College is often discussed as if it produces one stable earnings return. That shorthand hides at least three dimensions: calendar time, differences between women and men, and workers’ position in the life cycle. <strong>How large is the bachelor’s earnings premium, and how does it vary along those dimensions?</strong></p>
-<p>I use IPUMS Current Population Survey Annual Social and Economic Supplement (ASEC) microdata. The analytic sample contains wage and salary workers ages 25–64 who worked at least 50 weeks and usually at least 35 hours per week. This full-time, full-year restriction reduces the role of differences in weeks and hours, although it also excludes people whose employment is less stable.</p>
-<p>Annual wage income is divided by weeks worked to construct weekly earnings. <code>CPI99</code> converts dollar values across years, and all results are expressed in 2024 dollars. Most importantly, every median is calculated with <code>ASECWT</code>, the IPUMS person-level weight for ASEC analysis. The figures therefore summarize the population represented by CPS rather than treating every sampled record as equally representative.</p>
-</section>
-<section id="the-education-hierarchy-persisted-but-its-size-changed" class="level2">
-<h2 class="anchored" data-anchor-id="the-education-hierarchy-persisted-but-its-size-changed">The education hierarchy persisted, but its size changed</h2>
+<p>A university degree can provide an earnings advantage even when graduates’ pay barely increases. That distinction matters when interpreting claims about the financial value of college: earning more than another group is different from being able to buy more than earlier graduates. <strong>Did a larger college earnings premium between 2000 and 2024 mean that bachelor’s graduates earned substantially more in real terms?</strong></p>
+<p>In this CPS comparison, the answer is no. The relative gap widened modestly, while the pooled median for bachelor’s graduates ended almost where it began. The three figures separate the relative comparison from purchasing power, then check whether the pooled result describes women and men equally well.</p>
+<section id="the-relative-advantage-became-slightly-larger" class="level2">
+<h2 class="anchored" data-anchor-id="the-relative-advantage-became-slightly-larger">The relative advantage became slightly larger</h2>
 <div class="cell">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="index_files/figure-html/earnings-trend-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
-<figcaption>Figure 1. Weighted median real weekly earnings by education.</figcaption>
+<p><img src="index_files/figure-html/premium-trend-1.png" class="img-fluid figure-img" style="width:100.0%" alt="A line shows the bachelor's earnings premium fluctuating between selected income years. Its endpoint rises from about 60 percent in 2000 to 64 percent in 2024, without a steady upward trend."></p>
+<figcaption>Figure 1. Bachelor’s premium relative to high-school graduates. Points are the selected income years; lines connect those observations.</figcaption>
 </figure>
 </div>
 </div>
 </div>
-<p>The first figure establishes the broad pattern. In every displayed year, median weekly earnings rise with educational attainment. For workers with a bachelor’s degree, the weighted median changed from $1,576 in 2000 to $1,577 in 2024. High-school graduates earned $962 at the median in the latest year.</p>
-<p>Relative comparisons are often more informative than dollar gaps. The bachelor’s premium over high school moved from 60.3% to 64%, making it 3.7 percentage points wider across the displayed period. This is a descriptive contrast between groups—not the causal effect that the same person would experience from completing college.</p>
+<p>I define the premium as the weighted median weekly earnings of bachelor’s graduates divided by the corresponding high-school median, minus one. A 60% premium means the bachelor’s median is 1.6 times the high-school median; it does not mean college raises every student’s earnings by 60%.</p>
+<p>Figure 1 puts the premium at <strong>60.3% in 2000 and 64.0% in 2024</strong>, an increase of 3.7 percentage points. The intervening observations fluctuate, so the endpoints should not be described as a steady rise.</p>
 </section>
-<section id="the-premium-is-not-identical-for-women-and-men" class="level2">
-<h2 class="anchored" data-anchor-id="the-premium-is-not-identical-for-women-and-men">The premium is not identical for women and men</h2>
+<section id="a-bigger-ratio-need-not-mean-a-bigger-paycheck" class="level2">
+<h2 class="anchored" data-anchor-id="a-bigger-ratio-need-not-mean-a-bigger-paycheck">A bigger ratio need not mean a bigger paycheck</h2>
 <div class="cell">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="index_files/figure-html/gender-premium-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
-<figcaption>Figure 2. Bachelor’s earnings premium relative to high-school graduates, by reported sex.</figcaption>
+<p><img src="index_files/figure-html/real-earnings-1.png" class="img-fluid figure-img" style="width:100.0%" alt="Two lines compare real weekly earnings for bachelor's and high-school graduates. The bachelor's median begins and ends near 1577 dollars; the high-school median falls from about 983 to 962 dollars."></p>
+<figcaption>Figure 2. Weighted median weekly wage and salary income, expressed in 2024 dollars.</figcaption>
 </figure>
 </div>
 </div>
 </div>
-<p>Figure 2 calculates the comparison separately using the CPS categories for female and male respondents. In 2024, the premium was 73.1% for women and 72.7% for men, so the relative education gap was larger among women. This does not mean that college eliminates the gender wage gap: each line compares bachelor’s and high-school workers within the same sex category. The pattern instead shows that the payoff associated with education can differ depending on the comparison group.</p>
+<p>The bachelor’s median moved from <strong>$1,576 to $1,577 per week</strong>, a real change of only 0.1%. The high-school median fell from $983 to $962, or 2.2%.</p>
+<p>These endpoints explain the apparent puzzle. A nearly unchanged numerator divided by a smaller denominator produces a larger relative premium. College graduates retained a sizable earnings advantage, but that advantage is not evidence of a large gain in their purchasing power over this period. This is an arithmetic description of group medians, not an explanation of what caused either group’s earnings to change.</p>
+<p>For a reader thinking about living standards, the dollar series is the relevant check: it puts both years on the same purchasing-power scale. The percentage premium instead answers how far apart two groups are. Neither measure alone tells us whether tuition was worthwhile, because these data do not include students’ costs or their alternative career paths.</p>
 </section>
-<section id="earnings-profiles-diverge-with-age" class="level2">
-<h2 class="anchored" data-anchor-id="earnings-profiles-diverge-with-age">Earnings profiles diverge with age</h2>
+<section id="the-pooled-result-is-not-everyones-experience" class="level2">
+<h2 class="anchored" data-anchor-id="the-pooled-result-is-not-everyones-experience">The pooled result is not everyone’s experience</h2>
 <div class="cell">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="index_files/figure-html/age-profile-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
-<figcaption>Figure 3. Weighted median weekly earnings across age groups in the latest income year.</figcaption>
+<p><img src="index_files/figure-html/earnings-change-by-sex-1.png" class="img-fluid figure-img" style="width:100.0%" alt="Four bars show changes between 2000 and 2024. Bachelor's earnings rise modestly among women and decline among men. High-school earnings decline within both sex categories."></p>
+<figcaption>Figure 3. Percentage change in each group’s weighted median real weekly earnings from 2000 to 2024. These are repeated cross-sections, not individual earnings histories.</figcaption>
 </figure>
 </div>
 </div>
 </div>
-<p>The cross-section by age supplies the final piece of the story. In 2024, the bachelor’s premium was 55.6% among workers ages 25–29 and 73.1% among those ages 50–54. These are not longitudinal careers: older and younger people belong to different cohorts, and CPS does not reveal what one worker’s earnings path will be. Still, the figure demonstrates why a single pooled premium can conceal economically meaningful life-cycle variation.</p>
+<p>For women, the bachelor’s median increased 3.0%, while the high-school median declined 4.8%. For men, both fell: 3.4% for bachelor’s graduates and 8.5% for high-school graduates. A relative advantage can therefore widen even when both comparison groups lose purchasing power.</p>
+<p>By 2024, the within-sex premiums were 73.1% for women and 72.7% for men: very close. Without uncertainty estimates, that small difference should not be presented as a clear gender difference. The figures also do not follow the same workers over time or establish individual career paths.</p>
 </section>
-<section id="takeaway-and-limitations" class="level2">
-<h2 class="anchored" data-anchor-id="takeaway-and-limitations">Takeaway and limitations</h2>
-<p>The central takeaway is that college graduates earn more at the weighted median, but <strong>the college earnings premium is not one universal number</strong>. It changes over time, differs between women and men, and varies across age groups. A student evaluating education should therefore ask which workers, which year, and which career stage underlie a quoted return.</p>
-<p>The analysis remains descriptive. Education groups differ in occupation, field of study, experience, location, selection into employment, and other characteristics. Wage income excludes self-employment earnings; high incomes may be topcoded; population-control changes and sampling error can affect comparisons; and no confidence intervals are shown. These figures document patterns, not causal effects.</p>
-</section>
-<section id="data-and-reproducibility" class="level2">
-<h2 class="anchored" data-anchor-id="data-and-reproducibility">Data and reproducibility</h2>
-<p>Data are from <a href="https://cps.ipums.org/cps/">IPUMS CPS</a>, which harmonizes CPS microdata produced by the U.S. Census Bureau and Bureau of Labor Statistics. Variable definitions are documented for <a href="https://cps.ipums.org/cps-action/variables/INCWAGE">INCWAGE</a>, <a href="https://cps.ipums.org/cps-action/variables/WKSWORK1">WKSWORK1</a>, <a href="https://cps.ipums.org/cps-action/variables/UHRSWORKLY">UHRSWORKLY</a>, and <a href="https://cps.ipums.org/cps-action/variables/EDUC">EDUC</a>. IPUMS explains the appropriate <a href="https://cps.ipums.org/cps/sample_weights.shtml">CPS weights</a> and <a href="https://cps.ipums.org/cps/cpi99.shtml">CPI99 inflation adjustment</a>.</p>
-<p>The public repository contains the complete R code, README, and generated aggregate results, but not restricted IPUMS microdata. After an authorized user places the matching DDI and data files in <code>data/raw/</code>, rendering the post recreates all statistics and figures.</p>
+<section id="what-the-figures-can-tell-us" class="level2">
+<h2 class="anchored" data-anchor-id="what-the-figures-can-tell-us">What the figures can tell us</h2>
+<p>The sample uses <a href="https://cps.ipums.org/cps/">IPUMS CPS ASEC</a> wage and salary workers ages 25–64 who worked 50–52 weeks and usually at least 35 hours weekly. Income refers to the preceding calendar year; annual wage income is divided by weeks worked. Every median uses the person weight <a href="https://cps.ipums.org/cps/sample_weights.shtml">ASECWT</a>. Published <a href="https://cps.ipums.org/cps/cpi99.shtml">CPI99 factors</a>, stored in the code, express earnings in 2024 dollars; the extract does not need a CPI99 variable.</p>
+<p>These restrictions exclude people with absent or unstable employment. Changing group composition, top coding, nonresponse and sampling error can affect medians. The comparison does not control for occupation, experience, college costs or selection into education, and cannot measure college’s causal return.</p>
+<p><strong>The takeaway: check both the earnings gap and the earnings levels.</strong> A larger relative college advantage can coexist with little improvement in graduates’ real median pay. It answers a different question from whether college paid off for a particular student.</p>
+<p><a href="https://github.com/augenstern118/testrepo/tree/main/blog/posts/post3">Code, data definitions and replication instructions</a> accompany the article; raw IPUMS microdata require separate access.</p>
 <details>
 <summary>
-View the complete R data-preparation code
+R data-preparation code
 </summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>find_ipums_extract <span class="ot">&lt;-</span> <span class="cf">function</span>(<span class="at">raw_dir =</span> <span class="st">"data/raw"</span>) {</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  xml <span class="ot">&lt;-</span> <span class="fu">list.files</span>(raw_dir, <span class="at">pattern =</span> <span class="st">"</span><span class="sc">\\</span><span class="st">.xml$"</span>, <span class="at">full.names =</span> <span class="cn">TRUE</span>,</span>
@@ -434,14 +426,14 @@ View the complete R data-preparation code
 </details>
 <details>
 <summary>
-View the complete R analysis and visualization code
+R analysis and visualization code
 </summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>weighted_median <span class="ot">&lt;-</span> <span class="cf">function</span>(x, w) {</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  keep <span class="ot">&lt;-</span> <span class="fu">is.finite</span>(x) <span class="sc">&amp;</span> <span class="fu">is.finite</span>(w) <span class="sc">&amp;</span> w <span class="sc">&gt;</span> <span class="dv">0</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  x <span class="ot">&lt;-</span> x[keep]</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  w <span class="ot">&lt;-</span> w[keep]</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (<span class="fu">length</span>(x) <span class="sc">==</span> <span class="dv">0</span>) <span class="fu">return</span>(<span class="cn">NA_real_</span>)</span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Person-level ASEC medians: weights, not observation counts, determine rank.</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>weighted_median <span class="ot">&lt;-</span> <span class="cf">function</span>(x, w) {</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  keep <span class="ot">&lt;-</span> <span class="fu">is.finite</span>(x) <span class="sc">&amp;</span> <span class="fu">is.finite</span>(w) <span class="sc">&amp;</span> w <span class="sc">&gt;</span> <span class="dv">0</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  x <span class="ot">&lt;-</span> x[keep]</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  w <span class="ot">&lt;-</span> w[keep]</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (<span class="fu">length</span>(x) <span class="sc">==</span> <span class="dv">0</span>) <span class="fu">return</span>(<span class="cn">NA_real_</span>)</span>
 <span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>  ord <span class="ot">&lt;-</span> <span class="fu">order</span>(x)</span>
 <span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>  x <span class="ot">&lt;-</span> x[ord]</span>
 <span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>  w <span class="ot">&lt;-</span> w[ord]</span>
@@ -459,148 +451,178 @@ View the complete R analysis and visualization code
 <span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>    )</span>
 <span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>}</span>
 <span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>analyze_cps <span class="ot">&lt;-</span> <span class="cf">function</span>(cps, <span class="at">results_dir =</span> <span class="st">"results"</span>) {</span>
-<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">dir.create</span>(results_dir, <span class="at">recursive =</span> <span class="cn">TRUE</span>, <span class="at">showWarnings =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>  dollar_year <span class="ot">&lt;-</span> <span class="fu">attr</span>(cps, <span class="st">"latest_dollar_year"</span>)</span>
-<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>  latest_year <span class="ot">&lt;-</span> <span class="fu">max</span>(cps<span class="sc">$</span>income_year)</span>
-<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>  trend <span class="ot">&lt;-</span> <span class="fu">weighted_summary</span>(cps, income_year, education)</span>
-<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a>  overall_premium <span class="ot">&lt;-</span> trend <span class="sc">|&gt;</span></span>
-<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">filter</span>(education <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"High school"</span>, <span class="st">"Bachelor's"</span>)) <span class="sc">|&gt;</span></span>
-<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">select</span>(income_year, education, median_weekly) <span class="sc">|&gt;</span></span>
-<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a>    tidyr<span class="sc">::</span><span class="fu">pivot_wider</span>(<span class="at">names_from =</span> education, <span class="at">values_from =</span> median_weekly) <span class="sc">|&gt;</span></span>
-<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">mutate</span>(</span>
-<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a>      <span class="at">premium_pct =</span> <span class="dv">100</span> <span class="sc">*</span> (<span class="st">`</span><span class="at">Bachelor's</span><span class="st">`</span> <span class="sc">/</span> <span class="st">`</span><span class="at">High school</span><span class="st">`</span> <span class="sc">-</span> <span class="dv">1</span>)</span>
-<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a>  by_sex <span class="ot">&lt;-</span> <span class="fu">weighted_summary</span>(cps, income_year, sex_group, education)</span>
-<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a>  gender_premium <span class="ot">&lt;-</span> by_sex <span class="sc">|&gt;</span></span>
-<span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">filter</span>(education <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"High school"</span>, <span class="st">"Bachelor's"</span>)) <span class="sc">|&gt;</span></span>
-<span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">select</span>(income_year, sex_group, education, median_weekly) <span class="sc">|&gt;</span></span>
-<span id="cb2-44"><a href="#cb2-44" aria-hidden="true" tabindex="-1"></a>    tidyr<span class="sc">::</span><span class="fu">pivot_wider</span>(<span class="at">names_from =</span> education, <span class="at">values_from =</span> median_weekly) <span class="sc">|&gt;</span></span>
-<span id="cb2-45"><a href="#cb2-45" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">mutate</span>(</span>
-<span id="cb2-46"><a href="#cb2-46" aria-hidden="true" tabindex="-1"></a>      <span class="at">premium_pct =</span> <span class="dv">100</span> <span class="sc">*</span> (<span class="st">`</span><span class="at">Bachelor's</span><span class="st">`</span> <span class="sc">/</span> <span class="st">`</span><span class="at">High school</span><span class="st">`</span> <span class="sc">-</span> <span class="dv">1</span>)</span>
-<span id="cb2-47"><a href="#cb2-47" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb2-48"><a href="#cb2-48" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-49"><a href="#cb2-49" aria-hidden="true" tabindex="-1"></a>  age_profile <span class="ot">&lt;-</span> cps <span class="sc">|&gt;</span></span>
-<span id="cb2-50"><a href="#cb2-50" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">filter</span>(income_year <span class="sc">==</span> latest_year) <span class="sc">|&gt;</span></span>
-<span id="cb2-51"><a href="#cb2-51" aria-hidden="true" tabindex="-1"></a>    <span class="fu">weighted_summary</span>(age_band, education)</span>
-<span id="cb2-52"><a href="#cb2-52" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-53"><a href="#cb2-53" aria-hidden="true" tabindex="-1"></a>  age_premium <span class="ot">&lt;-</span> age_profile <span class="sc">|&gt;</span></span>
-<span id="cb2-54"><a href="#cb2-54" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">filter</span>(education <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"High school"</span>, <span class="st">"Bachelor's"</span>)) <span class="sc">|&gt;</span></span>
-<span id="cb2-55"><a href="#cb2-55" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">select</span>(age_band, education, median_weekly) <span class="sc">|&gt;</span></span>
-<span id="cb2-56"><a href="#cb2-56" aria-hidden="true" tabindex="-1"></a>    tidyr<span class="sc">::</span><span class="fu">pivot_wider</span>(<span class="at">names_from =</span> education, <span class="at">values_from =</span> median_weekly) <span class="sc">|&gt;</span></span>
-<span id="cb2-57"><a href="#cb2-57" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">mutate</span>(</span>
-<span id="cb2-58"><a href="#cb2-58" aria-hidden="true" tabindex="-1"></a>      <span class="at">premium_pct =</span> <span class="dv">100</span> <span class="sc">*</span> (<span class="st">`</span><span class="at">Bachelor's</span><span class="st">`</span> <span class="sc">/</span> <span class="st">`</span><span class="at">High school</span><span class="st">`</span> <span class="sc">-</span> <span class="dv">1</span>)</span>
-<span id="cb2-59"><a href="#cb2-59" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb2-60"><a href="#cb2-60" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-61"><a href="#cb2-61" aria-hidden="true" tabindex="-1"></a>  palette <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
-<span id="cb2-62"><a href="#cb2-62" aria-hidden="true" tabindex="-1"></a>    <span class="st">"High school"</span> <span class="ot">=</span> <span class="st">"#4D4D4D"</span>,</span>
-<span id="cb2-63"><a href="#cb2-63" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Some college / associate"</span> <span class="ot">=</span> <span class="st">"#56B4E9"</span>,</span>
-<span id="cb2-64"><a href="#cb2-64" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Bachelor's"</span> <span class="ot">=</span> <span class="st">"#0072B2"</span>,</span>
-<span id="cb2-65"><a href="#cb2-65" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Advanced degree"</span> <span class="ot">=</span> <span class="st">"#D55E00"</span></span>
-<span id="cb2-66"><a href="#cb2-66" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a><span class="co"># All plots and ratios use these weighted summaries. Keeping this step separate</span></span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a><span class="co"># also lets a reader check the published calculations from aggregate CSV files.</span></span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>make_cps_outputs <span class="ot">&lt;-</span> <span class="cf">function</span>(trend, by_sex, dollar_year, <span class="at">results_dir =</span> <span class="st">"results"</span>) {</span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">dir.create</span>(results_dir, <span class="at">recursive =</span> <span class="cn">TRUE</span>, <span class="at">showWarnings =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>  degrees <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"High school"</span>, <span class="st">"Bachelor's"</span>)</span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>  first_year <span class="ot">&lt;-</span> <span class="fu">min</span>(trend<span class="sc">$</span>income_year)</span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>  latest_year <span class="ot">&lt;-</span> <span class="fu">max</span>(trend<span class="sc">$</span>income_year)</span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (first_year <span class="sc">==</span> latest_year) <span class="fu">stop</span>(<span class="st">"At least two income years are needed."</span>)</span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a>  comparison <span class="ot">&lt;-</span> trend <span class="sc">|&gt;</span></span>
+<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">filter</span>(education <span class="sc">%in%</span> degrees) <span class="sc">|&gt;</span></span>
+<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">mutate</span>(<span class="at">education =</span> <span class="fu">factor</span>(education, <span class="at">levels =</span> degrees))</span>
+<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a>  by_sex <span class="ot">&lt;-</span> by_sex <span class="sc">|&gt;</span></span>
+<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">filter</span>(education <span class="sc">%in%</span> degrees) <span class="sc">|&gt;</span></span>
+<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">mutate</span>(</span>
+<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a>      <span class="at">education =</span> <span class="fu">factor</span>(education, <span class="at">levels =</span> degrees),</span>
+<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a>      <span class="at">sex_group =</span> <span class="fu">factor</span>(sex_group, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"Women"</span>, <span class="st">"Men"</span>))</span>
+<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">|&gt;</span></span>
+<span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">select</span>(income_year, sex_group, education, median_weekly)</span>
+<span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-44"><a href="#cb2-44" aria-hidden="true" tabindex="-1"></a>  overall_premium <span class="ot">&lt;-</span> comparison <span class="sc">|&gt;</span></span>
+<span id="cb2-45"><a href="#cb2-45" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">select</span>(income_year, education, median_weekly) <span class="sc">|&gt;</span></span>
+<span id="cb2-46"><a href="#cb2-46" aria-hidden="true" tabindex="-1"></a>    tidyr<span class="sc">::</span><span class="fu">pivot_wider</span>(<span class="at">names_from =</span> education, <span class="at">values_from =</span> median_weekly) <span class="sc">|&gt;</span></span>
+<span id="cb2-47"><a href="#cb2-47" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">mutate</span>(<span class="at">premium_pct =</span> <span class="dv">100</span> <span class="sc">*</span> (<span class="st">`</span><span class="at">Bachelor's</span><span class="st">`</span> <span class="sc">/</span> <span class="st">`</span><span class="at">High school</span><span class="st">`</span> <span class="sc">-</span> <span class="dv">1</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb2-48"><a href="#cb2-48" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">arrange</span>(income_year)</span>
+<span id="cb2-49"><a href="#cb2-49" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-50"><a href="#cb2-50" aria-hidden="true" tabindex="-1"></a>  gender_premium <span class="ot">&lt;-</span> by_sex <span class="sc">|&gt;</span></span>
+<span id="cb2-51"><a href="#cb2-51" aria-hidden="true" tabindex="-1"></a>    tidyr<span class="sc">::</span><span class="fu">pivot_wider</span>(<span class="at">names_from =</span> education, <span class="at">values_from =</span> median_weekly) <span class="sc">|&gt;</span></span>
+<span id="cb2-52"><a href="#cb2-52" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">mutate</span>(<span class="at">premium_pct =</span> <span class="dv">100</span> <span class="sc">*</span> (<span class="st">`</span><span class="at">Bachelor's</span><span class="st">`</span> <span class="sc">/</span> <span class="st">`</span><span class="at">High school</span><span class="st">`</span> <span class="sc">-</span> <span class="dv">1</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb2-53"><a href="#cb2-53" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">arrange</span>(income_year, sex_group)</span>
+<span id="cb2-54"><a href="#cb2-54" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-55"><a href="#cb2-55" aria-hidden="true" tabindex="-1"></a>  overall_change <span class="ot">&lt;-</span> comparison <span class="sc">|&gt;</span></span>
+<span id="cb2-56"><a href="#cb2-56" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">group_by</span>(education) <span class="sc">|&gt;</span></span>
+<span id="cb2-57"><a href="#cb2-57" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">summarise</span>(</span>
+<span id="cb2-58"><a href="#cb2-58" aria-hidden="true" tabindex="-1"></a>      <span class="at">first_median =</span> median_weekly[income_year <span class="sc">==</span> first_year],</span>
+<span id="cb2-59"><a href="#cb2-59" aria-hidden="true" tabindex="-1"></a>      <span class="at">latest_median =</span> median_weekly[income_year <span class="sc">==</span> latest_year],</span>
+<span id="cb2-60"><a href="#cb2-60" aria-hidden="true" tabindex="-1"></a>      <span class="at">.groups =</span> <span class="st">"drop"</span></span>
+<span id="cb2-61"><a href="#cb2-61" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">|&gt;</span></span>
+<span id="cb2-62"><a href="#cb2-62" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">mutate</span>(</span>
+<span id="cb2-63"><a href="#cb2-63" aria-hidden="true" tabindex="-1"></a>      <span class="at">first_year =</span> first_year,</span>
+<span id="cb2-64"><a href="#cb2-64" aria-hidden="true" tabindex="-1"></a>      <span class="at">latest_year =</span> latest_year,</span>
+<span id="cb2-65"><a href="#cb2-65" aria-hidden="true" tabindex="-1"></a>      <span class="at">change_pct =</span> <span class="dv">100</span> <span class="sc">*</span> (latest_median <span class="sc">/</span> first_median <span class="sc">-</span> <span class="dv">1</span>)</span>
+<span id="cb2-66"><a href="#cb2-66" aria-hidden="true" tabindex="-1"></a>    )</span>
 <span id="cb2-67"><a href="#cb2-67" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-68"><a href="#cb2-68" aria-hidden="true" tabindex="-1"></a>  base_theme <span class="ot">&lt;-</span> ggplot2<span class="sc">::</span><span class="fu">theme_minimal</span>(<span class="at">base_size =</span> <span class="dv">13</span>) <span class="sc">+</span></span>
-<span id="cb2-69"><a href="#cb2-69" aria-hidden="true" tabindex="-1"></a>    ggplot2<span class="sc">::</span><span class="fu">theme</span>(</span>
-<span id="cb2-70"><a href="#cb2-70" aria-hidden="true" tabindex="-1"></a>      <span class="at">plot.title.position =</span> <span class="st">"plot"</span>,</span>
-<span id="cb2-71"><a href="#cb2-71" aria-hidden="true" tabindex="-1"></a>      <span class="at">plot.title =</span> ggplot2<span class="sc">::</span><span class="fu">element_text</span>(<span class="at">face =</span> <span class="st">"bold"</span>),</span>
-<span id="cb2-72"><a href="#cb2-72" aria-hidden="true" tabindex="-1"></a>      <span class="at">plot.subtitle =</span> ggplot2<span class="sc">::</span><span class="fu">element_text</span>(<span class="at">color =</span> <span class="st">"grey30"</span>),</span>
-<span id="cb2-73"><a href="#cb2-73" aria-hidden="true" tabindex="-1"></a>      <span class="at">panel.grid.minor =</span> ggplot2<span class="sc">::</span><span class="fu">element_blank</span>(),</span>
-<span id="cb2-74"><a href="#cb2-74" aria-hidden="true" tabindex="-1"></a>      <span class="at">legend.position =</span> <span class="st">"bottom"</span>,</span>
-<span id="cb2-75"><a href="#cb2-75" aria-hidden="true" tabindex="-1"></a>      <span class="at">legend.title =</span> ggplot2<span class="sc">::</span><span class="fu">element_blank</span>()</span>
-<span id="cb2-76"><a href="#cb2-76" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb2-77"><a href="#cb2-77" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-78"><a href="#cb2-78" aria-hidden="true" tabindex="-1"></a>  trend_plot <span class="ot">&lt;-</span> ggplot2<span class="sc">::</span><span class="fu">ggplot</span>(</span>
-<span id="cb2-79"><a href="#cb2-79" aria-hidden="true" tabindex="-1"></a>    trend,</span>
-<span id="cb2-80"><a href="#cb2-80" aria-hidden="true" tabindex="-1"></a>    ggplot2<span class="sc">::</span><span class="fu">aes</span>(income_year, median_weekly, <span class="at">color =</span> education)</span>
-<span id="cb2-81"><a href="#cb2-81" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb2-82"><a href="#cb2-82" aria-hidden="true" tabindex="-1"></a>    ggplot2<span class="sc">::</span><span class="fu">geom_line</span>(<span class="at">linewidth =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
-<span id="cb2-83"><a href="#cb2-83" aria-hidden="true" tabindex="-1"></a>    ggplot2<span class="sc">::</span><span class="fu">geom_point</span>(<span class="at">size =</span> <span class="fl">2.2</span>) <span class="sc">+</span></span>
-<span id="cb2-84"><a href="#cb2-84" aria-hidden="true" tabindex="-1"></a>    ggplot2<span class="sc">::</span><span class="fu">scale_color_manual</span>(<span class="at">values =</span> palette) <span class="sc">+</span></span>
-<span id="cb2-85"><a href="#cb2-85" aria-hidden="true" tabindex="-1"></a>    ggplot2<span class="sc">::</span><span class="fu">scale_y_continuous</span>(<span class="at">labels =</span> scales<span class="sc">::</span><span class="fu">label_dollar</span>(<span class="at">accuracy =</span> <span class="dv">1</span>)) <span class="sc">+</span></span>
-<span id="cb2-86"><a href="#cb2-86" aria-hidden="true" tabindex="-1"></a>    ggplot2<span class="sc">::</span><span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">sort</span>(<span class="fu">unique</span>(trend<span class="sc">$</span>income_year))) <span class="sc">+</span></span>
-<span id="cb2-87"><a href="#cb2-87" aria-hidden="true" tabindex="-1"></a>    ggplot2<span class="sc">::</span><span class="fu">labs</span>(</span>
-<span id="cb2-88"><a href="#cb2-88" aria-hidden="true" tabindex="-1"></a>      <span class="at">title =</span> <span class="st">"Education and median weekly earnings"</span>,</span>
-<span id="cb2-89"><a href="#cb2-89" aria-hidden="true" tabindex="-1"></a>      <span class="at">subtitle =</span> <span class="fu">paste0</span>(</span>
-<span id="cb2-90"><a href="#cb2-90" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Full-time, full-year wage and salary workers ages 25–64; "</span>,</span>
-<span id="cb2-91"><a href="#cb2-91" aria-hidden="true" tabindex="-1"></a>        dollar_year, <span class="st">" dollars"</span></span>
-<span id="cb2-92"><a href="#cb2-92" aria-hidden="true" tabindex="-1"></a>      ),</span>
-<span id="cb2-93"><a href="#cb2-93" aria-hidden="true" tabindex="-1"></a>      <span class="at">x =</span> <span class="cn">NULL</span>,</span>
-<span id="cb2-94"><a href="#cb2-94" aria-hidden="true" tabindex="-1"></a>      <span class="at">y =</span> <span class="st">"Weighted median weekly earnings"</span>,</span>
-<span id="cb2-95"><a href="#cb2-95" aria-hidden="true" tabindex="-1"></a>      <span class="at">caption =</span> <span class="st">"Source: IPUMS CPS ASEC. Estimates use ASECWT."</span></span>
-<span id="cb2-96"><a href="#cb2-96" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">+</span></span>
-<span id="cb2-97"><a href="#cb2-97" aria-hidden="true" tabindex="-1"></a>    base_theme <span class="sc">+</span></span>
-<span id="cb2-98"><a href="#cb2-98" aria-hidden="true" tabindex="-1"></a>    ggplot2<span class="sc">::</span><span class="fu">theme</span>(<span class="at">axis.text.x =</span> ggplot2<span class="sc">::</span><span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>, <span class="at">hjust =</span> <span class="dv">1</span>))</span>
-<span id="cb2-99"><a href="#cb2-99" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-100"><a href="#cb2-100" aria-hidden="true" tabindex="-1"></a>  gender_plot <span class="ot">&lt;-</span> ggplot2<span class="sc">::</span><span class="fu">ggplot</span>(</span>
-<span id="cb2-101"><a href="#cb2-101" aria-hidden="true" tabindex="-1"></a>    gender_premium,</span>
-<span id="cb2-102"><a href="#cb2-102" aria-hidden="true" tabindex="-1"></a>    ggplot2<span class="sc">::</span><span class="fu">aes</span>(income_year, premium_pct, <span class="at">color =</span> sex_group)</span>
-<span id="cb2-103"><a href="#cb2-103" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb2-104"><a href="#cb2-104" aria-hidden="true" tabindex="-1"></a>    ggplot2<span class="sc">::</span><span class="fu">geom_hline</span>(<span class="at">yintercept =</span> <span class="dv">0</span>, <span class="at">color =</span> <span class="st">"grey75"</span>, <span class="at">linewidth =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
-<span id="cb2-105"><a href="#cb2-105" aria-hidden="true" tabindex="-1"></a>    ggplot2<span class="sc">::</span><span class="fu">geom_line</span>(<span class="at">linewidth =</span> <span class="fl">1.1</span>) <span class="sc">+</span></span>
-<span id="cb2-106"><a href="#cb2-106" aria-hidden="true" tabindex="-1"></a>    ggplot2<span class="sc">::</span><span class="fu">geom_point</span>(<span class="at">size =</span> <span class="fl">2.3</span>) <span class="sc">+</span></span>
-<span id="cb2-107"><a href="#cb2-107" aria-hidden="true" tabindex="-1"></a>    ggplot2<span class="sc">::</span><span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"Women"</span> <span class="ot">=</span> <span class="st">"#CC79A7"</span>, <span class="st">"Men"</span> <span class="ot">=</span> <span class="st">"#0072B2"</span>)) <span class="sc">+</span></span>
-<span id="cb2-108"><a href="#cb2-108" aria-hidden="true" tabindex="-1"></a>    ggplot2<span class="sc">::</span><span class="fu">scale_y_continuous</span>(<span class="at">labels =</span> scales<span class="sc">::</span><span class="fu">label_percent</span>(<span class="at">scale =</span> <span class="dv">1</span>, <span class="at">accuracy =</span> <span class="dv">1</span>)) <span class="sc">+</span></span>
-<span id="cb2-109"><a href="#cb2-109" aria-hidden="true" tabindex="-1"></a>    ggplot2<span class="sc">::</span><span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">sort</span>(<span class="fu">unique</span>(gender_premium<span class="sc">$</span>income_year))) <span class="sc">+</span></span>
-<span id="cb2-110"><a href="#cb2-110" aria-hidden="true" tabindex="-1"></a>    ggplot2<span class="sc">::</span><span class="fu">labs</span>(</span>
-<span id="cb2-111"><a href="#cb2-111" aria-hidden="true" tabindex="-1"></a>      <span class="at">title =</span> <span class="st">"The bachelor's premium differs for women and men"</span>,</span>
-<span id="cb2-112"><a href="#cb2-112" aria-hidden="true" tabindex="-1"></a>      <span class="at">subtitle =</span> <span class="st">"Percent difference in weighted median weekly earnings relative to high-school graduates"</span>,</span>
-<span id="cb2-113"><a href="#cb2-113" aria-hidden="true" tabindex="-1"></a>      <span class="at">x =</span> <span class="cn">NULL</span>,</span>
-<span id="cb2-114"><a href="#cb2-114" aria-hidden="true" tabindex="-1"></a>      <span class="at">y =</span> <span class="st">"Bachelor's earnings premium"</span>,</span>
-<span id="cb2-115"><a href="#cb2-115" aria-hidden="true" tabindex="-1"></a>      <span class="at">caption =</span> <span class="st">"Source: IPUMS CPS ASEC. Estimates use ASECWT."</span></span>
-<span id="cb2-116"><a href="#cb2-116" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">+</span></span>
-<span id="cb2-117"><a href="#cb2-117" aria-hidden="true" tabindex="-1"></a>    base_theme <span class="sc">+</span></span>
-<span id="cb2-118"><a href="#cb2-118" aria-hidden="true" tabindex="-1"></a>    ggplot2<span class="sc">::</span><span class="fu">theme</span>(<span class="at">axis.text.x =</span> ggplot2<span class="sc">::</span><span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>, <span class="at">hjust =</span> <span class="dv">1</span>))</span>
-<span id="cb2-119"><a href="#cb2-119" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-120"><a href="#cb2-120" aria-hidden="true" tabindex="-1"></a>  age_plot <span class="ot">&lt;-</span> ggplot2<span class="sc">::</span><span class="fu">ggplot</span>(</span>
-<span id="cb2-121"><a href="#cb2-121" aria-hidden="true" tabindex="-1"></a>    age_profile,</span>
-<span id="cb2-122"><a href="#cb2-122" aria-hidden="true" tabindex="-1"></a>    ggplot2<span class="sc">::</span><span class="fu">aes</span>(age_band, median_weekly, <span class="at">color =</span> education, <span class="at">group =</span> education)</span>
-<span id="cb2-123"><a href="#cb2-123" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb2-124"><a href="#cb2-124" aria-hidden="true" tabindex="-1"></a>    ggplot2<span class="sc">::</span><span class="fu">geom_line</span>(<span class="at">linewidth =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
-<span id="cb2-125"><a href="#cb2-125" aria-hidden="true" tabindex="-1"></a>    ggplot2<span class="sc">::</span><span class="fu">geom_point</span>(<span class="at">size =</span> <span class="fl">2.2</span>) <span class="sc">+</span></span>
-<span id="cb2-126"><a href="#cb2-126" aria-hidden="true" tabindex="-1"></a>    ggplot2<span class="sc">::</span><span class="fu">scale_color_manual</span>(<span class="at">values =</span> palette) <span class="sc">+</span></span>
-<span id="cb2-127"><a href="#cb2-127" aria-hidden="true" tabindex="-1"></a>    ggplot2<span class="sc">::</span><span class="fu">scale_y_continuous</span>(<span class="at">labels =</span> scales<span class="sc">::</span><span class="fu">label_dollar</span>(<span class="at">accuracy =</span> <span class="dv">1</span>)) <span class="sc">+</span></span>
-<span id="cb2-128"><a href="#cb2-128" aria-hidden="true" tabindex="-1"></a>    ggplot2<span class="sc">::</span><span class="fu">labs</span>(</span>
-<span id="cb2-129"><a href="#cb2-129" aria-hidden="true" tabindex="-1"></a>      <span class="at">title =</span> <span class="fu">paste0</span>(<span class="st">"The education gap changes across the life cycle in "</span>, latest_year),</span>
-<span id="cb2-130"><a href="#cb2-130" aria-hidden="true" tabindex="-1"></a>      <span class="at">subtitle =</span> <span class="fu">paste0</span>(</span>
-<span id="cb2-131"><a href="#cb2-131" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Weighted median weekly earnings of full-time, full-year workers; "</span>,</span>
-<span id="cb2-132"><a href="#cb2-132" aria-hidden="true" tabindex="-1"></a>        dollar_year, <span class="st">" dollars"</span></span>
-<span id="cb2-133"><a href="#cb2-133" aria-hidden="true" tabindex="-1"></a>      ),</span>
-<span id="cb2-134"><a href="#cb2-134" aria-hidden="true" tabindex="-1"></a>      <span class="at">x =</span> <span class="st">"Age group"</span>,</span>
-<span id="cb2-135"><a href="#cb2-135" aria-hidden="true" tabindex="-1"></a>      <span class="at">y =</span> <span class="st">"Weighted median weekly earnings"</span>,</span>
-<span id="cb2-136"><a href="#cb2-136" aria-hidden="true" tabindex="-1"></a>      <span class="at">caption =</span> <span class="st">"Source: IPUMS CPS ASEC. Estimates use ASECWT."</span></span>
-<span id="cb2-137"><a href="#cb2-137" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">+</span></span>
-<span id="cb2-138"><a href="#cb2-138" aria-hidden="true" tabindex="-1"></a>    base_theme</span>
-<span id="cb2-139"><a href="#cb2-139" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-140"><a href="#cb2-140" aria-hidden="true" tabindex="-1"></a>  readr<span class="sc">::</span><span class="fu">write_csv</span>(trend, <span class="fu">file.path</span>(results_dir, <span class="st">"earnings_by_education.csv"</span>))</span>
-<span id="cb2-141"><a href="#cb2-141" aria-hidden="true" tabindex="-1"></a>  readr<span class="sc">::</span><span class="fu">write_csv</span>(overall_premium, <span class="fu">file.path</span>(results_dir, <span class="st">"college_premium.csv"</span>))</span>
-<span id="cb2-142"><a href="#cb2-142" aria-hidden="true" tabindex="-1"></a>  readr<span class="sc">::</span><span class="fu">write_csv</span>(gender_premium, <span class="fu">file.path</span>(results_dir, <span class="st">"college_premium_by_sex.csv"</span>))</span>
-<span id="cb2-143"><a href="#cb2-143" aria-hidden="true" tabindex="-1"></a>  readr<span class="sc">::</span><span class="fu">write_csv</span>(age_profile, <span class="fu">file.path</span>(results_dir, <span class="st">"earnings_by_age.csv"</span>))</span>
-<span id="cb2-144"><a href="#cb2-144" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-145"><a href="#cb2-145" aria-hidden="true" tabindex="-1"></a>  ggplot2<span class="sc">::</span><span class="fu">ggsave</span>(<span class="fu">file.path</span>(results_dir, <span class="st">"01_earnings_trend.png"</span>), trend_plot,</span>
-<span id="cb2-146"><a href="#cb2-146" aria-hidden="true" tabindex="-1"></a>                  <span class="at">width =</span> <span class="dv">9</span>, <span class="at">height =</span> <span class="fl">5.2</span>, <span class="at">dpi =</span> <span class="dv">220</span>)</span>
-<span id="cb2-147"><a href="#cb2-147" aria-hidden="true" tabindex="-1"></a>  ggplot2<span class="sc">::</span><span class="fu">ggsave</span>(<span class="fu">file.path</span>(results_dir, <span class="st">"02_premium_by_sex.png"</span>), gender_plot,</span>
-<span id="cb2-148"><a href="#cb2-148" aria-hidden="true" tabindex="-1"></a>                  <span class="at">width =</span> <span class="dv">9</span>, <span class="at">height =</span> <span class="fl">5.2</span>, <span class="at">dpi =</span> <span class="dv">220</span>)</span>
-<span id="cb2-149"><a href="#cb2-149" aria-hidden="true" tabindex="-1"></a>  ggplot2<span class="sc">::</span><span class="fu">ggsave</span>(<span class="fu">file.path</span>(results_dir, <span class="st">"03_age_profile.png"</span>), age_plot,</span>
-<span id="cb2-150"><a href="#cb2-150" aria-hidden="true" tabindex="-1"></a>                  <span class="at">width =</span> <span class="dv">9</span>, <span class="at">height =</span> <span class="fl">5.2</span>, <span class="at">dpi =</span> <span class="dv">220</span>)</span>
-<span id="cb2-151"><a href="#cb2-151" aria-hidden="true" tabindex="-1"></a>  <span class="fu">writeLines</span>(<span class="fu">capture.output</span>(<span class="fu">sessionInfo</span>()), <span class="fu">file.path</span>(results_dir, <span class="st">"sessionInfo.txt"</span>))</span>
-<span id="cb2-152"><a href="#cb2-152" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-153"><a href="#cb2-153" aria-hidden="true" tabindex="-1"></a>  <span class="fu">list</span>(</span>
-<span id="cb2-154"><a href="#cb2-154" aria-hidden="true" tabindex="-1"></a>    <span class="at">trend =</span> trend,</span>
-<span id="cb2-155"><a href="#cb2-155" aria-hidden="true" tabindex="-1"></a>    <span class="at">overall_premium =</span> overall_premium,</span>
-<span id="cb2-156"><a href="#cb2-156" aria-hidden="true" tabindex="-1"></a>    <span class="at">gender_premium =</span> gender_premium,</span>
-<span id="cb2-157"><a href="#cb2-157" aria-hidden="true" tabindex="-1"></a>    <span class="at">age_profile =</span> age_profile,</span>
-<span id="cb2-158"><a href="#cb2-158" aria-hidden="true" tabindex="-1"></a>    <span class="at">age_premium =</span> age_premium,</span>
-<span id="cb2-159"><a href="#cb2-159" aria-hidden="true" tabindex="-1"></a>    <span class="at">trend_plot =</span> trend_plot,</span>
-<span id="cb2-160"><a href="#cb2-160" aria-hidden="true" tabindex="-1"></a>    <span class="at">gender_plot =</span> gender_plot,</span>
-<span id="cb2-161"><a href="#cb2-161" aria-hidden="true" tabindex="-1"></a>    <span class="at">age_plot =</span> age_plot,</span>
-<span id="cb2-162"><a href="#cb2-162" aria-hidden="true" tabindex="-1"></a>    <span class="at">latest_year =</span> latest_year,</span>
-<span id="cb2-163"><a href="#cb2-163" aria-hidden="true" tabindex="-1"></a>    <span class="at">dollar_year =</span> dollar_year</span>
-<span id="cb2-164"><a href="#cb2-164" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb2-165"><a href="#cb2-165" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb2-68"><a href="#cb2-68" aria-hidden="true" tabindex="-1"></a>  sex_change <span class="ot">&lt;-</span> by_sex <span class="sc">|&gt;</span></span>
+<span id="cb2-69"><a href="#cb2-69" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">group_by</span>(sex_group, education) <span class="sc">|&gt;</span></span>
+<span id="cb2-70"><a href="#cb2-70" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">summarise</span>(</span>
+<span id="cb2-71"><a href="#cb2-71" aria-hidden="true" tabindex="-1"></a>      <span class="at">first_median =</span> median_weekly[income_year <span class="sc">==</span> first_year],</span>
+<span id="cb2-72"><a href="#cb2-72" aria-hidden="true" tabindex="-1"></a>      <span class="at">latest_median =</span> median_weekly[income_year <span class="sc">==</span> latest_year],</span>
+<span id="cb2-73"><a href="#cb2-73" aria-hidden="true" tabindex="-1"></a>      <span class="at">.groups =</span> <span class="st">"drop"</span></span>
+<span id="cb2-74"><a href="#cb2-74" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">|&gt;</span></span>
+<span id="cb2-75"><a href="#cb2-75" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">mutate</span>(</span>
+<span id="cb2-76"><a href="#cb2-76" aria-hidden="true" tabindex="-1"></a>      <span class="at">first_year =</span> first_year,</span>
+<span id="cb2-77"><a href="#cb2-77" aria-hidden="true" tabindex="-1"></a>      <span class="at">latest_year =</span> latest_year,</span>
+<span id="cb2-78"><a href="#cb2-78" aria-hidden="true" tabindex="-1"></a>      <span class="at">change_pct =</span> <span class="dv">100</span> <span class="sc">*</span> (latest_median <span class="sc">/</span> first_median <span class="sc">-</span> <span class="dv">1</span>),</span>
+<span id="cb2-79"><a href="#cb2-79" aria-hidden="true" tabindex="-1"></a>      <span class="at">change_label =</span> <span class="fu">sprintf</span>(<span class="st">"%+.1f%%"</span>, change_pct),</span>
+<span id="cb2-80"><a href="#cb2-80" aria-hidden="true" tabindex="-1"></a>      <span class="at">label_x =</span> change_pct <span class="sc">+</span> <span class="fu">ifelse</span>(change_pct <span class="sc">&gt;=</span> <span class="dv">0</span>, <span class="fl">0.3</span>, <span class="sc">-</span><span class="fl">0.3</span>),</span>
+<span id="cb2-81"><a href="#cb2-81" aria-hidden="true" tabindex="-1"></a>      <span class="at">label_hjust =</span> <span class="fu">ifelse</span>(change_pct <span class="sc">&gt;=</span> <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>)</span>
+<span id="cb2-82"><a href="#cb2-82" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb2-83"><a href="#cb2-83" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-84"><a href="#cb2-84" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (<span class="fu">nrow</span>(overall_change) <span class="sc">!=</span> <span class="dv">2</span> <span class="sc">||</span> <span class="fu">nrow</span>(sex_change) <span class="sc">!=</span> <span class="dv">4</span> <span class="sc">||</span></span>
+<span id="cb2-85"><a href="#cb2-85" aria-hidden="true" tabindex="-1"></a>      <span class="fu">any</span>(<span class="sc">!</span><span class="fu">is.finite</span>(overall_premium<span class="sc">$</span>premium_pct)) <span class="sc">||</span></span>
+<span id="cb2-86"><a href="#cb2-86" aria-hidden="true" tabindex="-1"></a>      <span class="fu">any</span>(<span class="sc">!</span><span class="fu">is.finite</span>(gender_premium<span class="sc">$</span>premium_pct)) <span class="sc">||</span></span>
+<span id="cb2-87"><a href="#cb2-87" aria-hidden="true" tabindex="-1"></a>      <span class="fu">any</span>(<span class="sc">!</span><span class="fu">is.finite</span>(overall_change<span class="sc">$</span>change_pct)) <span class="sc">||</span></span>
+<span id="cb2-88"><a href="#cb2-88" aria-hidden="true" tabindex="-1"></a>      <span class="fu">any</span>(<span class="sc">!</span><span class="fu">is.finite</span>(sex_change<span class="sc">$</span>change_pct))) {</span>
+<span id="cb2-89"><a href="#cb2-89" aria-hidden="true" tabindex="-1"></a>    <span class="fu">stop</span>(<span class="st">"An education/sex comparison is missing. Check the extract."</span>)</span>
+<span id="cb2-90"><a href="#cb2-90" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb2-91"><a href="#cb2-91" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-92"><a href="#cb2-92" aria-hidden="true" tabindex="-1"></a>  palette <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"High school"</span> <span class="ot">=</span> <span class="st">"#555555"</span>, <span class="st">"Bachelor's"</span> <span class="ot">=</span> <span class="st">"#0072B2"</span>)</span>
+<span id="cb2-93"><a href="#cb2-93" aria-hidden="true" tabindex="-1"></a>  years <span class="ot">&lt;-</span> <span class="fu">seq</span>(first_year, latest_year, <span class="at">by =</span> <span class="dv">4</span>)</span>
+<span id="cb2-94"><a href="#cb2-94" aria-hidden="true" tabindex="-1"></a>  source_note <span class="ot">&lt;-</span> <span class="st">"Source: IPUMS CPS ASEC; author calculations using ASECWT."</span></span>
+<span id="cb2-95"><a href="#cb2-95" aria-hidden="true" tabindex="-1"></a>  base_theme <span class="ot">&lt;-</span> ggplot2<span class="sc">::</span><span class="fu">theme_minimal</span>(<span class="at">base_size =</span> <span class="dv">12</span>) <span class="sc">+</span></span>
+<span id="cb2-96"><a href="#cb2-96" aria-hidden="true" tabindex="-1"></a>    ggplot2<span class="sc">::</span><span class="fu">theme</span>(</span>
+<span id="cb2-97"><a href="#cb2-97" aria-hidden="true" tabindex="-1"></a>      <span class="at">plot.title.position =</span> <span class="st">"plot"</span>,</span>
+<span id="cb2-98"><a href="#cb2-98" aria-hidden="true" tabindex="-1"></a>      <span class="at">plot.title =</span> ggplot2<span class="sc">::</span><span class="fu">element_text</span>(<span class="at">face =</span> <span class="st">"bold"</span>, <span class="at">size =</span> <span class="dv">16</span>),</span>
+<span id="cb2-99"><a href="#cb2-99" aria-hidden="true" tabindex="-1"></a>      <span class="at">plot.subtitle =</span> ggplot2<span class="sc">::</span><span class="fu">element_text</span>(<span class="at">color =</span> <span class="st">"grey30"</span>, <span class="at">size =</span> <span class="dv">11</span>),</span>
+<span id="cb2-100"><a href="#cb2-100" aria-hidden="true" tabindex="-1"></a>      <span class="at">plot.caption =</span> ggplot2<span class="sc">::</span><span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">9</span>, <span class="at">hjust =</span> <span class="dv">0</span>),</span>
+<span id="cb2-101"><a href="#cb2-101" aria-hidden="true" tabindex="-1"></a>      <span class="at">panel.grid.minor =</span> ggplot2<span class="sc">::</span><span class="fu">element_blank</span>(),</span>
+<span id="cb2-102"><a href="#cb2-102" aria-hidden="true" tabindex="-1"></a>      <span class="at">legend.position =</span> <span class="st">"bottom"</span>,</span>
+<span id="cb2-103"><a href="#cb2-103" aria-hidden="true" tabindex="-1"></a>      <span class="at">legend.title =</span> ggplot2<span class="sc">::</span><span class="fu">element_blank</span>(),</span>
+<span id="cb2-104"><a href="#cb2-104" aria-hidden="true" tabindex="-1"></a>      <span class="at">plot.margin =</span> ggplot2<span class="sc">::</span><span class="fu">margin</span>(<span class="dv">12</span>, <span class="dv">16</span>, <span class="dv">12</span>, <span class="dv">12</span>)</span>
+<span id="cb2-105"><a href="#cb2-105" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb2-106"><a href="#cb2-106" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-107"><a href="#cb2-107" aria-hidden="true" tabindex="-1"></a>  premium_plot <span class="ot">&lt;-</span> ggplot2<span class="sc">::</span><span class="fu">ggplot</span>(</span>
+<span id="cb2-108"><a href="#cb2-108" aria-hidden="true" tabindex="-1"></a>    overall_premium, ggplot2<span class="sc">::</span><span class="fu">aes</span>(income_year, premium_pct)</span>
+<span id="cb2-109"><a href="#cb2-109" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb2-110"><a href="#cb2-110" aria-hidden="true" tabindex="-1"></a>    ggplot2<span class="sc">::</span><span class="fu">geom_line</span>(<span class="at">linewidth =</span> <span class="dv">1</span>, <span class="at">color =</span> <span class="st">"#0072B2"</span>) <span class="sc">+</span></span>
+<span id="cb2-111"><a href="#cb2-111" aria-hidden="true" tabindex="-1"></a>    ggplot2<span class="sc">::</span><span class="fu">geom_point</span>(<span class="at">size =</span> <span class="fl">2.5</span>, <span class="at">color =</span> <span class="st">"#0072B2"</span>) <span class="sc">+</span></span>
+<span id="cb2-112"><a href="#cb2-112" aria-hidden="true" tabindex="-1"></a>    ggplot2<span class="sc">::</span><span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> years) <span class="sc">+</span></span>
+<span id="cb2-113"><a href="#cb2-113" aria-hidden="true" tabindex="-1"></a>    ggplot2<span class="sc">::</span><span class="fu">scale_y_continuous</span>(</span>
+<span id="cb2-114"><a href="#cb2-114" aria-hidden="true" tabindex="-1"></a>      <span class="at">labels =</span> scales<span class="sc">::</span><span class="fu">label_percent</span>(<span class="at">scale =</span> <span class="dv">1</span>, <span class="at">accuracy =</span> <span class="dv">1</span>)</span>
+<span id="cb2-115"><a href="#cb2-115" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">+</span></span>
+<span id="cb2-116"><a href="#cb2-116" aria-hidden="true" tabindex="-1"></a>    ggplot2<span class="sc">::</span><span class="fu">labs</span>(</span>
+<span id="cb2-117"><a href="#cb2-117" aria-hidden="true" tabindex="-1"></a>      <span class="at">title =</span> <span class="st">"The college premium ended modestly higher"</span>,</span>
+<span id="cb2-118"><a href="#cb2-118" aria-hidden="true" tabindex="-1"></a>      <span class="at">subtitle =</span> <span class="st">"Bachelor's relative to high school; selected income years"</span>,</span>
+<span id="cb2-119"><a href="#cb2-119" aria-hidden="true" tabindex="-1"></a>      <span class="at">x =</span> <span class="st">"Income year"</span>, <span class="at">y =</span> <span class="st">"Difference in weighted medians (%)"</span>,</span>
+<span id="cb2-120"><a href="#cb2-120" aria-hidden="true" tabindex="-1"></a>      <span class="at">caption =</span> source_note</span>
+<span id="cb2-121"><a href="#cb2-121" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">+</span> base_theme</span>
+<span id="cb2-122"><a href="#cb2-122" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-123"><a href="#cb2-123" aria-hidden="true" tabindex="-1"></a>  earnings_plot <span class="ot">&lt;-</span> ggplot2<span class="sc">::</span><span class="fu">ggplot</span>(</span>
+<span id="cb2-124"><a href="#cb2-124" aria-hidden="true" tabindex="-1"></a>    comparison, ggplot2<span class="sc">::</span><span class="fu">aes</span>(income_year, median_weekly, <span class="at">color =</span> education)</span>
+<span id="cb2-125"><a href="#cb2-125" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb2-126"><a href="#cb2-126" aria-hidden="true" tabindex="-1"></a>    ggplot2<span class="sc">::</span><span class="fu">geom_line</span>(<span class="at">linewidth =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb2-127"><a href="#cb2-127" aria-hidden="true" tabindex="-1"></a>    ggplot2<span class="sc">::</span><span class="fu">geom_point</span>(<span class="at">size =</span> <span class="fl">2.5</span>) <span class="sc">+</span></span>
+<span id="cb2-128"><a href="#cb2-128" aria-hidden="true" tabindex="-1"></a>    ggplot2<span class="sc">::</span><span class="fu">scale_color_manual</span>(<span class="at">values =</span> palette) <span class="sc">+</span></span>
+<span id="cb2-129"><a href="#cb2-129" aria-hidden="true" tabindex="-1"></a>    ggplot2<span class="sc">::</span><span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> years) <span class="sc">+</span></span>
+<span id="cb2-130"><a href="#cb2-130" aria-hidden="true" tabindex="-1"></a>    ggplot2<span class="sc">::</span><span class="fu">scale_y_continuous</span>(<span class="at">labels =</span> scales<span class="sc">::</span><span class="fu">label_dollar</span>(<span class="at">accuracy =</span> <span class="dv">1</span>)) <span class="sc">+</span></span>
+<span id="cb2-131"><a href="#cb2-131" aria-hidden="true" tabindex="-1"></a>    ggplot2<span class="sc">::</span><span class="fu">labs</span>(</span>
+<span id="cb2-132"><a href="#cb2-132" aria-hidden="true" tabindex="-1"></a>      <span class="at">title =</span> <span class="st">"Similar endpoints for bachelor's real earnings"</span>,</span>
+<span id="cb2-133"><a href="#cb2-133" aria-hidden="true" tabindex="-1"></a>      <span class="at">subtitle =</span> <span class="fu">paste0</span>(<span class="st">"Full-time, full-year wage workers ages 25–64; "</span>,</span>
+<span id="cb2-134"><a href="#cb2-134" aria-hidden="true" tabindex="-1"></a>                        dollar_year, <span class="st">" dollars"</span>),</span>
+<span id="cb2-135"><a href="#cb2-135" aria-hidden="true" tabindex="-1"></a>      <span class="at">x =</span> <span class="st">"Income year"</span>, <span class="at">y =</span> <span class="st">"Weighted median weekly earnings"</span>,</span>
+<span id="cb2-136"><a href="#cb2-136" aria-hidden="true" tabindex="-1"></a>      <span class="at">caption =</span> source_note</span>
+<span id="cb2-137"><a href="#cb2-137" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">+</span> base_theme</span>
+<span id="cb2-138"><a href="#cb2-138" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-139"><a href="#cb2-139" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Facets share an axis, so bar lengths are comparable across sex groups.</span></span>
+<span id="cb2-140"><a href="#cb2-140" aria-hidden="true" tabindex="-1"></a>  change_limits <span class="ot">&lt;-</span> <span class="fu">range</span>(<span class="fu">c</span>(<span class="dv">0</span>, sex_change<span class="sc">$</span>change_pct)) <span class="sc">+</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">2</span>, <span class="dv">2</span>)</span>
+<span id="cb2-141"><a href="#cb2-141" aria-hidden="true" tabindex="-1"></a>  sex_change_plot <span class="ot">&lt;-</span> ggplot2<span class="sc">::</span><span class="fu">ggplot</span>(</span>
+<span id="cb2-142"><a href="#cb2-142" aria-hidden="true" tabindex="-1"></a>    sex_change, ggplot2<span class="sc">::</span><span class="fu">aes</span>(change_pct, education, <span class="at">fill =</span> education)</span>
+<span id="cb2-143"><a href="#cb2-143" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb2-144"><a href="#cb2-144" aria-hidden="true" tabindex="-1"></a>    ggplot2<span class="sc">::</span><span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="dv">0</span>, <span class="at">color =</span> <span class="st">"grey50"</span>, <span class="at">linewidth =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
+<span id="cb2-145"><a href="#cb2-145" aria-hidden="true" tabindex="-1"></a>    ggplot2<span class="sc">::</span><span class="fu">geom_col</span>(<span class="at">width =</span> <span class="fl">0.6</span>) <span class="sc">+</span></span>
+<span id="cb2-146"><a href="#cb2-146" aria-hidden="true" tabindex="-1"></a>    ggplot2<span class="sc">::</span><span class="fu">geom_text</span>(</span>
+<span id="cb2-147"><a href="#cb2-147" aria-hidden="true" tabindex="-1"></a>      ggplot2<span class="sc">::</span><span class="fu">aes</span>(<span class="at">x =</span> label_x, <span class="at">label =</span> change_label, <span class="at">hjust =</span> label_hjust),</span>
+<span id="cb2-148"><a href="#cb2-148" aria-hidden="true" tabindex="-1"></a>      <span class="at">size =</span> <span class="fl">3.8</span>, <span class="at">show.legend =</span> <span class="cn">FALSE</span></span>
+<span id="cb2-149"><a href="#cb2-149" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">+</span></span>
+<span id="cb2-150"><a href="#cb2-150" aria-hidden="true" tabindex="-1"></a>    ggplot2<span class="sc">::</span><span class="fu">facet_wrap</span>(<span class="sc">~</span> sex_group, <span class="at">nrow =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb2-151"><a href="#cb2-151" aria-hidden="true" tabindex="-1"></a>    ggplot2<span class="sc">::</span><span class="fu">scale_fill_manual</span>(<span class="at">values =</span> palette) <span class="sc">+</span></span>
+<span id="cb2-152"><a href="#cb2-152" aria-hidden="true" tabindex="-1"></a>    ggplot2<span class="sc">::</span><span class="fu">scale_y_discrete</span>(<span class="at">limits =</span> <span class="fu">rev</span>(degrees)) <span class="sc">+</span></span>
+<span id="cb2-153"><a href="#cb2-153" aria-hidden="true" tabindex="-1"></a>    ggplot2<span class="sc">::</span><span class="fu">scale_x_continuous</span>(</span>
+<span id="cb2-154"><a href="#cb2-154" aria-hidden="true" tabindex="-1"></a>      <span class="at">labels =</span> scales<span class="sc">::</span><span class="fu">label_percent</span>(<span class="at">scale =</span> <span class="dv">1</span>, <span class="at">accuracy =</span> <span class="dv">1</span>),</span>
+<span id="cb2-155"><a href="#cb2-155" aria-hidden="true" tabindex="-1"></a>      <span class="at">limits =</span> change_limits</span>
+<span id="cb2-156"><a href="#cb2-156" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">+</span></span>
+<span id="cb2-157"><a href="#cb2-157" aria-hidden="true" tabindex="-1"></a>    ggplot2<span class="sc">::</span><span class="fu">labs</span>(</span>
+<span id="cb2-158"><a href="#cb2-158" aria-hidden="true" tabindex="-1"></a>      <span class="at">title =</span> <span class="st">"Real earnings changes differ within the pooled sample"</span>,</span>
+<span id="cb2-159"><a href="#cb2-159" aria-hidden="true" tabindex="-1"></a>      <span class="at">subtitle =</span> <span class="fu">paste0</span>(<span class="st">"Change in each group's weighted median, "</span>,</span>
+<span id="cb2-160"><a href="#cb2-160" aria-hidden="true" tabindex="-1"></a>                        first_year, <span class="st">"–"</span>, latest_year),</span>
+<span id="cb2-161"><a href="#cb2-161" aria-hidden="true" tabindex="-1"></a>      <span class="at">x =</span> <span class="st">"Change in real weekly earnings (%)"</span>, <span class="at">y =</span> <span class="cn">NULL</span>,</span>
+<span id="cb2-162"><a href="#cb2-162" aria-hidden="true" tabindex="-1"></a>      <span class="at">caption =</span> <span class="fu">paste0</span>(source_note, <span class="st">"</span><span class="sc">\n</span><span class="st">Repeated cross-sections; not individual earnings histories."</span>)</span>
+<span id="cb2-163"><a href="#cb2-163" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">+</span> base_theme <span class="sc">+</span> ggplot2<span class="sc">::</span><span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"none"</span>)</span>
+<span id="cb2-164"><a href="#cb2-164" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-165"><a href="#cb2-165" aria-hidden="true" tabindex="-1"></a>  readr<span class="sc">::</span><span class="fu">write_csv</span>(trend, <span class="fu">file.path</span>(results_dir, <span class="st">"earnings_by_education.csv"</span>))</span>
+<span id="cb2-166"><a href="#cb2-166" aria-hidden="true" tabindex="-1"></a>  readr<span class="sc">::</span><span class="fu">write_csv</span>(by_sex, <span class="fu">file.path</span>(results_dir, <span class="st">"earnings_by_sex.csv"</span>))</span>
+<span id="cb2-167"><a href="#cb2-167" aria-hidden="true" tabindex="-1"></a>  readr<span class="sc">::</span><span class="fu">write_csv</span>(overall_premium, <span class="fu">file.path</span>(results_dir, <span class="st">"college_premium.csv"</span>))</span>
+<span id="cb2-168"><a href="#cb2-168" aria-hidden="true" tabindex="-1"></a>  readr<span class="sc">::</span><span class="fu">write_csv</span>(gender_premium, <span class="fu">file.path</span>(results_dir, <span class="st">"college_premium_by_sex.csv"</span>))</span>
+<span id="cb2-169"><a href="#cb2-169" aria-hidden="true" tabindex="-1"></a>  readr<span class="sc">::</span><span class="fu">write_csv</span>(overall_change, <span class="fu">file.path</span>(results_dir, <span class="st">"earnings_change_overall.csv"</span>))</span>
+<span id="cb2-170"><a href="#cb2-170" aria-hidden="true" tabindex="-1"></a>  readr<span class="sc">::</span><span class="fu">write_csv</span>(</span>
+<span id="cb2-171"><a href="#cb2-171" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">select</span>(sex_change, <span class="sc">-</span>change_label, <span class="sc">-</span>label_x, <span class="sc">-</span>label_hjust),</span>
+<span id="cb2-172"><a href="#cb2-172" aria-hidden="true" tabindex="-1"></a>    <span class="fu">file.path</span>(results_dir, <span class="st">"earnings_change_by_sex.csv"</span>)</span>
+<span id="cb2-173"><a href="#cb2-173" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb2-174"><a href="#cb2-174" aria-hidden="true" tabindex="-1"></a>  ggplot2<span class="sc">::</span><span class="fu">ggsave</span>(<span class="fu">file.path</span>(results_dir, <span class="st">"01_college_premium.png"</span>), premium_plot,</span>
+<span id="cb2-175"><a href="#cb2-175" aria-hidden="true" tabindex="-1"></a>                  <span class="at">width =</span> <span class="dv">9</span>, <span class="at">height =</span> <span class="fl">5.2</span>, <span class="at">dpi =</span> <span class="dv">220</span>, <span class="at">bg =</span> <span class="st">"white"</span>)</span>
+<span id="cb2-176"><a href="#cb2-176" aria-hidden="true" tabindex="-1"></a>  ggplot2<span class="sc">::</span><span class="fu">ggsave</span>(<span class="fu">file.path</span>(results_dir, <span class="st">"02_real_earnings.png"</span>), earnings_plot,</span>
+<span id="cb2-177"><a href="#cb2-177" aria-hidden="true" tabindex="-1"></a>                  <span class="at">width =</span> <span class="dv">9</span>, <span class="at">height =</span> <span class="fl">5.2</span>, <span class="at">dpi =</span> <span class="dv">220</span>, <span class="at">bg =</span> <span class="st">"white"</span>)</span>
+<span id="cb2-178"><a href="#cb2-178" aria-hidden="true" tabindex="-1"></a>  ggplot2<span class="sc">::</span><span class="fu">ggsave</span>(<span class="fu">file.path</span>(results_dir, <span class="st">"03_earnings_change_by_sex.png"</span>), sex_change_plot,</span>
+<span id="cb2-179"><a href="#cb2-179" aria-hidden="true" tabindex="-1"></a>                  <span class="at">width =</span> <span class="dv">9</span>, <span class="at">height =</span> <span class="fl">5.2</span>, <span class="at">dpi =</span> <span class="dv">220</span>, <span class="at">bg =</span> <span class="st">"white"</span>)</span>
+<span id="cb2-180"><a href="#cb2-180" aria-hidden="true" tabindex="-1"></a>  <span class="fu">writeLines</span>(<span class="fu">capture.output</span>(<span class="fu">sessionInfo</span>()), <span class="fu">file.path</span>(results_dir, <span class="st">"sessionInfo.txt"</span>))</span>
+<span id="cb2-181"><a href="#cb2-181" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-182"><a href="#cb2-182" aria-hidden="true" tabindex="-1"></a>  <span class="fu">list</span>(</span>
+<span id="cb2-183"><a href="#cb2-183" aria-hidden="true" tabindex="-1"></a>    <span class="at">trend =</span> trend, <span class="at">overall_premium =</span> overall_premium,</span>
+<span id="cb2-184"><a href="#cb2-184" aria-hidden="true" tabindex="-1"></a>    <span class="at">gender_premium =</span> gender_premium, <span class="at">overall_change =</span> overall_change,</span>
+<span id="cb2-185"><a href="#cb2-185" aria-hidden="true" tabindex="-1"></a>    <span class="at">sex_change =</span> sex_change, <span class="at">premium_plot =</span> premium_plot,</span>
+<span id="cb2-186"><a href="#cb2-186" aria-hidden="true" tabindex="-1"></a>    <span class="at">earnings_plot =</span> earnings_plot, <span class="at">sex_change_plot =</span> sex_change_plot,</span>
+<span id="cb2-187"><a href="#cb2-187" aria-hidden="true" tabindex="-1"></a>    <span class="at">first_year =</span> first_year, <span class="at">latest_year =</span> latest_year, <span class="at">dollar_year =</span> dollar_year</span>
+<span id="cb2-188"><a href="#cb2-188" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb2-189"><a href="#cb2-189" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb2-190"><a href="#cb2-190" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-191"><a href="#cb2-191" aria-hidden="true" tabindex="-1"></a>analyze_cps <span class="ot">&lt;-</span> <span class="cf">function</span>(cps, <span class="at">results_dir =</span> <span class="st">"results"</span>) {</span>
+<span id="cb2-192"><a href="#cb2-192" aria-hidden="true" tabindex="-1"></a>  trend <span class="ot">&lt;-</span> <span class="fu">weighted_summary</span>(cps, income_year, education)</span>
+<span id="cb2-193"><a href="#cb2-193" aria-hidden="true" tabindex="-1"></a>  by_sex <span class="ot">&lt;-</span> <span class="fu">weighted_summary</span>(cps, income_year, sex_group, education)</span>
+<span id="cb2-194"><a href="#cb2-194" aria-hidden="true" tabindex="-1"></a>  <span class="fu">make_cps_outputs</span>(trend, by_sex, <span class="fu">attr</span>(cps, <span class="st">"latest_dollar_year"</span>), results_dir)</span>
+<span id="cb2-195"><a href="#cb2-195" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 
 
