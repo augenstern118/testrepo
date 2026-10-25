@@ -1,0 +1,709 @@
+"date","series_id","sector","kind","jobs_thousands","baseline_thousands","change_thousands","change_pct"
+2020-02-01,"PAYEMS","Total nonfarm","total",152293,152293,0,0
+2020-03-01,"PAYEMS","Total nonfarm","total",150895,152293,-1398,-0.91796733927364
+2020-04-01,"PAYEMS","Total nonfarm","total",130426,152293,-21867,-14.3585063003552
+2020-05-01,"PAYEMS","Total nonfarm","total",133040,152293,-19253,-12.642078099453
+2020-06-01,"PAYEMS","Total nonfarm","total",137671,152293,-14622,-9.60122920948435
+2020-07-01,"PAYEMS","Total nonfarm","total",139255,152293,-13038,-8.56112887657344
+2020-08-01,"PAYEMS","Total nonfarm","total",140821,152293,-11472,-7.53284786562745
+2020-09-01,"PAYEMS","Total nonfarm","total",141770,152293,-10523,-6.90970694647817
+2020-10-01,"PAYEMS","Total nonfarm","total",142460,152293,-9833,-6.4566329378238
+2020-11-01,"PAYEMS","Total nonfarm","total",142733,152293,-9560,-6.2773732213562
+2020-12-01,"PAYEMS","Total nonfarm","total",142548,152293,-9745,-6.39884958599541
+2021-01-01,"PAYEMS","Total nonfarm","total",142863,152293,-9430,-6.19201145160972
+2021-02-01,"PAYEMS","Total nonfarm","total",143380,152293,-8913,-5.85253425961797
+2021-03-01,"PAYEMS","Total nonfarm","total",144232,152293,-8061,-5.29308635327953
+2021-04-01,"PAYEMS","Total nonfarm","total",144587,152293,-7706,-5.05998305897185
+2021-05-01,"PAYEMS","Total nonfarm","total",145065,152293,-7228,-4.74611439790404
+2021-06-01,"PAYEMS","Total nonfarm","total",145820,152293,-6473,-4.25035950437643
+2021-07-01,"PAYEMS","Total nonfarm","total",146762,152293,-5531,-3.63181498821351
+2021-08-01,"PAYEMS","Total nonfarm","total",147314,152293,-4979,-3.26935578129002
+2021-09-01,"PAYEMS","Total nonfarm","total",147771,152293,-4522,-2.96927632918125
+2021-10-01,"PAYEMS","Total nonfarm","total",148572,152293,-3721,-2.44331650174335
+2021-11-01,"PAYEMS","Total nonfarm","total",149230,152293,-3063,-2.01125462102657
+2021-12-01,"PAYEMS","Total nonfarm","total",149816,152293,-2477,-1.62647002816938
+2022-01-01,"PAYEMS","Total nonfarm","total",150006,152293,-2287,-1.50171051853992
+2022-02-01,"PAYEMS","Total nonfarm","total",150825,152293,-1468,-0.963931369137128
+2022-03-01,"PAYEMS","Total nonfarm","total",151315,152293,-978,-0.642183160092713
+2022-04-01,"PAYEMS","Total nonfarm","total",151623,152293,-670,-0.439941428693369
+2022-05-01,"PAYEMS","Total nonfarm","total",151924,152293,-369,-0.242296100280381
+2022-06-01,"PAYEMS","Total nonfarm","total",152358,152293,65,0.0426808848732474
+2022-07-01,"PAYEMS","Total nonfarm","total",153072,152293,779,0.511513989480794
+2022-08-01,"PAYEMS","Total nonfarm","total",153362,152293,1069,0.701936398915248
+2022-09-01,"PAYEMS","Total nonfarm","total",153582,152293,1289,0.846394778486204
+2022-10-01,"PAYEMS","Total nonfarm","total",153939,152293,1646,1.08081133078999
+2022-11-01,"PAYEMS","Total nonfarm","total",154242,152293,1949,1.27976991719909
+2022-12-01,"PAYEMS","Total nonfarm","total",154342,152293,2049,1.34543281700406
+2023-01-01,"PAYEMS","Total nonfarm","total",154776,152293,2483,1.63040980215767
+2023-02-01,"PAYEMS","Total nonfarm","total",155066,152293,2773,1.82083221159213
+2023-03-01,"PAYEMS","Total nonfarm","total",155134,152293,2841,1.86548298345952
+2023-04-01,"PAYEMS","Total nonfarm","total",155375,152293,3082,2.02373057198952
+2023-05-01,"PAYEMS","Total nonfarm","total",155655,152293,3362,2.20758669144347
+2023-06-01,"PAYEMS","Total nonfarm","total",155880,152293,3587,2.35532821600468
+2023-07-01,"PAYEMS","Total nonfarm","total",156043,152293,3750,2.46235874268679
+2023-08-01,"PAYEMS","Total nonfarm","total",156261,152293,3968,2.60550386426166
+2023-09-01,"PAYEMS","Total nonfarm","total",156417,152293,4124,2.70793798795743
+2023-10-01,"PAYEMS","Total nonfarm","total",156576,152293,4283,2.81234199864735
+2023-11-01,"PAYEMS","Total nonfarm","total",156703,152293,4410,2.89573388139968
+2023-12-01,"PAYEMS","Total nonfarm","total",156857,152293,4564,2.99685474709934
+2024-01-01,"PAYEMS","Total nonfarm","total",157032,152293,4739,3.11176482175806
+2024-02-01,"PAYEMS","Total nonfarm","total",157238,152293,4945,3.24703039535632
+2024-03-01,"PAYEMS","Total nonfarm","total",157466,152293,5173,3.39674180691167
+2024-04-01,"PAYEMS","Total nonfarm","total",157530,152293,5237,3.43876606278686
+2024-05-01,"PAYEMS","Total nonfarm","total",157608,152293,5315,3.48998312463475
+2024-06-01,"PAYEMS","Total nonfarm","total",157695,152293,5402,3.54710984746509
+2024-07-01,"PAYEMS","Total nonfarm","total",157748,152293,5455,3.58191118436173
+2024-08-01,"PAYEMS","Total nonfarm","total",157757,152293,5464,3.58782084534417
+2024-09-01,"PAYEMS","Total nonfarm","total",157912,152293,5619,3.6895983400419
+2024-10-01,"PAYEMS","Total nonfarm","total",157945,152293,5652,3.71126709697753
+2024-11-01,"PAYEMS","Total nonfarm","total",158079,152293,5786,3.79925538271622
+2024-12-01,"PAYEMS","Total nonfarm","total",158316,152293,6023,3.95487645525401
+2020-02-01,"USMINE","Mining & logging","sector",684,684,0,0
+2020-03-01,"USMINE","Mining & logging","sector",678,684,-6,-0.877192982456143
+2020-04-01,"USMINE","Mining & logging","sector",619,684,-65,-9.50292397660819
+2020-05-01,"USMINE","Mining & logging","sector",595,684,-89,-13.0116959064328
+2020-06-01,"USMINE","Mining & logging","sector",579,684,-105,-15.3508771929825
+2020-07-01,"USMINE","Mining & logging","sector",569,684,-115,-16.812865497076
+2020-08-01,"USMINE","Mining & logging","sector",561,684,-123,-17.9824561403509
+2020-09-01,"USMINE","Mining & logging","sector",561,684,-123,-17.9824561403509
+2020-10-01,"USMINE","Mining & logging","sector",556,684,-128,-18.7134502923977
+2020-11-01,"USMINE","Mining & logging","sector",554,684,-130,-19.0058479532164
+2020-12-01,"USMINE","Mining & logging","sector",557,684,-127,-18.5672514619883
+2021-01-01,"USMINE","Mining & logging","sector",549,684,-135,-19.7368421052632
+2021-02-01,"USMINE","Mining & logging","sector",539,684,-145,-21.1988304093567
+2021-03-01,"USMINE","Mining & logging","sector",553,684,-131,-19.1520467836257
+2021-04-01,"USMINE","Mining & logging","sector",555,684,-129,-18.859649122807
+2021-05-01,"USMINE","Mining & logging","sector",557,684,-127,-18.5672514619883
+2021-06-01,"USMINE","Mining & logging","sector",559,684,-125,-18.2748538011696
+2021-07-01,"USMINE","Mining & logging","sector",561,684,-123,-17.9824561403509
+2021-08-01,"USMINE","Mining & logging","sector",565,684,-119,-17.3976608187134
+2021-09-01,"USMINE","Mining & logging","sector",566,684,-118,-17.2514619883041
+2021-10-01,"USMINE","Mining & logging","sector",569,684,-115,-16.812865497076
+2021-11-01,"USMINE","Mining & logging","sector",572,684,-112,-16.374269005848
+2021-12-01,"USMINE","Mining & logging","sector",577,684,-107,-15.6432748538012
+2022-01-01,"USMINE","Mining & logging","sector",578,684,-106,-15.4970760233918
+2022-02-01,"USMINE","Mining & logging","sector",581,684,-103,-15.0584795321637
+2022-03-01,"USMINE","Mining & logging","sector",589,684,-95,-13.8888888888889
+2022-04-01,"USMINE","Mining & logging","sector",596,684,-88,-12.8654970760234
+2022-05-01,"USMINE","Mining & logging","sector",600,684,-84,-12.280701754386
+2022-06-01,"USMINE","Mining & logging","sector",608,684,-76,-11.1111111111111
+2022-07-01,"USMINE","Mining & logging","sector",614,684,-70,-10.233918128655
+2022-08-01,"USMINE","Mining & logging","sector",612,684,-72,-10.5263157894737
+2022-09-01,"USMINE","Mining & logging","sector",614,684,-70,-10.233918128655
+2022-10-01,"USMINE","Mining & logging","sector",618,684,-66,-9.64912280701754
+2022-11-01,"USMINE","Mining & logging","sector",624,684,-60,-8.77192982456141
+2022-12-01,"USMINE","Mining & logging","sector",627,684,-57,-8.33333333333334
+2023-01-01,"USMINE","Mining & logging","sector",634,684,-50,-7.30994152046783
+2023-02-01,"USMINE","Mining & logging","sector",633,684,-51,-7.45614035087719
+2023-03-01,"USMINE","Mining & logging","sector",634,684,-50,-7.30994152046783
+2023-04-01,"USMINE","Mining & logging","sector",637,684,-47,-6.87134502923976
+2023-05-01,"USMINE","Mining & logging","sector",642,684,-42,-6.14035087719298
+2023-06-01,"USMINE","Mining & logging","sector",640,684,-44,-6.4327485380117
+2023-07-01,"USMINE","Mining & logging","sector",642,684,-42,-6.14035087719298
+2023-08-01,"USMINE","Mining & logging","sector",641,684,-43,-6.28654970760234
+2023-09-01,"USMINE","Mining & logging","sector",641,684,-43,-6.28654970760234
+2023-10-01,"USMINE","Mining & logging","sector",639,684,-45,-6.57894736842105
+2023-11-01,"USMINE","Mining & logging","sector",636,684,-48,-7.01754385964912
+2023-12-01,"USMINE","Mining & logging","sector",638,684,-46,-6.72514619883041
+2024-01-01,"USMINE","Mining & logging","sector",633,684,-51,-7.45614035087719
+2024-02-01,"USMINE","Mining & logging","sector",633,684,-51,-7.45614035087719
+2024-03-01,"USMINE","Mining & logging","sector",636,684,-48,-7.01754385964912
+2024-04-01,"USMINE","Mining & logging","sector",628,684,-56,-8.18713450292398
+2024-05-01,"USMINE","Mining & logging","sector",624,684,-60,-8.77192982456141
+2024-06-01,"USMINE","Mining & logging","sector",620,684,-64,-9.35672514619883
+2024-07-01,"USMINE","Mining & logging","sector",622,684,-62,-9.06432748538012
+2024-08-01,"USMINE","Mining & logging","sector",620,684,-64,-9.35672514619883
+2024-09-01,"USMINE","Mining & logging","sector",622,684,-62,-9.06432748538012
+2024-10-01,"USMINE","Mining & logging","sector",622,684,-62,-9.06432748538012
+2024-11-01,"USMINE","Mining & logging","sector",624,684,-60,-8.77192982456141
+2024-12-01,"USMINE","Mining & logging","sector",622,684,-62,-9.06432748538012
+2020-02-01,"USCONS","Construction","sector",7610,7610,0,0
+2020-03-01,"USCONS","Construction","sector",7541,7610,-69,-0.906701708278579
+2020-04-01,"USCONS","Construction","sector",6522,7610,-1088,-14.2969776609724
+2020-05-01,"USCONS","Construction","sector",7004,7610,-606,-7.96320630749014
+2020-06-01,"USCONS","Construction","sector",7159,7610,-451,-5.92641261498029
+2020-07-01,"USCONS","Construction","sector",7196,7610,-414,-5.44021024967148
+2020-08-01,"USCONS","Construction","sector",7226,7610,-384,-5.04599211563732
+2020-09-01,"USCONS","Construction","sector",7253,7610,-357,-4.69119579500657
+2020-10-01,"USCONS","Construction","sector",7301,7610,-309,-4.06044678055191
+2020-11-01,"USCONS","Construction","sector",7321,7610,-289,-3.79763469119579
+2020-12-01,"USCONS","Construction","sector",7357,7610,-253,-3.3245729303548
+2021-01-01,"USCONS","Construction","sector",7362,7610,-248,-3.25886990801577
+2021-02-01,"USCONS","Construction","sector",7278,7610,-332,-4.36268068331144
+2021-03-01,"USCONS","Construction","sector",7399,7610,-211,-2.77266754270696
+2021-04-01,"USCONS","Construction","sector",7400,7610,-210,-2.75952693823915
+2021-05-01,"USCONS","Construction","sector",7391,7610,-219,-2.87779237844941
+2021-06-01,"USCONS","Construction","sector",7393,7610,-217,-2.8515111695138
+2021-07-01,"USCONS","Construction","sector",7425,7610,-185,-2.43101182654402
+2021-08-01,"USCONS","Construction","sector",7432,7610,-178,-2.33902759526938
+2021-09-01,"USCONS","Construction","sector",7484,7610,-126,-1.6557161629435
+2021-10-01,"USCONS","Construction","sector",7518,7610,-92,-1.20893561103811
+2021-11-01,"USCONS","Construction","sector",7562,7610,-48,-0.630749014454668
+2021-12-01,"USCONS","Construction","sector",7595,7610,-15,-0.197109067017087
+2022-01-01,"USCONS","Construction","sector",7595,7610,-15,-0.197109067017087
+2022-02-01,"USCONS","Construction","sector",7651,7610,41,0.538764783180024
+2022-03-01,"USCONS","Construction","sector",7692,7610,82,1.07752956636005
+2022-04-01,"USCONS","Construction","sector",7698,7610,88,1.15637319316688
+2022-05-01,"USCONS","Construction","sector",7738,7610,128,1.68199737187911
+2022-06-01,"USCONS","Construction","sector",7761,7610,151,1.98423127463863
+2022-07-01,"USCONS","Construction","sector",7792,7610,182,2.3915900131406
+2022-08-01,"USCONS","Construction","sector",7801,7610,191,2.50985545335085
+2022-09-01,"USCONS","Construction","sector",7832,7610,222,2.91721419185282
+2022-10-01,"USCONS","Construction","sector",7847,7610,237,3.11432325886991
+2022-11-01,"USCONS","Construction","sector",7863,7610,253,3.3245729303548
+2022-12-01,"USCONS","Construction","sector",7885,7610,275,3.61366622864652
+2023-01-01,"USCONS","Construction","sector",7932,7610,322,4.23127463863338
+2023-02-01,"USCONS","Construction","sector",7943,7610,333,4.37582128777925
+2023-03-01,"USCONS","Construction","sector",7926,7610,316,4.15243101182654
+2023-04-01,"USCONS","Construction","sector",7955,7610,345,4.53350854139289
+2023-05-01,"USCONS","Construction","sector",7965,7610,355,4.66491458607097
+2023-06-01,"USCONS","Construction","sector",8006,7610,396,5.20367936925099
+2023-07-01,"USCONS","Construction","sector",8016,7610,406,5.33508541392904
+2023-08-01,"USCONS","Construction","sector",8042,7610,432,5.67674113009198
+2023-09-01,"USCONS","Construction","sector",8053,7610,443,5.82128777923785
+2023-10-01,"USCONS","Construction","sector",8080,7610,470,6.17608409986858
+2023-11-01,"USCONS","Construction","sector",8088,7610,478,6.28120893561104
+2023-12-01,"USCONS","Construction","sector",8100,7610,490,6.43889618922471
+2024-01-01,"USCONS","Construction","sector",8123,7610,513,6.74113009198423
+2024-02-01,"USCONS","Construction","sector",8132,7610,522,6.85939553219448
+2024-03-01,"USCONS","Construction","sector",8164,7610,554,7.27989487516425
+2024-04-01,"USCONS","Construction","sector",8170,7610,560,7.35873850197108
+2024-05-01,"USCONS","Construction","sector",8176,7610,566,7.43758212877792
+2024-06-01,"USCONS","Construction","sector",8196,7610,586,7.70039421813404
+2024-07-01,"USCONS","Construction","sector",8208,7610,598,7.85808147174769
+2024-08-01,"USCONS","Construction","sector",8236,7610,626,8.22601839684625
+2024-09-01,"USCONS","Construction","sector",8254,7610,644,8.46254927726675
+2024-10-01,"USCONS","Construction","sector",8262,7610,652,8.5676741130092
+2024-11-01,"USCONS","Construction","sector",8267,7610,657,8.63337713534822
+2024-12-01,"USCONS","Construction","sector",8276,7610,666,8.75164257555847
+2020-02-01,"MANEMP","Manufacturing","sector",12743,12743,0,0
+2020-03-01,"MANEMP","Manufacturing","sector",12684,12743,-59,-0.462999293729893
+2020-04-01,"MANEMP","Manufacturing","sector",11382,12743,-1361,-10.6803735384132
+2020-05-01,"MANEMP","Manufacturing","sector",11610,12743,-1133,-8.8911559287452
+2020-06-01,"MANEMP","Manufacturing","sector",11950,12743,-793,-6.22302440555599
+2020-07-01,"MANEMP","Manufacturing","sector",11973,12743,-770,-6.0425331554579
+2020-08-01,"MANEMP","Manufacturing","sector",11999,12743,-744,-5.83849956839049
+2020-09-01,"MANEMP","Manufacturing","sector",12057,12743,-686,-5.38334772031703
+2020-10-01,"MANEMP","Manufacturing","sector",12086,12743,-657,-5.15577179628031
+2020-11-01,"MANEMP","Manufacturing","sector",12118,12743,-625,-4.90465353527427
+2020-12-01,"MANEMP","Manufacturing","sector",12153,12743,-590,-4.62999293729891
+2021-01-01,"MANEMP","Manufacturing","sector",12142,12743,-601,-4.71631483951974
+2021-02-01,"MANEMP","Manufacturing","sector",12172,12743,-571,-4.48089146982658
+2021-03-01,"MANEMP","Manufacturing","sector",12229,12743,-514,-4.03358706740956
+2021-04-01,"MANEMP","Manufacturing","sector",12193,12743,-550,-4.31609511104135
+2021-05-01,"MANEMP","Manufacturing","sector",12216,12743,-527,-4.13560386094326
+2021-06-01,"MANEMP","Manufacturing","sector",12247,12743,-496,-3.89233304559365
+2021-07-01,"MANEMP","Manufacturing","sector",12305,12743,-438,-3.43718119752021
+2021-08-01,"MANEMP","Manufacturing","sector",12353,12743,-390,-3.06050380601114
+2021-09-01,"MANEMP","Manufacturing","sector",12393,12743,-350,-2.74660597975359
+2021-10-01,"MANEMP","Manufacturing","sector",12453,12743,-290,-2.27575924036726
+2021-11-01,"MANEMP","Manufacturing","sector",12498,12743,-245,-1.92262418582752
+2021-12-01,"MANEMP","Manufacturing","sector",12537,12743,-206,-1.6165738052264
+2022-01-01,"MANEMP","Manufacturing","sector",12564,12743,-179,-1.40469277250255
+2022-02-01,"MANEMP","Manufacturing","sector",12601,12743,-142,-1.11433728321432
+2022-03-01,"MANEMP","Manufacturing","sector",12674,12743,-69,-0.541473750294275
+2022-04-01,"MANEMP","Manufacturing","sector",12726,12743,-17,-0.133406576159456
+2022-05-01,"MANEMP","Manufacturing","sector",12735,12743,-8,-0.062779565251514
+2022-06-01,"MANEMP","Manufacturing","sector",12767,12743,24,0.188338695754542
+2022-07-01,"MANEMP","Manufacturing","sector",12800,12743,57,0.447304402417004
+2022-08-01,"MANEMP","Manufacturing","sector",12832,12743,89,0.698422663423059
+2022-09-01,"MANEMP","Manufacturing","sector",12849,12743,106,0.831829239582516
+2022-10-01,"MANEMP","Manufacturing","sector",12883,12743,140,1.09864239190143
+2022-11-01,"MANEMP","Manufacturing","sector",12896,12743,153,1.20065918543515
+2022-12-01,"MANEMP","Manufacturing","sector",12895,12743,152,1.1928117397787
+2023-01-01,"MANEMP","Manufacturing","sector",12903,12743,160,1.25559130503021
+2023-02-01,"MANEMP","Manufacturing","sector",12898,12743,155,1.21635407674803
+2023-03-01,"MANEMP","Manufacturing","sector",12888,12743,145,1.13787962018363
+2023-04-01,"MANEMP","Manufacturing","sector",12884,12743,141,1.10648983755788
+2023-05-01,"MANEMP","Manufacturing","sector",12869,12743,126,0.9887781527113
+2023-06-01,"MANEMP","Manufacturing","sector",12875,12743,132,1.03586282664994
+2023-07-01,"MANEMP","Manufacturing","sector",12862,12743,119,0.933846033116215
+2023-08-01,"MANEMP","Manufacturing","sector",12861,12743,118,0.925998587459786
+2023-09-01,"MANEMP","Manufacturing","sector",12872,12743,129,1.01232048968061
+2023-10-01,"MANEMP","Manufacturing","sector",12837,12743,94,0.737659891705245
+2023-11-01,"MANEMP","Manufacturing","sector",12859,12743,116,0.910303696146908
+2023-12-01,"MANEMP","Manufacturing","sector",12872,12743,129,1.01232048968061
+2024-01-01,"MANEMP","Manufacturing","sector",12875,12743,132,1.03586282664994
+2024-02-01,"MANEMP","Manufacturing","sector",12852,12743,109,0.855371576551822
+2024-03-01,"MANEMP","Manufacturing","sector",12836,12743,93,0.729812446048816
+2024-04-01,"MANEMP","Manufacturing","sector",12833,12743,90,0.706270109079488
+2024-05-01,"MANEMP","Manufacturing","sector",12825,12743,82,0.643490543827974
+2024-06-01,"MANEMP","Manufacturing","sector",12814,12743,71,0.557168641607153
+2024-07-01,"MANEMP","Manufacturing","sector",12806,12743,63,0.494389076355639
+2024-08-01,"MANEMP","Manufacturing","sector",12772,12743,29,0.227575924036727
+2024-09-01,"MANEMP","Manufacturing","sector",12758,12743,15,0.117711684846578
+2024-10-01,"MANEMP","Manufacturing","sector",12697,12743,-46,-0.360982500196183
+2024-11-01,"MANEMP","Manufacturing","sector",12711,12743,-32,-0.251118261006045
+2024-12-01,"MANEMP","Manufacturing","sector",12693,12743,-50,-0.39237228282194
+2020-02-01,"USTPU","Trade, transport & utilities","sector",27738,27738,0,0
+2020-03-01,"USTPU","Trade, transport & utilities","sector",27659,27738,-79,-0.284807844833801
+2020-04-01,"USTPU","Trade, transport & utilities","sector",24564,27738,-3174,-11.4427860696517
+2020-05-01,"USTPU","Trade, transport & utilities","sector",24975,27738,-2763,-9.96106424399741
+2020-06-01,"USTPU","Trade, transport & utilities","sector",25963,27738,-1775,-6.39916360227847
+2020-07-01,"USTPU","Trade, transport & utilities","sector",26231,27738,-1507,-5.43298002739924
+2020-08-01,"USTPU","Trade, transport & utilities","sector",26613,27738,-1125,-4.05580791693705
+2020-09-01,"USTPU","Trade, transport & utilities","sector",26746,27738,-992,-3.57632129209028
+2020-10-01,"USTPU","Trade, transport & utilities","sector",26947,27738,-791,-2.85168361093086
+2020-11-01,"USTPU","Trade, transport & utilities","sector",27112,27738,-626,-2.25683178311342
+2020-12-01,"USTPU","Trade, transport & utilities","sector",27158,27738,-580,-2.09099430384311
+2021-01-01,"USTPU","Trade, transport & utilities","sector",27201,27738,-537,-1.93597231235129
+2021-02-01,"USTPU","Trade, transport & utilities","sector",27277,27738,-461,-1.66197995529599
+2021-03-01,"USTPU","Trade, transport & utilities","sector",27423,27738,-315,-1.13562621674238
+2021-04-01,"USTPU","Trade, transport & utilities","sector",27387,27738,-351,-1.26541207008436
+2021-05-01,"USTPU","Trade, transport & utilities","sector",27431,27738,-307,-1.10678491599971
+2021-06-01,"USTPU","Trade, transport & utilities","sector",27571,27738,-167,-0.602062153003102
+2021-07-01,"USTPU","Trade, transport & utilities","sector",27652,27738,-86,-0.310043982983632
+2021-08-01,"USTPU","Trade, transport & utilities","sector",27703,27738,-35,-0.126180690749156
+2021-09-01,"USTPU","Trade, transport & utilities","sector",27832,27738,94,0.338885283726298
+2021-10-01,"USTPU","Trade, transport & utilities","sector",27988,27738,250,0.901290648208231
+2021-11-01,"USTPU","Trade, transport & utilities","sector",28151,27738,413,1.48893215084001
+2021-12-01,"USTPU","Trade, transport & utilities","sector",28262,27738,524,1.88910519864447
+2022-01-01,"USTPU","Trade, transport & utilities","sector",28318,27738,580,2.0909943038431
+2022-02-01,"USTPU","Trade, transport & utilities","sector",28528,27738,790,2.84807844833801
+2022-03-01,"USTPU","Trade, transport & utilities","sector",28593,27738,855,3.08241401687217
+2022-04-01,"USTPU","Trade, transport & utilities","sector",28595,27738,857,3.08962434205782
+2022-05-01,"USTPU","Trade, transport & utilities","sector",28572,27738,834,3.00670560242267
+2022-06-01,"USTPU","Trade, transport & utilities","sector",28646,27738,908,3.27348763429232
+2022-07-01,"USTPU","Trade, transport & utilities","sector",28702,27738,964,3.47537673949094
+2022-08-01,"USTPU","Trade, transport & utilities","sector",28748,27738,1010,3.64121421876127
+2022-09-01,"USTPU","Trade, transport & utilities","sector",28720,27738,982,3.54026966616194
+2022-10-01,"USTPU","Trade, transport & utilities","sector",28761,27738,1023,3.6880813324681
+2022-11-01,"USTPU","Trade, transport & utilities","sector",28763,27738,1025,3.69529165765377
+2022-12-01,"USTPU","Trade, transport & utilities","sector",28769,27738,1031,3.71692263321075
+2023-01-01,"USTPU","Trade, transport & utilities","sector",28807,27738,1069,3.8539188117384
+2023-02-01,"USTPU","Trade, transport & utilities","sector",28845,27738,1107,3.99091499026607
+2023-03-01,"USTPU","Trade, transport & utilities","sector",28803,27738,1065,3.83949816136708
+2023-04-01,"USTPU","Trade, transport & utilities","sector",28799,27738,1061,3.82507751099574
+2023-05-01,"USTPU","Trade, transport & utilities","sector",28830,27738,1092,3.93683755137357
+2023-06-01,"USTPU","Trade, transport & utilities","sector",28799,27738,1061,3.82507751099574
+2023-07-01,"USTPU","Trade, transport & utilities","sector",28816,27738,1078,3.88636527507391
+2023-08-01,"USTPU","Trade, transport & utilities","sector",28799,27738,1061,3.82507751099574
+2023-09-01,"USTPU","Trade, transport & utilities","sector",28832,27738,1094,3.94404787655924
+2023-10-01,"USTPU","Trade, transport & utilities","sector",28865,27738,1127,4.06301824212272
+2023-11-01,"USTPU","Trade, transport & utilities","sector",28837,27738,1099,3.96207368952339
+2023-12-01,"USTPU","Trade, transport & utilities","sector",28829,27738,1091,3.93323238878074
+2024-01-01,"USTPU","Trade, transport & utilities","sector",28799,27738,1061,3.82507751099574
+2024-02-01,"USTPU","Trade, transport & utilities","sector",28839,27738,1101,3.96928401470906
+2024-03-01,"USTPU","Trade, transport & utilities","sector",28855,27738,1117,4.02696661619439
+2024-04-01,"USTPU","Trade, transport & utilities","sector",28880,27738,1142,4.11709568101521
+2024-05-01,"USTPU","Trade, transport & utilities","sector",28880,27738,1142,4.11709568101521
+2024-06-01,"USTPU","Trade, transport & utilities","sector",28851,27738,1113,4.01254596582306
+2024-07-01,"USTPU","Trade, transport & utilities","sector",28830,27738,1092,3.93683755137357
+2024-08-01,"USTPU","Trade, transport & utilities","sector",28802,27738,1064,3.83589299877425
+2024-09-01,"USTPU","Trade, transport & utilities","sector",28813,27738,1075,3.87554978729541
+2024-10-01,"USTPU","Trade, transport & utilities","sector",28794,27738,1056,3.80705169803157
+2024-11-01,"USTPU","Trade, transport & utilities","sector",28755,27738,1017,3.66645035691109
+2024-12-01,"USTPU","Trade, transport & utilities","sector",28811,27738,1073,3.86833946210974
+2020-02-01,"USINFO","Information","sector",2910,2910,0,0
+2020-03-01,"USINFO","Information","sector",2902,2910,-8,-0.274914089347078
+2020-04-01,"USINFO","Information","sector",2643,2910,-267,-9.17525773195876
+2020-05-01,"USINFO","Information","sector",2609,2910,-301,-10.3436426116838
+2020-06-01,"USINFO","Information","sector",2622,2910,-288,-9.89690721649484
+2020-07-01,"USINFO","Information","sector",2622,2910,-288,-9.89690721649484
+2020-08-01,"USINFO","Information","sector",2640,2910,-270,-9.27835051546392
+2020-09-01,"USINFO","Information","sector",2695,2910,-215,-7.38831615120275
+2020-10-01,"USINFO","Information","sector",2684,2910,-226,-7.76632302405498
+2020-11-01,"USINFO","Information","sector",2696,2910,-214,-7.35395189003436
+2020-12-01,"USINFO","Information","sector",2712,2910,-198,-6.8041237113402
+2021-01-01,"USINFO","Information","sector",2747,2910,-163,-5.60137457044674
+2021-02-01,"USINFO","Information","sector",2764,2910,-146,-5.0171821305842
+2021-03-01,"USINFO","Information","sector",2770,2910,-140,-4.81099656357389
+2021-04-01,"USINFO","Information","sector",2796,2910,-114,-3.91752577319587
+2021-05-01,"USINFO","Information","sector",2816,2910,-94,-3.23024054982818
+2021-06-01,"USINFO","Information","sector",2824,2910,-86,-2.9553264604811
+2021-07-01,"USINFO","Information","sector",2881,2910,-29,-0.996563573883158
+2021-08-01,"USINFO","Information","sector",2903,2910,-7,-0.240549828178693
+2021-09-01,"USINFO","Information","sector",2917,2910,7,0.240549828178693
+2021-10-01,"USINFO","Information","sector",2938,2910,28,0.962199312714773
+2021-11-01,"USINFO","Information","sector",2957,2910,47,1.61512027491408
+2021-12-01,"USINFO","Information","sector",2967,2910,57,1.95876288659793
+2022-01-01,"USINFO","Information","sector",2984,2910,74,2.54295532646047
+2022-02-01,"USINFO","Information","sector",2990,2910,80,2.74914089347078
+2022-03-01,"USINFO","Information","sector",3018,2910,108,3.71134020618558
+2022-04-01,"USINFO","Information","sector",3034,2910,124,4.26116838487973
+2022-05-01,"USINFO","Information","sector",3057,2910,147,5.05154639175258
+2022-06-01,"USINFO","Information","sector",3076,2910,166,5.70446735395189
+2022-07-01,"USINFO","Information","sector",3094,2910,184,6.32302405498282
+2022-08-01,"USINFO","Information","sector",3097,2910,187,6.42611683848797
+2022-09-01,"USINFO","Information","sector",3095,2910,185,6.3573883161512
+2022-10-01,"USINFO","Information","sector",3100,2910,190,6.52920962199313
+2022-11-01,"USINFO","Information","sector",3115,2910,205,7.0446735395189
+2022-12-01,"USINFO","Information","sector",3092,2910,182,6.25429553264605
+2023-01-01,"USINFO","Information","sector",3061,2910,151,5.18900343642612
+2023-02-01,"USINFO","Information","sector",3048,2910,138,4.74226804123712
+2023-03-01,"USINFO","Information","sector",3049,2910,139,4.7766323024055
+2023-04-01,"USINFO","Information","sector",3043,2910,133,4.57044673539519
+2023-05-01,"USINFO","Information","sector",3034,2910,124,4.26116838487973
+2023-06-01,"USINFO","Information","sector",3021,2910,111,3.81443298969073
+2023-07-01,"USINFO","Information","sector",3001,2910,91,3.12714776632304
+2023-08-01,"USINFO","Information","sector",2981,2910,71,2.43986254295532
+2023-09-01,"USINFO","Information","sector",2975,2910,65,2.23367697594501
+2023-10-01,"USINFO","Information","sector",2951,2910,41,1.40893470790378
+2023-11-01,"USINFO","Information","sector",2962,2910,52,1.78694158075601
+2023-12-01,"USINFO","Information","sector",2963,2910,53,1.82130584192439
+2024-01-01,"USINFO","Information","sector",2963,2910,53,1.82130584192439
+2024-02-01,"USINFO","Information","sector",2958,2910,48,1.64948453608247
+2024-03-01,"USINFO","Information","sector",2951,2910,41,1.40893470790378
+2024-04-01,"USINFO","Information","sector",2940,2910,30,1.03092783505154
+2024-05-01,"USINFO","Information","sector",2930,2910,20,0.687285223367695
+2024-06-01,"USINFO","Information","sector",2930,2910,20,0.687285223367695
+2024-07-01,"USINFO","Information","sector",2917,2910,7,0.240549828178693
+2024-08-01,"USINFO","Information","sector",2909,2910,-1,-0.0343642611683848
+2024-09-01,"USINFO","Information","sector",2903,2910,-7,-0.240549828178693
+2024-10-01,"USINFO","Information","sector",2887,2910,-23,-0.790378006872849
+2024-11-01,"USINFO","Information","sector",2885,2910,-25,-0.859106529209619
+2024-12-01,"USINFO","Information","sector",2895,2910,-15,-0.515463917525771
+2020-02-01,"USFIRE","Financial activities","sector",8872,8872,0,0
+2020-03-01,"USFIRE","Financial activities","sector",8855,8872,-17,-0.191614066726786
+2020-04-01,"USFIRE","Financial activities","sector",8592,8872,-280,-3.15599639314698
+2020-05-01,"USFIRE","Financial activities","sector",8607,8872,-265,-2.98692515779982
+2020-06-01,"USFIRE","Financial activities","sector",8622,8872,-250,-2.81785392245266
+2020-07-01,"USFIRE","Financial activities","sector",8623,8872,-249,-2.80658250676284
+2020-08-01,"USFIRE","Financial activities","sector",8649,8872,-223,-2.51352569882777
+2020-09-01,"USFIRE","Financial activities","sector",8674,8872,-198,-2.23174030658251
+2020-10-01,"USFIRE","Financial activities","sector",8691,8872,-181,-2.04012623985572
+2020-11-01,"USFIRE","Financial activities","sector",8706,8872,-166,-1.87105500450857
+2020-12-01,"USFIRE","Financial activities","sector",8718,8872,-154,-1.73579801623084
+2021-01-01,"USFIRE","Financial activities","sector",8722,8872,-150,-1.69071235347159
+2021-02-01,"USFIRE","Financial activities","sector",8718,8872,-154,-1.73579801623084
+2021-03-01,"USFIRE","Financial activities","sector",8736,8872,-136,-1.53291253381425
+2021-04-01,"USFIRE","Financial activities","sector",8750,8872,-122,-1.3751127141569
+2021-05-01,"USFIRE","Financial activities","sector",8761,8872,-111,-1.25112714156899
+2021-06-01,"USFIRE","Financial activities","sector",8773,8872,-99,-1.11587015329125
+2021-07-01,"USFIRE","Financial activities","sector",8808,8872,-64,-0.721370604147886
+2021-08-01,"USFIRE","Financial activities","sector",8826,8872,-46,-0.518485121731294
+2021-09-01,"USFIRE","Financial activities","sector",8851,8872,-21,-0.236699729486023
+2021-10-01,"USFIRE","Financial activities","sector",8879,8872,7,0.078899909828678
+2021-11-01,"USFIRE","Financial activities","sector",8911,8872,39,0.439585211902616
+2021-12-01,"USFIRE","Financial activities","sector",8938,8872,66,0.74391343552751
+2022-01-01,"USFIRE","Financial activities","sector",8934,8872,62,0.698827772768262
+2022-02-01,"USFIRE","Financial activities","sector",8976,8872,104,1.17222723174031
+2022-03-01,"USFIRE","Financial activities","sector",9002,8872,130,1.46528403967539
+2022-04-01,"USFIRE","Financial activities","sector",9037,8872,165,1.85978358881875
+2022-05-01,"USFIRE","Financial activities","sector",9049,8872,177,1.99504057709647
+2022-06-01,"USFIRE","Financial activities","sector",9059,8872,187,2.10775473399458
+2022-07-01,"USFIRE","Financial activities","sector",9073,8872,201,2.26555455365194
+2022-08-01,"USFIRE","Financial activities","sector",9092,8872,220,2.47971145175834
+2022-09-01,"USFIRE","Financial activities","sector",9097,8872,225,2.5360685302074
+2022-10-01,"USFIRE","Financial activities","sector",9122,8872,250,2.81785392245266
+2022-11-01,"USFIRE","Financial activities","sector",9136,8872,264,2.97565374211002
+2022-12-01,"USFIRE","Financial activities","sector",9146,8872,274,3.08836789900813
+2023-01-01,"USFIRE","Financial activities","sector",9144,8872,272,3.06582506762849
+2023-02-01,"USFIRE","Financial activities","sector",9152,8872,280,3.15599639314699
+2023-03-01,"USFIRE","Financial activities","sector",9150,8872,278,3.13345356176735
+2023-04-01,"USFIRE","Financial activities","sector",9180,8872,308,3.47159603246168
+2023-05-01,"USFIRE","Financial activities","sector",9175,8872,303,3.41523895401263
+2023-06-01,"USFIRE","Financial activities","sector",9182,8872,310,3.49413886384129
+2023-07-01,"USFIRE","Financial activities","sector",9193,8872,321,3.61812443642922
+2023-08-01,"USFIRE","Financial activities","sector",9193,8872,321,3.61812443642922
+2023-09-01,"USFIRE","Financial activities","sector",9186,8872,314,3.53922452660054
+2023-10-01,"USFIRE","Financial activities","sector",9179,8872,307,3.46032461677186
+2023-11-01,"USFIRE","Financial activities","sector",9172,8872,300,3.38142470694318
+2023-12-01,"USFIRE","Financial activities","sector",9176,8872,304,3.42651036970243
+2024-01-01,"USFIRE","Financial activities","sector",9165,8872,293,3.30252479711453
+2024-02-01,"USFIRE","Financial activities","sector",9151,8872,279,3.14472497745717
+2024-03-01,"USFIRE","Financial activities","sector",9149,8872,277,3.12218214607756
+2024-04-01,"USFIRE","Financial activities","sector",9144,8872,272,3.06582506762849
+2024-05-01,"USFIRE","Financial activities","sector",9147,8872,275,3.09963931469792
+2024-06-01,"USFIRE","Financial activities","sector",9159,8872,287,3.23489630297564
+2024-07-01,"USFIRE","Financial activities","sector",9154,8872,282,3.1785392245266
+2024-08-01,"USFIRE","Financial activities","sector",9162,8872,290,3.2687105500451
+2024-09-01,"USFIRE","Financial activities","sector",9162,8872,290,3.2687105500451
+2024-10-01,"USFIRE","Financial activities","sector",9164,8872,292,3.29125338142471
+2024-11-01,"USFIRE","Financial activities","sector",9173,8872,301,3.392696122633
+2024-12-01,"USFIRE","Financial activities","sector",9179,8872,307,3.46032461677186
+2020-02-01,"USPBS","Professional & business services","sector",21483,21483,0,0
+2020-03-01,"USPBS","Professional & business services","sector",21388,21483,-95,-0.442210119629471
+2020-04-01,"USPBS","Professional & business services","sector",19223,21483,-2260,-10.519946003817
+2020-05-01,"USPBS","Professional & business services","sector",19410,21483,-2073,-9.64949029465159
+2020-06-01,"USPBS","Professional & business services","sector",19768,21483,-1715,-7.98305637015314
+2020-07-01,"USPBS","Professional & business services","sector",19953,21483,-1530,-7.1219103477168
+2020-08-01,"USPBS","Professional & business services","sector",20147,21483,-1336,-6.21887073499977
+2020-09-01,"USPBS","Professional & business services","sector",20267,21483,-1216,-5.66028953125728
+2020-10-01,"USPBS","Professional & business services","sector",20455,21483,-1028,-4.78517897872737
+2020-11-01,"USPBS","Professional & business services","sector",20602,21483,-881,-4.10091700414281
+2020-12-01,"USPBS","Professional & business services","sector",20770,21483,-713,-3.31890331890332
+2021-01-01,"USPBS","Professional & business services","sector",20922,21483,-561,-2.61136712749616
+2021-02-01,"USPBS","Professional & business services","sector",20999,21483,-484,-2.25294418842806
+2021-03-01,"USPBS","Professional & business services","sector",21109,21483,-374,-1.74091141833077
+2021-04-01,"USPBS","Professional & business services","sector",21103,21483,-380,-1.7688404785179
+2021-05-01,"USPBS","Professional & business services","sector",21176,21483,-307,-1.42903691290788
+2021-06-01,"USPBS","Professional & business services","sector",21257,21483,-226,-1.0519946003817
+2021-07-01,"USPBS","Professional & business services","sector",21418,21483,-65,-0.302564818693851
+2021-08-01,"USPBS","Professional & business services","sector",21535,21483,52,0.242051854955072
+2021-09-01,"USPBS","Professional & business services","sector",21636,21483,153,0.71219103477167
+2021-10-01,"USPBS","Professional & business services","sector",21873,21483,390,1.81538891216311
+2021-11-01,"USPBS","Professional & business services","sector",22019,21483,536,2.49499604338315
+2021-12-01,"USPBS","Professional & business services","sector",22129,21483,646,3.00702881348043
+2022-01-01,"USPBS","Professional & business services","sector",22183,21483,700,3.25839035516455
+2022-02-01,"USPBS","Professional & business services","sector",22372,21483,889,4.13815575105898
+2022-03-01,"USPBS","Professional & business services","sector",22483,21483,1000,4.65484336452078
+2022-04-01,"USPBS","Professional & business services","sector",22468,21483,985,4.58502071405298
+2022-05-01,"USPBS","Professional & business services","sector",22503,21483,1020,4.7479402318112
+2022-06-01,"USPBS","Professional & business services","sector",22564,21483,1081,5.03188567704698
+2022-07-01,"USPBS","Professional & business services","sector",22658,21483,1175,5.46944095331192
+2022-08-01,"USPBS","Professional & business services","sector",22697,21483,1214,5.65097984452823
+2022-09-01,"USPBS","Professional & business services","sector",22744,21483,1261,5.8697574826607
+2022-10-01,"USPBS","Professional & business services","sector",22783,21483,1300,6.05129637387702
+2022-11-01,"USPBS","Professional & business services","sector",22792,21483,1309,6.09318996415771
+2022-12-01,"USPBS","Professional & business services","sector",22774,21483,1291,6.00940278359634
+2023-01-01,"USPBS","Professional & business services","sector",22791,21483,1308,6.08853512079319
+2023-02-01,"USPBS","Professional & business services","sector",22837,21483,1354,6.30265791556115
+2023-03-01,"USPBS","Professional & business services","sector",22832,21483,1349,6.27938369873853
+2023-04-01,"USPBS","Professional & business services","sector",22837,21483,1354,6.30265791556115
+2023-05-01,"USPBS","Professional & business services","sector",22850,21483,1367,6.36317087929992
+2023-06-01,"USPBS","Professional & business services","sector",22826,21483,1343,6.25145463855141
+2023-07-01,"USPBS","Professional & business services","sector",22779,21483,1296,6.03267700041894
+2023-08-01,"USPBS","Professional & business services","sector",22768,21483,1285,5.9814737234092
+2023-09-01,"USPBS","Professional & business services","sector",22743,21483,1260,5.86510263929618
+2023-10-01,"USPBS","Professional & business services","sector",22715,21483,1232,5.73476702508962
+2023-11-01,"USPBS","Professional & business services","sector",22661,21483,1178,5.48340548340549
+2023-12-01,"USPBS","Professional & business services","sector",22643,21483,1160,5.3996183028441
+2024-01-01,"USPBS","Professional & business services","sector",22668,21483,1185,5.51598938695712
+2024-02-01,"USPBS","Professional & business services","sector",22658,21483,1175,5.46944095331192
+2024-03-01,"USPBS","Professional & business services","sector",22631,21483,1148,5.34376018246987
+2024-04-01,"USPBS","Professional & business services","sector",22616,21483,1133,5.27393753200205
+2024-05-01,"USPBS","Professional & business services","sector",22633,21483,1150,5.3530698691989
+2024-06-01,"USPBS","Professional & business services","sector",22606,21483,1123,5.22738909835685
+2024-07-01,"USPBS","Professional & business services","sector",22584,21483,1101,5.12498254433738
+2024-08-01,"USPBS","Professional & business services","sector",22544,21483,1061,4.93878880975656
+2024-09-01,"USPBS","Professional & business services","sector",22525,21483,1042,4.85034678583065
+2024-10-01,"USPBS","Professional & business services","sector",22486,21483,1003,4.66880789461435
+2024-11-01,"USPBS","Professional & business services","sector",22499,21483,1016,4.72932085835311
+2024-12-01,"USPBS","Professional & business services","sector",22532,21483,1049,4.8829306893823
+2020-02-01,"USEHS","Private education & health","sector",24573,24573,0,0
+2020-03-01,"USEHS","Private education & health","sector",24356,24573,-217,-0.883083058641598
+2020-04-01,"USEHS","Private education & health","sector",21742,24573,-2831,-11.5207748341676
+2020-05-01,"USEHS","Private education & health","sector",22150,24573,-2423,-9.86041590363407
+2020-06-01,"USEHS","Private education & health","sector",22727,24573,-1846,-7.51231025922761
+2020-07-01,"USEHS","Private education & health","sector",22923,24573,-1650,-6.71468685142229
+2020-08-01,"USEHS","Private education & health","sector",23124,24573,-1449,-5.89671590770358
+2020-09-01,"USEHS","Private education & health","sector",23189,24573,-1384,-5.63219794082936
+2020-10-01,"USEHS","Private education & health","sector",23278,24573,-1295,-5.27001180157083
+2020-11-01,"USEHS","Private education & health","sector",23337,24573,-1236,-5.0299108777927
+2020-12-01,"USEHS","Private education & health","sector",23334,24573,-1239,-5.04211939934074
+2021-01-01,"USEHS","Private education & health","sector",23362,24573,-1211,-4.92817319822569
+2021-02-01,"USEHS","Private education & health","sector",23413,24573,-1160,-4.720628331909
+2021-03-01,"USEHS","Private education & health","sector",23536,24573,-1037,-4.22007894843934
+2021-04-01,"USEHS","Private education & health","sector",23584,24573,-989,-4.02474260367069
+2021-05-01,"USEHS","Private education & health","sector",23616,24573,-957,-3.89451837382493
+2021-06-01,"USEHS","Private education & health","sector",23642,24573,-931,-3.78871118707524
+2021-07-01,"USEHS","Private education & health","sector",23684,24573,-889,-3.61779188540268
+2021-08-01,"USEHS","Private education & health","sector",23708,24573,-865,-3.52012371301835
+2021-09-01,"USEHS","Private education & health","sector",23705,24573,-868,-3.53233223456639
+2021-10-01,"USEHS","Private education & health","sector",23800,24573,-773,-3.14572905221178
+2021-11-01,"USEHS","Private education & health","sector",23845,24573,-728,-2.96260122899117
+2021-12-01,"USEHS","Private education & health","sector",23886,24573,-687,-2.79575143450128
+2022-01-01,"USEHS","Private education & health","sector",23869,24573,-704,-2.86493305660684
+2022-02-01,"USEHS","Private education & health","sector",23984,24573,-589,-2.39693973059862
+2022-03-01,"USEHS","Private education & health","sector",24057,24573,-516,-2.09986570626297
+2022-04-01,"USEHS","Private education & health","sector",24117,24573,-456,-1.85569527530216
+2022-05-01,"USEHS","Private education & health","sector",24176,24573,-397,-1.61559435152403
+2022-06-01,"USEHS","Private education & health","sector",24267,24573,-306,-1.24526919790013
+2022-07-01,"USEHS","Private education & health","sector",24395,24573,-178,-0.724372278517071
+2022-08-01,"USEHS","Private education & health","sector",24468,24573,-105,-0.427298254181419
+2022-09-01,"USEHS","Private education & health","sector",24552,24573,-21,-0.0854596508362837
+2022-10-01,"USEHS","Private education & health","sector",24642,24573,69,0.280795995604932
+2022-11-01,"USEHS","Private education & health","sector",24729,24573,156,0.634843120498108
+2022-12-01,"USEHS","Private education & health","sector",24773,24573,200,0.813901436536035
+2023-01-01,"USEHS","Private education & health","sector",24883,24573,310,1.26154722663085
+2023-02-01,"USEHS","Private education & health","sector",24956,24573,383,1.55862125096651
+2023-03-01,"USEHS","Private education & health","sector",25033,24573,460,1.87197330403288
+2023-04-01,"USEHS","Private education & health","sector",25113,24573,540,2.1975338786473
+2023-05-01,"USEHS","Private education & health","sector",25221,24573,648,2.63704065437675
+2023-06-01,"USEHS","Private education & health","sector",25314,24573,741,3.01550482236601
+2023-07-01,"USEHS","Private education & health","sector",25435,24573,862,3.50791519147031
+2023-08-01,"USEHS","Private education & health","sector",25544,24573,971,3.95149147438245
+2023-09-01,"USEHS","Private education & health","sector",25641,24573,1068,4.34623367110243
+2023-10-01,"USEHS","Private education & health","sector",25735,24573,1162,4.72876734627437
+2023-11-01,"USEHS","Private education & health","sector",25853,24573,1280,5.20896919383063
+2023-12-01,"USEHS","Private education & health","sector",25935,24573,1362,5.5426687828104
+2024-01-01,"USEHS","Private education & health","sector",26033,24573,1460,5.94148048671306
+2024-02-01,"USEHS","Private education & health","sector",26130,24573,1557,6.33622268343303
+2024-03-01,"USEHS","Private education & health","sector",26225,24573,1652,6.72282586578765
+2024-04-01,"USEHS","Private education & health","sector",26313,24573,1740,7.08094249786351
+2024-05-01,"USEHS","Private education & health","sector",26383,24573,1810,7.36580800065112
+2024-06-01,"USEHS","Private education & health","sector",26474,24573,1901,7.73613315427502
+2024-07-01,"USEHS","Private education & health","sector",26515,24573,1942,7.9029829487649
+2024-08-01,"USEHS","Private education & health","sector",26573,24573,2000,8.13901436536035
+2024-09-01,"USEHS","Private education & health","sector",26691,24573,2118,8.61921621291661
+2024-10-01,"USEHS","Private education & health","sector",26786,24573,2213,9.00581939527123
+2024-11-01,"USEHS","Private education & health","sector",26870,24573,2297,9.34765799861637
+2024-12-01,"USEHS","Private education & health","sector",26945,24573,2372,9.65287103731738
+2020-02-01,"USLAH","Leisure & hospitality","sector",16889,16889,0,0
+2020-03-01,"USLAH","Leisure & hospitality","sector",16158,16889,-731,-4.32826099828291
+2020-04-01,"USLAH","Leisure & hospitality","sector",8719,16889,-8170,-48.3746817455148
+2020-05-01,"USLAH","Leisure & hospitality","sector",9947,16889,-6942,-41.1036769494938
+2020-06-01,"USLAH","Leisure & hospitality","sector",11777,16889,-5112,-30.2682219195926
+2020-07-01,"USLAH","Leisure & hospitality","sector",12415,16889,-4474,-26.4906151933211
+2020-08-01,"USLAH","Leisure & hospitality","sector",12573,16889,-4316,-25.5550950322695
+2020-09-01,"USLAH","Leisure & hospitality","sector",13065,16889,-3824,-22.6419563029191
+2020-10-01,"USLAH","Leisure & hospitality","sector",13303,16889,-3586,-21.2327550476642
+2020-11-01,"USLAH","Leisure & hospitality","sector",13260,16889,-3629,-21.4873586357984
+2020-12-01,"USLAH","Leisure & hospitality","sector",12798,16889,-4091,-24.2228669548227
+2021-01-01,"USLAH","Leisure & hospitality","sector",12801,16889,-4088,-24.20510391379
+2021-02-01,"USLAH","Leisure & hospitality","sector",13142,16889,-3747,-22.1860382497484
+2021-03-01,"USLAH","Leisure & hospitality","sector",13298,16889,-3591,-21.2623601160519
+2021-04-01,"USLAH","Leisure & hospitality","sector",13568,16889,-3321,-19.6636864231156
+2021-05-01,"USLAH","Leisure & hospitality","sector",13802,16889,-3087,-18.2781692225709
+2021-06-01,"USLAH","Leisure & hospitality","sector",14085,16889,-2804,-16.6025223518266
+2021-07-01,"USLAH","Leisure & hospitality","sector",14495,16889,-2394,-14.1749067440346
+2021-08-01,"USLAH","Leisure & hospitality","sector",14621,16889,-2268,-13.4288590206643
+2021-09-01,"USLAH","Leisure & hospitality","sector",14746,16889,-2143,-12.6887323109716
+2021-10-01,"USLAH","Leisure & hospitality","sector",14949,16889,-1940,-11.4867665344307
+2021-11-01,"USLAH","Leisure & hospitality","sector",15071,16889,-1818,-10.7644028657706
+2021-12-01,"USLAH","Leisure & hospitality","sector",15246,16889,-1643,-9.72822547220084
+2022-01-01,"USLAH","Leisure & hospitality","sector",15329,16889,-1560,-9.23678133696488
+2022-02-01,"USLAH","Leisure & hospitality","sector",15462,16889,-1427,-8.44928651785186
+2022-03-01,"USLAH","Leisure & hospitality","sector",15523,16889,-1366,-8.08810468352182
+2022-04-01,"USLAH","Leisure & hospitality","sector",15626,16889,-1263,-7.47824027473504
+2022-05-01,"USLAH","Leisure & hospitality","sector",15704,16889,-1185,-7.01640120788679
+2022-06-01,"USLAH","Leisure & hospitality","sector",15794,16889,-1095,-6.48350997690804
+2022-07-01,"USLAH","Leisure & hospitality","sector",15931,16889,-958,-5.67233110308485
+2022-08-01,"USLAH","Leisure & hospitality","sector",15990,16889,-899,-5.32299129610989
+2022-09-01,"USLAH","Leisure & hospitality","sector",16052,16889,-837,-4.95588844810232
+2022-10-01,"USLAH","Leisure & hospitality","sector",16142,16889,-747,-4.42299721712357
+2022-11-01,"USLAH","Leisure & hospitality","sector",16183,16889,-706,-4.18023565634437
+2022-12-01,"USLAH","Leisure & hospitality","sector",16245,16889,-644,-3.81313280833678
+2023-01-01,"USLAH","Leisure & hospitality","sector",16352,16889,-537,-3.17958434483984
+2023-02-01,"USLAH","Leisure & hospitality","sector",16431,16889,-458,-2.71182426431406
+2023-03-01,"USLAH","Leisure & hospitality","sector",16450,16889,-439,-2.59932500444076
+2023-04-01,"USLAH","Leisure & hospitality","sector",16487,16889,-402,-2.38024749837172
+2023-05-01,"USLAH","Leisure & hospitality","sector",16533,16889,-356,-2.1078808692048
+2023-06-01,"USLAH","Leisure & hospitality","sector",16594,16889,-295,-1.74669903487477
+2023-07-01,"USLAH","Leisure & hospitality","sector",16616,16889,-273,-1.61643673396885
+2023-08-01,"USLAH","Leisure & hospitality","sector",16651,16889,-238,-1.4092012552549
+2023-09-01,"USLAH","Leisure & hospitality","sector",16643,16889,-246,-1.45656936467523
+2023-10-01,"USLAH","Leisure & hospitality","sector",16689,16889,-200,-1.18420273550832
+2023-11-01,"USLAH","Leisure & hospitality","sector",16694,16889,-195,-1.15459766712062
+2023-12-01,"USLAH","Leisure & hospitality","sector",16704,16889,-185,-1.09538753034519
+2024-01-01,"USLAH","Leisure & hospitality","sector",16716,16889,-173,-1.0243353662147
+2024-02-01,"USLAH","Leisure & hospitality","sector",16744,16889,-145,-0.858546983243536
+2024-03-01,"USLAH","Leisure & hospitality","sector",16780,16889,-109,-0.645390490852038
+2024-04-01,"USLAH","Leisure & hospitality","sector",16762,16889,-127,-0.751968737047781
+2024-05-01,"USLAH","Leisure & hospitality","sector",16731,16889,-158,-0.935520161051573
+2024-06-01,"USLAH","Leisure & hospitality","sector",16744,16889,-145,-0.858546983243536
+2024-07-01,"USLAH","Leisure & hospitality","sector",16751,16889,-138,-0.817099887500738
+2024-08-01,"USLAH","Leisure & hospitality","sector",16746,16889,-143,-0.846704955888444
+2024-09-01,"USLAH","Leisure & hospitality","sector",16776,16889,-113,-0.669074545562198
+2024-10-01,"USLAH","Leisure & hospitality","sector",16799,16889,-90,-0.532891230978738
+2024-11-01,"USLAH","Leisure & hospitality","sector",16823,16889,-66,-0.390786902717744
+2024-12-01,"USLAH","Leisure & hospitality","sector",16862,16889,-27,-0.15986736929362
+2020-02-01,"USSERV","Other services","sector",5934,5934,0,0
+2020-03-01,"USSERV","Other services","sector",5847,5934,-87,-1.46612740141557
+2020-04-01,"USSERV","Other services","sector",4511,5934,-1423,-23.9804516346478
+2020-05-01,"USSERV","Other services","sector",4740,5934,-1194,-20.1213346814965
+2020-06-01,"USSERV","Other services","sector",5092,5934,-842,-14.1894169194473
+2020-07-01,"USSERV","Other services","sector",5236,5934,-698,-11.762723289518
+2020-08-01,"USSERV","Other services","sector",5289,5934,-645,-10.8695652173913
+2020-09-01,"USSERV","Other services","sector",5334,5934,-600,-10.1112234580384
+2020-10-01,"USSERV","Other services","sector",5354,5934,-580,-9.7741826761038
+2020-11-01,"USSERV","Other services","sector",5344,5934,-590,-9.94270306707111
+2020-12-01,"USSERV","Other services","sector",5313,5934,-621,-10.4651162790698
+2021-01-01,"USSERV","Other services","sector",5314,5934,-620,-10.448264239973
+2021-02-01,"USSERV","Other services","sector",5324,5934,-610,-10.2797438490057
+2021-03-01,"USSERV","Other services","sector",5335,5934,-599,-10.0943714189417
+2021-04-01,"USSERV","Other services","sector",5358,5934,-576,-9.70677451971689
+2021-05-01,"USSERV","Other services","sector",5370,5934,-564,-9.50455005055612
+2021-06-01,"USSERV","Other services","sector",5438,5934,-496,-8.35861139197843
+2021-07-01,"USSERV","Other services","sector",5494,5934,-440,-7.41489720256151
+2021-08-01,"USSERV","Other services","sector",5532,5934,-402,-6.77451971688574
+2021-09-01,"USSERV","Other services","sector",5539,5934,-395,-6.65655544320863
+2021-10-01,"USSERV","Other services","sector",5578,5934,-356,-5.99932591843613
+2021-11-01,"USSERV","Other services","sector",5598,5934,-336,-5.66228513650152
+2021-12-01,"USSERV","Other services","sector",5617,5934,-317,-5.34209639366363
+2022-01-01,"USSERV","Other services","sector",5603,5934,-331,-5.57802494101787
+2022-02-01,"USSERV","Other services","sector",5648,5934,-286,-4.81968318166498
+2022-03-01,"USSERV","Other services","sector",5651,5934,-283,-4.76912706437479
+2022-04-01,"USSERV","Other services","sector",5657,5934,-277,-4.66801482979441
+2022-05-01,"USSERV","Other services","sector",5665,5934,-269,-4.53319851702056
+2022-06-01,"USSERV","Other services","sector",5674,5934,-260,-4.38153016514998
+2022-07-01,"USSERV","Other services","sector",5707,5934,-227,-3.82541287495787
+2022-08-01,"USSERV","Other services","sector",5719,5934,-215,-3.62318840579711
+2022-09-01,"USSERV","Other services","sector",5730,5934,-204,-3.43781597573306
+2022-10-01,"USSERV","Other services","sector",5748,5934,-186,-3.13447927199191
+2022-11-01,"USSERV","Other services","sector",5762,5934,-172,-2.89855072463768
+2022-12-01,"USSERV","Other services","sector",5771,5934,-163,-2.7468823727671
+2023-01-01,"USSERV","Other services","sector",5785,5934,-149,-2.51095382541288
+2023-02-01,"USSERV","Other services","sector",5785,5934,-149,-2.51095382541288
+2023-03-01,"USSERV","Other services","sector",5789,5934,-145,-2.44354566902595
+2023-04-01,"USSERV","Other services","sector",5798,5934,-136,-2.29187731715538
+2023-05-01,"USSERV","Other services","sector",5814,5934,-120,-2.02224469160769
+2023-06-01,"USSERV","Other services","sector",5831,5934,-103,-1.73576002696326
+2023-07-01,"USSERV","Other services","sector",5846,5934,-88,-1.4829794405123
+2023-08-01,"USSERV","Other services","sector",5874,5934,-60,-1.01112234580384
+2023-09-01,"USSERV","Other services","sector",5883,5934,-51,-0.859453993933268
+2023-10-01,"USSERV","Other services","sector",5893,5934,-41,-0.69093360296596
+2023-11-01,"USSERV","Other services","sector",5905,5934,-29,-0.488709133805187
+2023-12-01,"USSERV","Other services","sector",5906,5934,-28,-0.471857094708461
+2024-01-01,"USSERV","Other services","sector",5917,5934,-17,-0.286484664644426
+2024-02-01,"USSERV","Other services","sector",5930,5934,-4,-0.0674081563869278
+2024-03-01,"USSERV","Other services","sector",5943,5934,9,0.151668351870571
+2024-04-01,"USSERV","Other services","sector",5947,5934,13,0.219076508257499
+2024-05-01,"USSERV","Other services","sector",5949,5934,15,0.252780586450951
+2024-06-01,"USSERV","Other services","sector",5962,5934,28,0.47185709470845
+2024-07-01,"USSERV","Other services","sector",5961,5934,27,0.455005055611735
+2024-08-01,"USSERV","Other services","sector",5957,5934,23,0.387596899224807
+2024-09-01,"USSERV","Other services","sector",5959,5934,25,0.42130097741826
+2024-10-01,"USSERV","Other services","sector",5962,5934,28,0.47185709470845
+2024-11-01,"USSERV","Other services","sector",5968,5934,34,0.572969329288853
+2024-12-01,"USSERV","Other services","sector",5972,5934,38,0.640377485675758
+2020-02-01,"USGOVT","Government","sector",22857,22857,0,0
+2020-03-01,"USGOVT","Government","sector",22827,22857,-30,-0.13125082031763
+2020-04-01,"USGOVT","Government","sector",21909,22857,-948,-4.14752592203701
+2020-05-01,"USGOVT","Government","sector",21393,22857,-1464,-6.4050400315002
+2020-06-01,"USGOVT","Government","sector",21412,22857,-1445,-6.3219145119657
+2020-07-01,"USGOVT","Government","sector",21514,22857,-1343,-5.87566172288577
+2020-08-01,"USGOVT","Government","sector",22000,22857,-857,-3.74939843374021
+2020-09-01,"USGOVT","Government","sector",21929,22857,-928,-4.06002537515859
+2020-10-01,"USGOVT","Government","sector",21805,22857,-1052,-4.60252876580478
+2020-11-01,"USGOVT","Government","sector",21683,22857,-1174,-5.13628210176313
+2020-12-01,"USGOVT","Government","sector",21678,22857,-1179,-5.15815723848274
+2021-01-01,"USGOVT","Government","sector",21741,22857,-1116,-4.88253051581572
+2021-02-01,"USGOVT","Government","sector",21754,22857,-1103,-4.82565516034476
+2021-03-01,"USGOVT","Government","sector",21844,22857,-1013,-4.43190269939188
+2021-04-01,"USGOVT","Government","sector",21893,22857,-964,-4.21752635953975
+2021-05-01,"USGOVT","Government","sector",21929,22857,-928,-4.06002537515859
+2021-06-01,"USGOVT","Government","sector",22031,22857,-826,-3.61377258607867
+2021-07-01,"USGOVT","Government","sector",22039,22857,-818,-3.5787723673273
+2021-08-01,"USGOVT","Government","sector",22136,22857,-721,-3.15439471496697
+2021-09-01,"USGOVT","Government","sector",22102,22857,-755,-3.30314564466028
+2021-10-01,"USGOVT","Government","sector",22027,22857,-830,-3.63127269545435
+2021-11-01,"USGOVT","Government","sector",22046,22857,-811,-3.54814717591985
+2021-12-01,"USGOVT","Government","sector",22062,22857,-795,-3.47814673841712
+2022-01-01,"USGOVT","Government","sector",22049,22857,-808,-3.53502209388808
+2022-02-01,"USGOVT","Government","sector",22032,22857,-825,-3.60939755873474
+2022-03-01,"USGOVT","Government","sector",22033,22857,-824,-3.60502253139082
+2022-04-01,"USGOVT","Government","sector",22069,22857,-788,-3.44752154700967
+2022-05-01,"USGOVT","Government","sector",22125,22857,-732,-3.2025200157501
+2022-06-01,"USGOVT","Government","sector",22142,22857,-715,-3.12814455090344
+2022-07-01,"USGOVT","Government","sector",22306,22857,-551,-2.41064006650041
+2022-08-01,"USGOVT","Government","sector",22306,22857,-551,-2.41064006650041
+2022-09-01,"USGOVT","Government","sector",22297,22857,-560,-2.4500153125957
+2022-10-01,"USGOVT","Government","sector",22293,22857,-564,-2.46751542197139
+2022-11-01,"USGOVT","Government","sector",22379,22857,-478,-2.09126307039419
+2022-12-01,"USGOVT","Government","sector",22365,22857,-492,-2.15251345320908
+2023-01-01,"USGOVT","Government","sector",22484,22857,-373,-1.63188519928249
+2023-02-01,"USGOVT","Government","sector",22538,22857,-319,-1.39563372271077
+2023-03-01,"USGOVT","Government","sector",22580,22857,-277,-1.21188257426609
+2023-04-01,"USGOVT","Government","sector",22642,22857,-215,-0.940630878942994
+2023-05-01,"USGOVT","Government","sector",22722,22857,-135,-0.590628691429318
+2023-06-01,"USGOVT","Government","sector",22792,22857,-65,-0.284376777354856
+2023-07-01,"USGOVT","Government","sector",22837,22857,-20,-0.0875005468784162
+2023-08-01,"USGOVT","Government","sector",22907,22857,50,0.218751367196046
+2023-09-01,"USGOVT","Government","sector",22948,22857,91,0.398127488296796
+2023-10-01,"USGOVT","Government","sector",22993,22857,136,0.595003718773235
+2023-11-01,"USGOVT","Government","sector",23036,22857,179,0.78312989456184
+2023-12-01,"USGOVT","Government","sector",23091,22857,234,1.02375639847749
+2024-01-01,"USGOVT","Government","sector",23140,22857,283,1.23813273832962
+2024-02-01,"USGOVT","Government","sector",23211,22857,354,1.54875967974799
+2024-03-01,"USGOVT","Government","sector",23296,22857,439,1.92063700398128
+2024-04-01,"USGOVT","Government","sector",23297,22857,440,1.9250120313252
+2024-05-01,"USGOVT","Government","sector",23330,22857,473,2.06938793367459
+2024-06-01,"USGOVT","Government","sector",23339,22857,482,2.10876317976987
+2024-07-01,"USGOVT","Government","sector",23400,22857,543,2.37563984774904
+2024-08-01,"USGOVT","Government","sector",23436,22857,579,2.53314083213021
+2024-09-01,"USGOVT","Government","sector",23449,22857,592,2.59001618760117
+2024-10-01,"USGOVT","Government","sector",23486,22857,629,2.75189219932626
+2024-11-01,"USGOVT","Government","sector",23504,22857,647,2.83064269151683
+2024-12-01,"USGOVT","Government","sector",23529,22857,672,2.94001837511484

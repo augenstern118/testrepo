@@ -1,0 +1,13 @@
+"date","series_id","sector","kind","jobs_thousands","baseline_thousands","change_thousands","change_pct"
+2022-06-01,"PAYEMS","Total nonfarm","total",152358,152293,65,0.0426808848732474
+2022-06-01,"USMINE","Mining & logging","sector",608,684,-76,-11.1111111111111
+2022-06-01,"USCONS","Construction","sector",7761,7610,151,1.98423127463863
+2022-06-01,"MANEMP","Manufacturing","sector",12767,12743,24,0.188338695754542
+2022-06-01,"USTPU","Trade, transport & utilities","sector",28646,27738,908,3.27348763429232
+2022-06-01,"USINFO","Information","sector",3076,2910,166,5.70446735395189
+2022-06-01,"USFIRE","Financial activities","sector",9059,8872,187,2.10775473399458
+2022-06-01,"USPBS","Professional & business services","sector",22564,21483,1081,5.03188567704698
+2022-06-01,"USEHS","Private education & health","sector",24267,24573,-306,-1.24526919790013
+2022-06-01,"USLAH","Leisure & hospitality","sector",15794,16889,-1095,-6.48350997690804
+2022-06-01,"USSERV","Other services","sector",5674,5934,-260,-4.38153016514998
+2022-06-01,"USGOVT","Government","sector",22142,22857,-715,-3.12814455090344

@@ -1,0 +1,2 @@
+file,source,retrieved_utc,url,sha256,md5,analysis_start,analysis_end,units,adjustment
+fred_employment.csv,BLS Current Employment Statistics via FRED,2026-10-25T20:48:28.516299+00:00,"https://fred.stlouisfed.org/graph/fredgraph.csv?id=PAYEMS,USMINE,USCONS,MANEMP,USTPU,USINFO,USFIRE,USPBS,USEHS,USLAH,USSERV,USGOVT&cosd=2020-02-01&coed=2024-12-01",367b57998c06aeacc2a03dfd337fdb656063ea7baefc38412a63a4b1120d30d4,6b81173d8b6a959e4d09385b7bd17004,2020-02-01,2024-12-01,Thousands of payroll jobs,Seasonally adjusted

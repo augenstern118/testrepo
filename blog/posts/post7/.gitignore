@@ -1,0 +1,9 @@
+data/downloaded/
+index.html
+index_files/
+*.rmarkdown
+*.knit.md
+Blog_Post_7_Preview.html
+results/employment_explorer_files/
+.Rhistory
+.RData

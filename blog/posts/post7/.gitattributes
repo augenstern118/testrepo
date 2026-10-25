@@ -1,0 +1,3 @@
+data/raw/*.csv text eol=lf
+data/*.csv text eol=lf
+*.png binary

@@ -1,0 +1,118 @@
+---
+title: "The Jobs Came Back. Did Every Industry?"
+author: "Junzheng Yang"
+date: "2026-10-25"
+description: "An interactive payroll chart shows what the national recovery date hides about eleven major sectors."
+categories: [Plotly, labor market, interactive visualization]
+image: results/thumbnail.png
+editor: source
+format:
+  html:
+    toc: false
+execute:
+  echo: false
+  message: false
+  warning: false
+  cache: false
+---
+
+```{r}
+#| label: setup
+#| include: false
+post_dir <- dirname(knitr::current_input(dir = TRUE))
+if (!file.exists(file.path(post_dir, "R/01_analyze.R"))) {
+  post_dir <- if (file.exists("R/01_analyze.R")) "." else "blog/posts/post7"
+}
+stopifnot(file.exists(file.path(post_dir, "R/01_analyze.R")))
+source(file.path(post_dir, "R/01_analyze.R"), local = TRUE)
+source(file.path(post_dir, "R/02_plot.R"), local = TRUE)
+```
+
+“Jobs are back” sounds like a finish line. But a national total can recover
+while particular industries still employ fewer people. **When U.S. payroll
+employment regained its February 2020 level, had every major sector recovered
+too?** That distinction matters when judging what a recovery headline tells
+someone looking for work in a particular part of the economy.
+
+The answer is no. In this data snapshot, total nonfarm payrolls first returned
+to their starting level in **`r month_text`**, yet **`r below_return` of the
+eleven major sectors** remained below theirs. The interactive chart lets you
+inspect those differences rather than treating the national line as everyone's
+experience.
+
+## Explore the recovery
+
+The data are monthly, seasonally adjusted estimates from the [Bureau of Labor
+Statistics payroll survey](https://www.bls.gov/ces/), obtained through
+[FRED](https://fred.stlouisfed.org/series/PAYEMS). The chart follows February
+2020 through December 2024, using eleven broad sectors, including government,
+alongside the national total. Each percentage line starts at zero because it
+compares a sector with its own February 2020 payroll count. Seasonal adjustment
+reduces recurring calendar effects, making month-to-month comparisons more useful.
+
+**Try this:** hover or tap a line for its date, payroll count, and both measures
+of change. Click legend entries to show or hide sectors; double-click one to
+isolate it. The dropdown restores the recovery comparison, selects
+goods-producing sectors, or displays every sector. Switch between **% change**
+and **Job change**; the latter axis is in thousands. Drag the date slider to
+inspect a shorter period, or drag a box within the plot to zoom. Double-click
+the plot to reset the zoom.
+
+```{r}
+#| label: interactive-employment
+explorer
+```
+
+*Monthly payroll employment relative to February 2020. The dotted vertical
+line marks the national total's first return to baseline in this snapshot.
+Source: BLS Current Employment Statistics via FRED. Downloaded
+`r snapshot_text`. [Open the chart separately](results/employment_explorer.html)
+or [download the plotted data](data/processed/employment.csv).*
+
+## A national crossing, several unfinished recoveries
+
+Start with the default comparison and hover around the vertical line.
+Professional and business services stood **`r pct_text(at_return("USPBS", "change_pct"))`
+above** its starting level. Leisure and hospitality was still
+**`r pct_text(at_return("USLAH", "change_pct"))` below**, representing
+**`r jobs_text(at_return("USLAH", "change_thousands"))` fewer jobs**. Private
+education and health services, other services, mining and logging, and
+government were also below baseline. Gains elsewhere were sufficient to offset
+these remaining shortfalls in the national total.
+
+This is why a recovery date needs a clearly defined unit. It marks when a
+total crosses a threshold; it does not establish that the same workers found
+new jobs, that vacancies were plentiful, or that wages recovered. Payroll
+statistics count jobs rather than unique people: someone holding two payroll
+jobs can be counted twice, as [BLS
+explains](https://www.bls.gov/bls/empsitquickguide.htm).
+
+## The units change the comparison
+
+Now compare mining and logging with private education and health services
+near the end of 2024. Mining was **`r pct_text(at_end("USMINE", "change_pct"))`
+below** baseline, while private education and health was
+**`r pct_text(at_end("USEHS", "change_pct"))` above**. Those percentages have
+similar magnitudes. Switching to **Job change** reveals very different scales:
+about **`r jobs_text(at_end("USMINE", "change_thousands"))` jobs lost** versus
+**`r jobs_text(at_end("USEHS", "change_thousands"))` gained**. Percentage changes
+describe the size of a shift relative to a sector; job counts describe its
+numerical contribution to the national change. Neither answers both questions.
+
+Select **Goods-producing sectors** and follow manufacturing after its first
+return above zero. By December 2024 it was slightly below baseline again.
+Returning once is not the same as remaining above the threshold. Across all
+sectors, **`r below_end`** ended the window below baseline, although **`r small_gaps`** of
+those gaps were less than one percent. These small endpoint differences should
+not be described as evidence of a large collapse.
+
+These are revised historical estimates downloaded in 2026, not the numbers
+available to journalists in 2022. [BLS revises payroll
+estimates](https://www.bls.gov/web/empsit/cesvininfo.htm), so crossing dates can
+change. The chart does not identify why sectors diverged, and returning to
+2020 employment is not equivalent to catching up with population growth or a
+pre-pandemic trend. **The takeaway: the national total recovered before every
+sector did. Check the sector, date, and units before interpreting what “jobs
+are back” means.**
+
+*[Code, data, and replication instructions](https://github.com/augenstern118/testrepo/tree/main/blog/posts/post7).*

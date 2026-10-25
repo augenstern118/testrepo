@@ -1,0 +1,13 @@
+series_id,sector,bls_series_id,kind,color,source_url
+PAYEMS,Total nonfarm,CES0000000001,total,#172B4D,https://fred.stlouisfed.org/series/PAYEMS
+USMINE,Mining & logging,CES1000000001,sector,#9B4D96,https://fred.stlouisfed.org/series/USMINE
+USCONS,Construction,CES2000000001,sector,#008878,https://fred.stlouisfed.org/series/USCONS
+MANEMP,Manufacturing,CES3000000001,sector,#4A6FE3,https://fred.stlouisfed.org/series/MANEMP
+USTPU,"Trade, transport & utilities",CES4000000001,sector,#805520,https://fred.stlouisfed.org/series/USTPU
+USINFO,Information,CES5000000001,sector,#A15242,https://fred.stlouisfed.org/series/USINFO
+USFIRE,Financial activities,CES5500000001,sector,#6950A1,https://fred.stlouisfed.org/series/USFIRE
+USPBS,Professional & business services,CES6000000001,sector,#33806D,https://fred.stlouisfed.org/series/USPBS
+USEHS,Private education & health,CES6500000001,sector,#007DA8,https://fred.stlouisfed.org/series/USEHS
+USLAH,Leisure & hospitality,CES7000000001,sector,#C94C22,https://fred.stlouisfed.org/series/USLAH
+USSERV,Other services,CES8000000001,sector,#B37A00,https://fred.stlouisfed.org/series/USSERV
+USGOVT,Government,CES9000000001,sector,#65758B,https://fred.stlouisfed.org/series/USGOVT

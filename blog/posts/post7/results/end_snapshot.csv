@@ -1,0 +1,13 @@
+"date","series_id","sector","kind","jobs_thousands","baseline_thousands","change_thousands","change_pct"
+2024-12-01,"PAYEMS","Total nonfarm","total",158316,152293,6023,3.95487645525401
+2024-12-01,"USMINE","Mining & logging","sector",622,684,-62,-9.06432748538012
+2024-12-01,"USCONS","Construction","sector",8276,7610,666,8.75164257555847
+2024-12-01,"MANEMP","Manufacturing","sector",12693,12743,-50,-0.39237228282194
+2024-12-01,"USTPU","Trade, transport & utilities","sector",28811,27738,1073,3.86833946210974
+2024-12-01,"USINFO","Information","sector",2895,2910,-15,-0.515463917525771
+2024-12-01,"USFIRE","Financial activities","sector",9179,8872,307,3.46032461677186
+2024-12-01,"USPBS","Professional & business services","sector",22532,21483,1049,4.8829306893823
+2024-12-01,"USEHS","Private education & health","sector",26945,24573,2372,9.65287103731738
+2024-12-01,"USLAH","Leisure & hospitality","sector",16862,16889,-27,-0.15986736929362
+2024-12-01,"USSERV","Other services","sector",5972,5934,38,0.640377485675758
+2024-12-01,"USGOVT","Government","sector",23529,22857,672,2.94001837511484

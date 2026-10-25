@@ -1,0 +1,13 @@
+"series_id","sector","kind","first_return","change_at_total_recovery_pct","change_at_total_recovery_thousands","end_change_pct","end_change_thousands","end_below_baseline"
+"PAYEMS","Total nonfarm","total","2022-06-01",0.0426808848732474,65,3.95487645525401,6023,FALSE
+"USMINE","Mining & logging","sector",NA,-11.1111111111111,-76,-9.06432748538012,-62,TRUE
+"USCONS","Construction","sector","2022-02-01",1.98423127463863,151,8.75164257555847,666,FALSE
+"MANEMP","Manufacturing","sector","2022-06-01",0.188338695754542,24,-0.39237228282194,-50,TRUE
+"USTPU","Trade, transport & utilities","sector","2021-09-01",3.27348763429232,908,3.86833946210974,1073,FALSE
+"USINFO","Information","sector","2021-09-01",5.70446735395189,166,-0.515463917525771,-15,TRUE
+"USFIRE","Financial activities","sector","2021-10-01",2.10775473399458,187,3.46032461677186,307,FALSE
+"USPBS","Professional & business services","sector","2021-08-01",5.03188567704698,1081,4.8829306893823,1049,FALSE
+"USEHS","Private education & health","sector","2022-10-01",-1.24526919790013,-306,9.65287103731738,2372,FALSE
+"USLAH","Leisure & hospitality","sector",NA,-6.48350997690804,-1095,-0.15986736929362,-27,TRUE
+"USSERV","Other services","sector","2024-03-01",-4.38153016514998,-260,0.640377485675758,38,FALSE
+"USGOVT","Government","sector","2023-08-01",-3.12814455090344,-715,2.94001837511484,672,FALSE
