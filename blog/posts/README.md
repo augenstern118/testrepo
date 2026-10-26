@@ -1,102 +1,54 @@
 # Junzheng Yang's Economics Blog
 
-Quarto website for Computational Methods for Economists. Posts 1–5 use R;
-Post 6 uses SQL within Python. Each post includes its own methods, inputs,
-code, generated results, and replication instructions.
+Quarto coursework for Computational Methods for Economists.
 
-- **Website:** https://augenstern118.github.io/testrepo/
-- **Blog:** https://augenstern118.github.io/testrepo/blog/
-- **Repository:** https://github.com/augenstern118/testrepo
+- [Published website](https://augenstern118.github.io/testrepo/)
+- [Blog listing](https://augenstern118.github.io/testrepo/blog/)
+- [GitHub repository](https://github.com/augenstern118/testrepo)
 
-## Posts and replication
+## Articles and replication
 
-| Post | Question or topic | Article source | Replication instructions |
+| Post | Topic | Article source | Replication |
 |---|---|---|---|
-| 1 | What does a p-value establish in a funding decision? | [index.qmd](blog/posts/post1/index.qmd) | [README](blog/posts/post1/README.md) |
-| 2 | Where should an economics student start a job search? | [index.qmd](blog/posts/post2/index.qmd) | [README](blog/posts/post2/README.md) |
-| 3 | How does the college earnings premium vary? | [index.qmd](blog/posts/post3/index.qmd) | [README](blog/posts/post3/README.md) |
-| 4 | How did mortgage rates change the payment burden? | [index.qmd](blog/posts/post4/index.qmd) | [README](blog/posts/post4/README.md) |
-| 5 | Do state population growth and domestic migration tell the same story? | [index.qmd](blog/posts/post5/index.qmd) | [README](blog/posts/post5/README.md) |
-| 6 | How do income averaging and measurement age change an IGE? | [index.qmd](blog/posts/post6/index.qmd) | [README](blog/posts/post6/README.md) |
+| 1 | What can a p-value establish in a funding decision? | [index.qmd](blog/posts/post1/index.qmd) | [README](blog/posts/post1/README.md) |
+| 2 | Where should an economics student start the job search? | [index.qmd](blog/posts/post2/index.qmd) | [README](blog/posts/post2/README.md) |
+| 3 | Can the college earnings premium grow without larger real paychecks? | [index.qmd](blog/posts/post3/index.qmd) | [README](blog/posts/post3/README.md) |
+| 4 | Mortgage rates and housing payments | [index.qmd](blog/posts/post4/index.qmd) | [README](blog/posts/post4/README.md) |
+| 5 | State population growth and domestic migration | [index.qmd](blog/posts/post5/index.qmd) | [README](blog/posts/post5/README.md) |
+| 6 | Parent-child income matching and intergenerational elasticity | [index.qmd](blog/posts/post6/index.qmd) | [README](blog/posts/post6/README.md) |
+| 7 | Interactive employment visualization with Plotly | [index.qmd](blog/posts/post7/index.qmd) | [README](blog/posts/post7/README.md) |
 
-## Working from the repository
-
-Clone or download this repository, then open `Junzheng Yang-website.Rproj`
-in RStudio. Commands described as running from the **website root** start
-in the directory containing `_quarto.yml` and this README. Run R code in
-the RStudio **Console**; run `quarto`, `python`, and `git` commands in the
-**Terminal**. RStudio is convenient but not required for command-line use.
-
-Install R and Quarto for the R articles, plus each post's documented R
-packages. Rendering R code uses `knitr` and `rmarkdown`; if missing, install
-them once in the R Console:
-
-```r
-install.packages(c("knitr", "rmarkdown"))
-```
-
-Post 6 analysis requires Python 3.11 or newer and the packages in its
-`requirements.txt`. SQLite is supplied through Python's built-in `sqlite3`.
-The post's README gives both `python` and Windows `py -3` commands.
-
-## Inputs and generated results
-
-- Post 1 uses explicitly hypothetical teaching inputs.
-- Posts 2, 4, and 5 include their archived public-source inputs; acquisition
-  scripts are optional when reproducing those fixed snapshots.
-- Post 3 requires a separately obtained IPUMS CPS ASEC extract. Its README
-  lists the exact samples and variables. Raw CPS microdata are excluded from
-  Git; do not upload them when publishing changes.
-- Post 6 includes selected columns from real public-use NLSY files and a
-  saved CPI series. The main analysis uses these included inputs. Reacquiring
-  the full source archives is optional.
-
-The default analyses need no data downloads once their required inputs and
-packages are installed. Source dates, definitions, transformations, limitations,
-and output locations are documented separately for each post.
-
-## Rebuild the website
-
-Follow the relevant post's README to regenerate its analysis first. For
-Post 6, rerun Python after changing analysis code, SQL, inputs, or its article
-template; Quarto publishes the saved generated article rather than executing
-Python during Render.
-
-To rebuild one article, for example Post 2, and refresh the listing, run in
-the Terminal from the website root:
-
-```bash
-quarto render blog/posts/post2/index.qmd
-quarto render blog/index.qmd
-```
-
-To rebuild the entire site, run:
-
-```bash
-quarto render
-```
-
-A full render executes the R posts and therefore requires the Post 3 CPS
-extract and all R dependencies. It does not replace the separate Python
-analysis step for Post 6. To preview the site locally, run `quarto preview`.
-
-`_quarto.yml` sets `output-dir: docs`. Review the rendered pages before
-publishing, then commit the changed source files and regenerated `docs/`
-files. Do not edit generated HTML by hand. A change confined to README files
-can be committed and pushed without rerunning the statistical analyses.
-
-## Repository layout
+## Repository organization
 
 | Location | Purpose |
 |---|---|
-| `_quarto.yml` | Website configuration and output directory |
-| `Junzheng Yang-website.Rproj` | RStudio project |
-| `index.qmd`, `bio.qmd`, `resume.qmd` | Main website pages |
+| `_quarto.yml` | Website configuration |
 | `blog/index.qmd` | Blog listing |
-| `blog/posts/post1/` through `post6/` | Article sources and replication materials |
-| `docs/` | Rendered website used by GitHub Pages |
-| `images/`, `files/`, `styles.css` | Shared website assets |
+| `blog/posts/postN/index.qmd` | Article source |
+| Each post's `R/`, Python or SQL files | Analysis code |
+| Each post's `data/` | Inputs, provenance or access instructions |
+| Each post's `results/` | Programmatically generated tables, figures and other outputs |
+| Each post's `README.md` | Data definitions and replication commands |
+| `docs/` | Rendered website published through GitHub Pages |
 
-Post-level READMEs distinguish raw inputs, analysis scripts, processed data,
-and generated results. Files under `results/` and `data/processed/` should be
-regenerated by the documented workflow rather than changed manually.
+## Replication and publishing
+
+Open the website's `.Rproj` file in RStudio. Follow each post's linked README
+for its data inputs, software requirements and analysis commands. Commands
+specified for the website root run where `_quarto.yml` is located.
+
+For example, rebuild Posts 2 and 3 and the blog listing from that directory:
+
+```bash
+quarto render blog/posts/post2/index.qmd
+quarto render blog/posts/post3/index.qmd
+quarto render blog/index.qmd
+```
+
+Post 3 requires a separately obtained local IPUMS extract. Post 6 requires
+its documented Python analysis step before rendering. A full `quarto render`
+requires the inputs and dependencies for every article.
+
+Commit changed article sources, analysis code, relevant README/data files,
+generated results and rendered `docs/` files. Keep Post 3's raw microdata
+excluded from Git. Edit source files and rerender rather than editing HTML.
