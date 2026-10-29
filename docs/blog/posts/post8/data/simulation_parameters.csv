@@ -1,0 +1,9 @@
+"parameter","value"
+"seed",20261029
+"population_mean",30
+"null_mean",28
+"log_sd",0.35
+"example_resamples",4999
+"coverage_resamples",999
+"surveys",1000
+"null_simulations",10000

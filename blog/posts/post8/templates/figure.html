@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Simulation and inference explorer</title>
+<link rel="stylesheet" href="../assets/figures.css">
+<script src="../assets/plotly-2.25.2.min.js"></script>
+</head>
+<body data-figure="__KIND__">
+<h3 id="figure-title"></h3>
+<div class="controls">
+<label>Workers sampled<select id="sample-size"><option value="30">30</option><option value="100">100</option><option value="400" selected>400</option></select></label>
+<label id="confidence-control">Confidence level<select id="confidence"><option value="90">90%</option><option value="95" selected>95%</option></select></label>
+<label id="surveys-control">New survey experiments<select id="surveys"><option value="100">100</option><option value="500">500</option><option value="1000" selected>1,000</option></select></label>
+<label id="alpha-control">Significance level<select id="alpha"><option value="0.01">1%</option><option value="0.05" selected>5%</option><option value="0.1">10%</option></select></label>
+</div>
+<p id="metrics" aria-live="polite"></p>
+<div id="chart" role="img" aria-label="Interactive simulation chart"></div>
+<p id="explanation" class="explanation"></p>
+<p class="source">Source: simulated lognormal hourly wages; author calculations in R. No observed worker data.</p>
+<noscript><p>JavaScript is needed for these controls. Use the static figure linked below the chart in the article.</p></noscript>
+<script id="figure-data" type="application/json">__PAYLOAD__</script>
+<script src="../assets/figures.js"></script>
+</body>
+</html>
